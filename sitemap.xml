@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mariebras.fr/</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mariebras.fr/formation-primo-manager</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mariebras.fr/coaching-manager</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mariebras.fr/passer-de-pair-a-manager</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://mariebras.fr/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
