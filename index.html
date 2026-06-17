@@ -203,6 +203,7 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
     <a href="#methode" class="nav-link" onclick="closeBurger()">La méthode Bascule</a>
     <span class="nav-dd"><a href="#offre" class="nav-link" onclick="closeBurger()">Accompagnement ▾</a><span class="nav-dd-menu"><a href="/formation-primo-manager">Pour les entreprises</a><a href="/accompagnement-manager">Pour les managers</a><a href="/entrepreneur-manager">Pour les dirigeants</a></span></span>
     <a href="#apropos" class="nav-link" onclick="closeBurger()">À propos</a>
+    <a href="/blog" class="nav-link" onclick="closeBurger()">Blog</a>
     <a href="#contact" class="nav-cta" onclick="closeBurger()">Parlons-en</a>
   </div>
   <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu">
@@ -219,11 +220,11 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
       <p style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:var(--muted);margin-top:2rem;line-height:1.3">Le Protocole BASCULE accompagne les managers en prise de poste, les entreprises qui forment leurs équipes, et les dirigeants qui recrutent leurs premières équipes.</p>
     </div>
     <div class="hero-sub">
-      <p>Le management est un vrai métier, et la bascule vers ce rôle mérite mieux qu'une improvisation. Que vous soyez manager en prise de poste, DRH qui forme ses équipes, ou dirigeant qui recrute ses premiers collaborateurs : le Protocole BASCULE est fait pour ça.</p>
+      <p>Les compétences qui ont permis à quelqu'un d'être promu ne sont pas celles qui lui permettront de réussir comme manager. Le Protocole BASCULE accompagne précisément cette transition.</p>
     </div>
     <div class="hero-actions">
       <a href="#offre" class="btn-main">Découvrir l'offre <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#contact" class="btn-sec">Parlons de vos managers</a>
+      <a href="#contact" class="btn-sec">Parlons de votre situation</a>
     </div>
     <!-- BOUSSOLE -->
     <div class="hero-compass">
@@ -250,16 +251,10 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
 </section>
 
 <!-- 3 PORTES D'ENTRÉE -->
-<div style="background:var(--white);padding:2.5rem clamp(1.5rem,5vw,4rem);border-bottom:1px solid var(--ivory3)">
+<div id="pourqui" style="background:var(--white);padding:2.5rem clamp(1.5rem,5vw,4rem);border-bottom:1px solid var(--ivory3)">
   <div class="wrap inner">
     <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:1.5rem;text-align:center" class="reveal">Vous êtes…</p>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem" class="reveal">
-      <a href="/accompagnement-manager" style="text-decoration:none;padding:1.8rem;border:1px solid var(--ivory3);border-top:3px solid var(--terra);background:var(--ivory);display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Manager</p>
-        <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.7rem;font-family:'Playfair Display',serif;line-height:1.3">Vous venez de prendre votre poste et vous manquez de repères.</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.65;margin-bottom:1rem">Coaching individuel sur vos situations réelles, feedback, posture, délégation, prise de parole.</p>
-        <p style="font-size:0.78rem;font-weight:700;color:var(--terra)">Coaching individuel →</p>
-      </a>
       <a href="/formation-primo-manager" style="text-decoration:none;padding:1.8rem;border:1px solid var(--ivory3);border-top:3px solid var(--terra);background:var(--ivory);display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
         <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">DRH · Responsable formation</p>
         <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.7rem;font-family:'Playfair Display',serif;line-height:1.3">Vous voulez former vos managers et renforcer la cohésion de vos équipes.</p>
@@ -268,9 +263,15 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
       </a>
       <a href="/entrepreneur-manager" style="text-decoration:none;padding:1.8rem;border:1px solid var(--ivory3);border-top:3px solid var(--terra);background:var(--ivory);display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
         <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Dirigeant</p>
-        <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.7rem;font-family:'Playfair Display',serif;line-height:1.3">Vous ne savez pas comment gérer vos premiers collaborateurs.</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.65;margin-bottom:1rem">Coaching de dirigeant dans votre rôle de manager, CDI ou freelances, adapté à votre réalité.</p>
+        <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.7rem;font-family:'Playfair Display',serif;line-height:1.3">Vous dirigez, et vous devez aussi manager.</p>
+        <p style="font-size:0.84rem;color:var(--mid);line-height:1.65;margin-bottom:1rem">Coaching de dirigeant : tenir votre posture, déléguer, et lâcher l'opérationnel sans perdre le cap.</p>
         <p style="font-size:0.78rem;font-weight:700;color:var(--terra)">Coaching dirigeant →</p>
+      </a>
+      <a href="/accompagnement-manager" style="text-decoration:none;padding:1.8rem;border:1px solid var(--ivory3);border-top:3px solid var(--terra);background:var(--ivory);display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Manager</p>
+        <p style="font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.7rem;font-family:'Playfair Display',serif;line-height:1.3">Vous venez de prendre votre poste et vous manquez de repères.</p>
+        <p style="font-size:0.84rem;color:var(--mid);line-height:1.65;margin-bottom:1rem">Coaching individuel sur vos situations réelles : feedback, posture, délégation, prise de parole.</p>
+        <p style="font-size:0.78rem;font-weight:700;color:var(--terra)">Coaching individuel →</p>
       </a>
     </div>
   </div>
@@ -282,8 +283,8 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
       <img src="/images/marie-bras-portrait.jpg" alt="Marie Bras" style="width:100%;border-radius:2px;object-fit:cover;max-height:320px;object-position:top">
       <div>
         <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Marie Bras</p>
-        <p style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.4rem);color:white;line-height:1.5;font-style:italic;margin-bottom:1.2rem">"Quand on devient manager, on change de métier, mais on change surtout soi-même."</p>
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:1.5rem">Coach professionnelle et formatrice, j'ai passé 10 ans dans des environnements exigeants où l'humain est mis à rude épreuve : recrutement dans le monde de la tech, management de plus de 10 personnes chez Malt, formation de 500+ personnes. J'ai créé ÉLAN parce que j'ai envie de transmettre ce que j'aurais voulu qu'on m'apprenne plus tôt, afin d'être plus épanoui plus vite.</p>
+        <p style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.4rem);color:white;line-height:1.5;font-style:italic;margin-bottom:1.2rem">Devenir manager n'est pas une simple évolution de poste. C'est un changement de métier et souvent un changement de soi.</p>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:1.5rem">J'accompagne les managers qui traversent cette transition à prendre leur place, gagner en légitimité et trouver une manière de manager qui leur ressemble.</p>
         <a href="/marie-bras" style="display:inline-block;font-size:0.82rem;font-weight:700;color:var(--terra2);text-decoration:none;border-bottom:1px solid var(--terra2);padding-bottom:2px">Mon parcours complet →</a>
       </div>
     </div>
@@ -297,10 +298,6 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
         <div class="s-label"><span class="s-label-line"></span><span>Les angles morts</span></div>
         <h2 class="s-title">Ce qui dysfonctionne<br><em>avant qu'on le nomme</em></h2>
         <p class="s-body">Dans la grande majorité des cas, il n'y a aucune formation à la prise de poste. Et quand il y en a une, elle est trop théorique, trop générale, elle parle de l'équipe, jamais du manager lui-même. Personne ne prépare vraiment celui ou celle qui bascule dans ce nouveau rôle.</p>
-        <div id="pain-reveal" style="margin-top:3rem;padding-top:2.5rem;border-top:2px solid var(--terra);overflow:hidden">
-          <p class="pain-label" style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:1.4rem;opacity:0;transform:translateX(-30px);transition:opacity 0.6s cubic-bezier(.22,1,.36,1),transform 0.6s cubic-bezier(.22,1,.36,1)">Ce que ça provoque</p>
-          <p class="pain-main" style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.55rem);font-style:italic;color:var(--dark);line-height:1.5;max-width:900px;opacity:0;transform:translateY(40px) scale(0.97);transition:opacity 0.9s cubic-bezier(.22,1,.36,1) 0.15s,transform 0.9s cubic-bezier(.22,1,.36,1) 0.15s">Des managers investis qui avancent seuls, apprennent par essai-erreur, et finissent épuisés ou convaincus de ne pas être à leur place. Et derrière eux, des équipes qui le ressentent, se démotivent, et parfois partent.</p>
-        </div>
       </div>
       <div class="reveal">
         <ul class="pain-list">
@@ -312,80 +309,34 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
         </ul>
       </div>
     </div>
+    <div class="reveal" style="margin-top:3rem;padding-top:2.2rem;border-top:1px solid var(--ivory3)">
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:1rem">Ce que ça provoque</p>
+      <p style="font-size:clamp(0.95rem,1.8vw,1.05rem);color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:2.4rem">Pris un par un, ces réflexes semblent anodins. Installés dans la durée, ils coûtent cher.</p>
+      <div id="csq" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.8rem">
+        <div class="csq-item" style="text-align:center;opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+          <div style="font-size:1.9rem;line-height:1;margin-bottom:0.6rem">😔</div>
+          <div style="font-size:clamp(0.98rem,1.6vw,1.12rem);font-weight:600;color:var(--terra);line-height:1.3">Désengagement</div>
+        </div>
+        <div class="csq-item" style="text-align:center;opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+          <div style="font-size:1.9rem;line-height:1;margin-bottom:0.6rem">😮‍💨</div>
+          <div style="font-size:clamp(0.98rem,1.6vw,1.12rem);font-weight:600;color:var(--terra);line-height:1.3">Burn-out des équipes</div>
+        </div>
+        <div class="csq-item" style="text-align:center;opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+          <div style="font-size:1.9rem;line-height:1;margin-bottom:0.6rem">🚪</div>
+          <div style="font-size:clamp(0.98rem,1.6vw,1.12rem);font-weight:600;color:var(--terra);line-height:1.3">Fort turnover</div>
+        </div>
+        <div class="csq-item" style="text-align:center;opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+          <div style="font-size:1.9rem;line-height:1;margin-bottom:0.6rem">📉</div>
+          <div style="font-size:clamp(0.98rem,1.6vw,1.12rem);font-weight:600;color:var(--terra);line-height:1.3">Baisse de productivité</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:3rem;padding:1.8rem 2rem;background:var(--white);border-left:3px solid var(--terra)">
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:0.9rem">Pourquoi intervenir tôt ?</p>
+      <p style="font-size:0.92rem;color:var(--mid);line-height:1.75">Les habitudes managériales se construisent vite. Éviter une conversation difficile, faire à la place de son équipe ou chercher systématiquement validation auprès des RH peut sembler anodin au départ. Avec le temps, ces réflexes deviennent des modes de fonctionnement.</p>
+    </div>
   </div>
 </div>
-
-<!-- RÉSULTATS -->
-<div class="res-bg" id="accompagnement">
-  <div class="wrap inner">
-    <div class="s-label reveal"><span class="s-label-line"></span><span>Les résultats</span></div>
-    <h2 class="s-title reveal">Quelques situations vécues<br><em>chez Élan by Marie Bras</em></h2>
-    <p class="s-body reveal" style="max-width:700px;margin-top:0.8rem">Les entreprises qui accompagnent leurs managers voient un ROI moyen de <strong style="color:var(--terra)">7x leur investissement</strong> et <strong style="color:var(--terra)">+53% de productivité</strong> chez les personnes coachées. <span style="font-size:0.78rem;color:var(--muted)">PwC / ICF</span></p>
-    <div style="margin-top:2rem">
-        <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:1.5rem" class="reveal">Ce que ça change concrètement</p>
-
-        <div class="res-grid reveal">
-          <div>
-            <div class="res-col-title">Côté managers</div>
-            <ul class="res-list">
-              <li><strong>Ils prennent leur place plus rapidement</strong>, moins d'hésitation et de flottement dans les premières semaines</li>
-              <li><strong>Ils traitent les sujets sensibles au bon moment</strong>, sans attendre que les tensions s'installent</li>
-              <li><strong>Ils sortent du "je fais à leur place"</strong>, et commencent réellement à faire faire</li>
-              <li><strong>Ils comprennent mieux ce qui se joue</strong>, et ajustent leur posture sans surcompenser</li>
-            </ul>
-          </div>
-          <div>
-            <div class="res-col-title">Impact pour votre organisation</div>
-            <ul class="res-list">
-              <li><strong>Des managers plus rapidement efficaces</strong>, performance des équipes maintenue dès la prise de poste</li>
-              <li><strong>Moins de décisions qui remontent vers les RH</strong>, des managers plus autonomes dans leur rôle</li>
-              <li><strong>Moins de tensions silencieuses</strong>, les sujets sont traités plus tôt, moins de sujets à gérer par le top management, productivité renforcée dans les équipes</li>
-              <li><strong>Moins de départs</strong>, les collaborateurs se sentent écoutés et épaulés, la motivation est présente. Vous vous préservez du turnover inutile.</li>
-            </ul>
-          </div>
-        </div>
-
-        <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin:2rem 0 1.5rem" class="reveal">Quelques situations vécues</p>
-
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:1px">
-          <div style="background:var(--ivory2);padding:1.4rem 1.6rem;border-top:2px solid var(--ivory3)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.7rem">Avant</p>
-            <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;font-style:italic">"Il gérait son équipe comme avant sa promotion. Relation trop copain-copain, sans cadre clair. Les décisions passaient mal."</p>
-          </div>
-          <div style="background:var(--white);padding:1.4rem 1.6rem;border-top:2px solid var(--terra)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);margin-bottom:0.7rem">Après</p>
-            <p style="font-size:0.88rem;color:var(--dark);line-height:1.65">"Il a appris à nommer ses deux casquettes, à poser les instances et à distinguer les moments managériaux des moments informels. L'équipe a suivi."</p>
-          </div>
-        </div>
-
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:1px">
-          <div style="background:var(--ivory2);padding:1.4rem 1.6rem;border-top:1px solid var(--ivory3)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.7rem">Avant</p>
-            <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;font-style:italic">"Elle n'osait pas dire les choses directement. Ses feedbacks tournaient autour du pot, les personnes de son équipe ne comprenaient pas ce qu'on attendait d'elles."</p>
-          </div>
-          <div style="background:var(--white);padding:1.4rem 1.6rem;border-top:1px solid var(--terra3)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);margin-bottom:0.7rem">Après</p>
-            <p style="font-size:0.88rem;color:var(--dark);line-height:1.65">"En parlant en 'je' plutôt qu'en 'tu' accusateur, elle a réussi à formuler ce qui n'allait pas sans créer de défensivité. Les conversations ont changé de nature."</p>
-          </div>
-        </div>
-
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:2rem">
-          <div style="background:var(--ivory2);padding:1.4rem 1.6rem;border-top:1px solid var(--ivory3)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.7rem">Avant</p>
-            <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;font-style:italic">"Il était débordé, faisait tout lui-même, finissait les semaines épuisé sans avoir avancé sur ce qui comptait vraiment."</p>
-          </div>
-          <div style="background:var(--white);padding:1.4rem 1.6rem;border-top:1px solid var(--terra3)">
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);margin-bottom:0.7rem">Après</p>
-            <p style="font-size:0.88rem;color:var(--dark);line-height:1.65">"Avec une carte des priorités structurée en début de semaine : urgent/important, délégable, à sortir. Il a récupéré du temps managérial et de la clarté."</p>
-          </div>
-        </div>
-
-        <div class="res-anchor reveal">👉 Ces changements sont visibles dans le quotidien des managers et ont un impact direct sur la performance, la stabilité et la productivité des équipes. C'est ça, l'élan : quand un manager se sent vraiment prêt à prendre sa place.</div>
-      </div></div>
-      <blockquote style="font-family:'Playfair Display',serif;font-size:clamp(1rem,2vw,1.3rem);font-style:italic;color:var(--terra);text-align:center;padding:2rem 0;border-top:1px solid var(--ivory3);margin-top:2rem;max-width:700px;margin-left:auto;margin-right:auto">C'est ça, l'élan : quand un manager se sent vraiment prêt à prendre sa place.</blockquote>
-    </div>
-  
-
 
 <!-- MÉTHODE -->
 <div class="meth-wrap" id="methode">
@@ -512,6 +463,12 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
       </a>
 
     </div>
+    <a href="https://calendly.com/elan-by-marie-bras/30min" target="_blank" style="text-decoration:none;display:block;margin-top:1.2rem;background:rgba(193,83,42,0.07);border:1px solid var(--terra3);border-left:3px solid var(--terra);padding:1.8rem 2rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+      <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Offre transversale</p>
+      <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:0.6rem;line-height:1.3">Améliorez vos prises de parole</p>
+      <p style="font-size:0.84rem;color:var(--mid);line-height:1.7;margin-bottom:0.8rem">Porter une décision, embarquer une équipe, pitcher : incarner votre posture à l'oral, sans que le doute prenne le dessus. En accompagnement individuel, ou en atelier collectif pour une équipe ou une cohorte de managers. Accessible seul.</p>
+      <p style="font-size:0.78rem;font-weight:700;color:var(--terra)">En parler →</p>
+    </a>
     <div style="margin-top:2rem;text-align:center;padding:1.2rem;background:var(--ivory2);border:1px solid var(--ivory3)" class="reveal">
       <p style="font-size:0.88rem;color:var(--mid);line-height:1.7">Pas sûr de ce dont vous avez besoin ? <a href="https://calendly.com/elan-by-marie-bras/30min" target="_blank" style="color:var(--terra);font-weight:700;text-decoration:none">30 min d'échange</a> pour définir le bon format ensemble.</p>
     </div>
@@ -526,7 +483,7 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
     <div style="margin-top:2rem" class="reveal">
       <div style="border-bottom:1px solid var(--ivory3);padding:1.4rem 0">
         <p style="font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:0.6rem">C'est quoi exactement le Protocole BASCULE ?</p>
-        <p style="font-size:0.88rem;color:var(--mid);line-height:1.75">C'est une méthode propriétaire créée par ÉLAN, 5 bascules clés que traverse tout primo-manager dans ses premières années. Pas un programme académique : une méthode construite à partir du terrain, des situations réelles, de ce qui coince vraiment. Chaque bascule a un outil concret associé, utilisable immédiatement.</p>
+        <p style="font-size:0.88rem;color:var(--mid);line-height:1.75">C'est une méthode propriétaire créée par ÉLAN, 5 bascules clés que traverse tout primo-manager dans ses premières années. Une méthode construite à partir du terrain, des situations réelles, de ce qui coince vraiment. Chaque bascule a un outil concret associé, utilisable immédiatement.</p>
       </div>
       <div style="border-bottom:1px solid var(--ivory3);padding:1.4rem 0">
         <p style="font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:0.6rem">À qui s'adresse ÉLAN exactement ?</p>
@@ -592,6 +549,16 @@ document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
   if(!el)return;
   var fired=false;
   new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting&&!fired){fired=true;el.style.opacity='1';el.style.transform='translateY(0)';}});},{threshold:0.3}).observe(el);
+})();
+
+(function(){
+  var c=document.getElementById('csq');
+  if(!c)return;
+  var items=c.querySelectorAll('.csq-item');
+  new IntersectionObserver(function(en,obs){en.forEach(function(e){if(e.isIntersecting){
+    items.forEach(function(it,i){setTimeout(function(){it.style.opacity='1';it.style.transform='none';},i*150);});
+    obs.disconnect();
+  }});},{threshold:0.3}).observe(c);
 })();
 
 function toggleBurger(){

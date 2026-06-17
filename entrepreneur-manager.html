@@ -278,6 +278,7 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
       </div>
     </div>
     <a href="/#apropos" class="nav-link" onclick="closeBurger()">À propos</a>
+    <a href="/blog" class="nav-link" onclick="closeBurger()">Blog</a>
     <a href="/#contact" class="nav-cta" onclick="closeBurger()">Parlons-en</a>
   </div>
   <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu">
@@ -303,76 +304,158 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
 <section class="sec">
   <div class="pw">
     <span class="slbl rv">Ce que vous vivez</span>
-    <h2 class="sh2 rv">Vous savez décider.<br><em>Lâcher l'opérationnel, c'est autre chose.</em></h2>
-    <p class="sbdy rv">Vous êtes légitime sur votre métier et sur votre vision. Mais dès qu'il s'agit de faire faire plutôt que de faire vous-même, le terrain devient mouvant.</p>
+    <h2 class="sh2 rv">Vous tenez la posture.<br><em>À l'intérieur, c'est moins simple.</em></h2>
+    <p class="sbdy rv">Diriger, c'est avancer en première ligne, décider, rassurer. Et porter, souvent seul, ce que personne ne voit.</p>
     <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem">
       <div style="padding:1.6rem;border-left:3px solid var(--terra);background:var(--ivory)">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">Posture</p>
-        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Vous portez encore tout</p>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Les décisions, l'exécution, les détails, tout repasse par vous. Vous devenez le goulot d'étranglement de votre propre projet.</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">La posture à tenir</p>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Être solide, même les jours de doute</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Vous devez décider, rassurer, donner le cap. Personne ne vous voit hésiter, et tenir ce masque en permanence, ça use.</p>
       </div>
       <div style="padding:1.6rem;border-left:3px solid var(--terra);background:var(--ivory)">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">Délégation</p>
-        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Vous n'arrivez pas à vraiment déléguer</p>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Vous confiez des tâches mais vous repassez derrière. Déléguer la responsabilité, et pas seulement l'exécution, ça ne vient pas tout seul.</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">La charge mentale</p>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Les décisions tournent en boucle</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Ce n'est pas le nombre d'heures, c'est le poids. Les arbitrages repassent la nuit, et la peur de se tromper ne vous quitte plus vraiment.</p>
       </div>
       <div style="padding:1.6rem;border-left:3px solid var(--terra);background:var(--ivory)">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">Contrôle</p>
-        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Lâcher vous met mal à l'aise</p>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Donner la main, c'est accepter que ce soit fait autrement que vous l'auriez fait. Cette perte de contrôle sur l'opérationnel est inconfortable, et pourtant nécessaire.</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">La solitude</p>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Seul à décider, seul à porter</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Plus l'entreprise grandit, plus vous décidez seul. Et vous ne pouvez pas déposer vos doutes sur votre équipe, qui attend justement que vous teniez le cap.</p>
       </div>
       <div style="padding:1.6rem;border-left:3px solid var(--terra);background:var(--ivory)">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">Posture managériale</p>
-        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Décideur oui, manager on ne vous l'a pas appris</p>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Vous tranchez vite et bien. Mais cadrer, faire un retour qui passe, tenir une exigence dans la durée, c'est un autre métier.</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem">Le doute de légitimité</p>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem">Pas toujours facile de prendre les décisions</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Vous avez réussi, et pourtant le doute revient, surtout dans les moments où il y a des enjeux forts à trancher. Vous le compensez en gardant tout, en ayant une communication qui ne passe pas auprès de vos équipes.</p>
       </div>
     </div>
   </div>
 </section>
 
+<div style="overflow:hidden">
+  <img src="/images/illus-charge-mentale.jpg" alt="Dirigeante absorbée par la charge mentale devant son ordinateur" style="display:block;width:100%;max-height:380px;object-fit:cover;object-position:center 22%">
+</div>
+
+<!-- CHECKLIST -->
+<section class="sec">
+  <div class="pw">
+    <span class="slbl rv">Vous vous reconnaissez sûrement ici</span>
+    <h2 class="sh2 rv">Les signes qu'il est temps<br><em>de lâcher un peu.</em></h2>
+    <p class="sbdy rv">Pris isolément, rien d'alarmant. Mis bout à bout, c'est souvent le signe que vous portez trop, et seul.</p>
+    <div class="rv" style="margin-top:2rem;display:grid;gap:0.7rem;max-width:760px">
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Vous validez encore la plupart des décisions, même les petites.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Vous repassez derrière votre équipe parce que ce n'est pas fait comme vous l'auriez fait.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Vous travaillez plus que tout le monde, et vous culpabilisez quand vous ralentissez.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Vous évitez certaines conversations difficiles, surtout avec des personnes que vous appréciez.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Vous avez du mal à dire clairement ce que vous attendez vraiment.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Sans vous, ça ralentit : vous êtes le point de passage obligé.</span></div>
+      <div style="display:flex;gap:0.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--ivory);border:1px solid var(--ivory3)"><span style="color:var(--terra);font-weight:700;flex-shrink:0">–</span><span style="font-size:0.9rem;color:var(--mid);line-height:1.6">Prendre la parole devant votre équipe, vos clients ou des investisseurs vous coûte plus que vous ne le montrez.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE JE VOUS APPORTE -->
+<section class="sec">
+  <div class="pw">
+    <span class="slbl rv">Ce que je vous apporte</span>
+    <h2 class="sh2 rv">Concrètement,<br><em>ce qu'on travaille ensemble.</em></h2>
+    <p class="sbdy rv">Un espace de respiration et de prise de recul pour vous aider à prendre pleinement votre posture de dirigeant et manager.</p>
+    <p class="sbdy rv" style="margin-top:0.6rem">On part de vos situations réelles, et on avance sur ce qui change vraiment votre quotidien.</p>
+    <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem">
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Déléguer pour de vrai</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Poser ce qui doit rester chez vous, ce qui peut partir, et construire une délégation qui tient sans que vous repassiez derrière.</p>
+      </div>
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Tenir votre posture</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Rester solide et lisible, même les jours de doute, sans porter en permanence un masque qui épuise.</p>
+      </div>
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Cadrer et faire des retours</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Dire clairement ce que vous attendez, recadrer quand il faut, sans abîmer la relation.</p>
+      </div>
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Décider sans porter seul</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Un espace pour poser vos arbitrages et vos doutes, là où vous n'avez souvent personne à qui les confier.</p>
+      </div>
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Tenir votre posture à l'oral</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Porter une décision, embarquer une équipe, pitcher devant des clients ou des investisseurs, sans que le doute prenne le dessus.</p>
+      </div>
+      <div style="padding:1.6rem;border-top:2px solid var(--terra);background:var(--ivory)">
+        <p style="font-size:0.9rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem">Désamorcer le doute de légitimité</p>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.65">Travailler ce qui revient dans les moments qui comptent, pour qu'il ne dicte plus vos décisions.</p>
+      </div>
+    </div>
+    <p class="rv" style="margin-top:1.8rem;font-size:0.88rem;color:var(--muted);line-height:1.7">Si vous vous demandez d'où je parle : dix ans à recruter, manager et accompagner des équipes en croissance, dont chez Malt. <a href="/marie-bras" style="color:var(--terra);font-weight:600;text-decoration:none">Mon parcours →</a></p>
+  </div>
+</section>
+
+<div style="overflow:hidden">
+  <img src="/images/illus-coaching-dirigeant.jpg" alt="Séance de coaching individuel entre une dirigeante et sa coach" style="display:block;width:100%;max-height:380px;object-fit:cover;object-position:center 30%">
+</div>
+
+<!-- RÉSULTATS -->
 <section class="sec sec-alt">
   <div class="pw">
-    <span class="slbl rv">Le double mouvement</span>
-    <h2 class="sh2 rv">Tenir une posture forte,<br><em>et savoir lâcher.</em></h2>
-    <p class="sbdy rv">J'ai dirigé et managé des équipes en environnement exigeant, des CDI comme des freelances, chez Malt. Diriger, ce n'est pas tout tenir. C'est décider clairement sur l'essentiel, et déléguer franchement le reste.</p>
-    <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ivory3);margin-top:2rem">
-      <div style="padding:1.8rem;border-right:1px solid var(--ivory3)">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Ce que vous gardez</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75;margin-bottom:0.4rem">→ La vision et le cap, les décisions structurantes</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75;margin-bottom:0.4rem">→ Le niveau d'exigence et le cadre</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75">→ Le sens : pourquoi on fait les choses</p>
+    <span class="slbl rv">Le vrai bénéfice</span>
+    <h2 class="sh2 rv">Du temps,<br><em>et de la tête, récupérés.</em></h2>
+    <p class="sbdy rv">Quand vous arrêtez de tout porter, vous ne gagnez pas que des heures. Vous récupérez de l'espace pour ce que vous êtes seul à pouvoir faire :</p>
+    <div id="benef" style="display:flex;flex-wrap:wrap;gap:1.8rem;margin-top:2rem">
+      <div class="benef-item" style="text-align:center;min-width:104px;opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+        <div style="font-size:1.9rem;line-height:1;margin-bottom:0.5rem">📈</div>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--dark)">Développer</div>
       </div>
-      <div style="padding:1.8rem">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);margin-bottom:0.8rem">Ce que vous lâchez</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75;margin-bottom:0.4rem">→ L'exécution au quotidien, les tâches opérationnelles</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75;margin-bottom:0.4rem">→ Le besoin que tout soit fait à votre façon</p>
-        <p style="font-size:0.84rem;color:var(--mid);line-height:1.75">→ Le réflexe de repasser derrière chacun</p>
+      <div class="benef-item" style="text-align:center;min-width:104px;opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+        <div style="font-size:1.9rem;line-height:1;margin-bottom:0.5rem">🤝</div>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--dark)">Vendre</div>
+      </div>
+      <div class="benef-item" style="text-align:center;min-width:104px;opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+        <div style="font-size:1.9rem;line-height:1;margin-bottom:0.5rem">👥</div>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--dark)">Recruter</div>
+      </div>
+      <div class="benef-item" style="text-align:center;min-width:104px;opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+        <div style="font-size:1.9rem;line-height:1;margin-bottom:0.5rem">🏗️</div>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--dark)">Structurer</div>
+      </div>
+      <div class="benef-item" style="text-align:center;min-width:104px;opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)">
+        <div style="font-size:1.9rem;line-height:1;margin-bottom:0.5rem">🔭</div>
+        <div style="font-size:0.92rem;font-weight:600;color:var(--dark)">Préparer la suite</div>
       </div>
     </div>
   </div>
 </section>
+
+<div style="overflow:hidden">
+  <img src="/images/illus-prise-parole.jpg" alt="Dirigeante prenant la parole devant son équipe lors d'une présentation" style="display:block;width:100%;max-height:380px;object-fit:cover;object-position:center 20%">
+</div>
 
 <section class="sec" style="background:var(--dark)">
   <div class="pw">
     <span class="slbl rv" style="color:#EAC4B0">L'accompagnement</span>
-    <h2 class="sh2 rv" style="color:white">Coaching de dirigeant<br><em style="color:var(--terra2)">dans votre rôle de manager</em></h2>
-    <p class="sbdy rv" style="color:rgba(255,255,255,0.72)">Pas une formation générique. Un coaching individuel ancré dans votre réalité de dirigeant : votre projet, votre équipe, vos décisions, vos situations.</p>
+    <h2 class="sh2 rv" style="color:white">Un coaching pour prendre votre place<br><em style="color:var(--terra2)">de dirigeant, de manière alignée.</em></h2>
+    <p class="sbdy rv" style="color:rgba(255,255,255,0.72)">Un coaching individuel ancré dans votre réalité de dirigeant : votre projet, votre équipe, vos décisions, vos situations.</p>
     <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem">
       <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:1.8rem">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Format standard</p>
-        <p style="font-size:0.95rem;font-weight:600;color:white;margin-bottom:0.6rem">Coaching individuel</p>
-        <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:0.8rem">Sessions régulières sur vos situations concrètes. On travaille ce qui coince vraiment : déléguer, lâcher l'opérationnel, tenir votre posture, cadrer, faire des retours. En visio ou présentiel.</p>
+        <p style="font-size:0.95rem;font-weight:700;color:white;margin-bottom:0.4rem">Travaillez votre posture</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Coaching individuel</p>
+        <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:0.8rem">Sessions régulières sur vos situations concrètes. On travaille ce qui coince vraiment : déléguer, lâcher l'opérationnel, tenir votre posture, cadrer, faire des retours.</p>
         <p style="font-size:0.82rem;color:var(--terra2);font-weight:700">Visio ou présentiel</p>
       </div>
       <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:1.8rem">
-        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Format intensif</p>
-        <p style="font-size:0.95rem;font-weight:600;color:white;margin-bottom:0.6rem">Journée BASCULE sur mesure</p>
+        <p style="font-size:0.95rem;font-weight:700;color:white;margin-bottom:0.4rem">Apprenez les bases du management et de la délégation</p>
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Journée BASCULE sur mesure</p>
         <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:0.8rem">Une journée entièrement dédiée à votre situation, pour poser les bases de votre posture managériale en profondeur. Tout est personnalisé à votre contexte.</p>
         <p style="font-size:0.82rem;color:var(--terra2);font-weight:700">Une journée, 100% sur mesure</p>
       </div>
     </div>
+    <div class="rv" style="margin-top:1.2rem;background:rgba(212,121,90,0.12);border:1px solid rgba(212,121,90,0.35);padding:1.8rem">
+      <p style="font-size:0.95rem;font-weight:700;color:white;margin-bottom:0.4rem">Améliorez vos prises de parole</p>
+      <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra2);margin-bottom:0.8rem">Coaching</p>
+      <p style="font-size:0.84rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:0.8rem">Porter une décision, embarquer une équipe, pitcher devant des clients ou des investisseurs : incarner votre posture à l'oral, sans que le doute prenne le dessus.</p>
+      <p style="font-size:0.82rem;color:var(--terra2);font-weight:700">En accompagnement individuel</p>
+    </div>
     <div style="margin-top:1.5rem;padding:1.2rem 1.8rem;background:rgba(255,255,255,0.05);border-left:3px solid var(--terra2)" class="rv">
-      <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7">Votre équipe grandit à 2 personnes ou plus ? <a href="/formation-primo-manager" style="color:var(--terra2);font-weight:600;text-decoration:none">L'Atelier BASCULE collectif</a> devient possible et plus rentable pour vous.</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7">Vous voulez former vos managers ? <a href="/formation-primo-manager" style="color:var(--terra2);font-weight:600;text-decoration:none">L'Atelier BASCULE</a> est là pour ça.</p>
     </div>
   </div>
 </section>
@@ -399,6 +482,17 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
   // Reveal on scroll
   var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.1});
   document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+})();
+</script>
+<script>
+(function(){
+  var c=document.getElementById('benef');
+  if(!c)return;
+  var items=c.querySelectorAll('.benef-item');
+  new IntersectionObserver(function(en,obs){en.forEach(function(e){if(e.isIntersecting){
+    items.forEach(function(it,i){setTimeout(function(){it.style.opacity='1';it.style.transform='none';},i*150);});
+    obs.disconnect();
+  }});},{threshold:0.3}).observe(c);
 })();
 </script>
 </body>
