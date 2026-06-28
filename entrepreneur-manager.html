@@ -259,6 +259,13 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
 .cdeco{position:absolute;right:-70px;top:50%;transform:translateY(-50%);opacity:0.06;pointer-events:none}
 @media(max-width:860px){.cdeco{display:none}}
 </style>
+<style id="resp-fix">
+@media(max-width:780px){
+  [style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  [style*="min-width:320px"],[style*="min-width:240px"],[style*="min-width:230px"],[style*="min-width:140px"]{min-width:0!important}
+  img{max-width:100%;height:auto}
+}
+</style>
 </head>
 <body>
 <nav id="nav">
