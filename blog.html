@@ -309,7 +309,7 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
 
 <section class="sec">
   <div class="pw">
-    <div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
       <a href="/blog/posture-manageriale" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
         <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture</span>
         <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Posture managériale : développer la vôtre sans vous renier</h2>
@@ -512,7 +512,7 @@ function closeBurger(){
   dd.addEventListener('mouseleave',function(){menu.style.display='none';});
   document.addEventListener('click',function(e){if(!dd.contains(e.target))menu.style.display='none';});
   // Reveal on scroll
-  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.1});
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0});
   document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
 })();
 </script>
