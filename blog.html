@@ -270,6 +270,702 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
   #nav-dd-menu{display:block!important;position:static!important;border:none!important;box-shadow:none!important;background:transparent!important;padding-left:0.8rem}
 }
 </style>
+  <style>
+    #elan-blog-guide,
+    #elan-blog-guide * {
+      box-sizing: border-box;
+    }
+
+    #elan-blog-guide {
+      --elan-paper: #faf7f2;
+      --elan-paper-deep: #F2EDE4;
+      --elan-card: #fffdf9;
+      --elan-ink: #2A201A;
+      --elan-muted: #5C4A40;
+      --elan-line: #E4DAD0;
+      --elan-accent: #C1532A;
+      --elan-accent-dark: #96391f;
+      --elan-soft-accent: #EAC4B0;
+      --elan-shadow: 0 24px 60px rgba(58, 38, 26, 0.09);
+      --elan-radius-xl: 34px;
+      --elan-radius-lg: 24px;
+      --elan-radius-md: 18px;
+
+      position: relative;
+      overflow: hidden;
+      color: var(--elan-ink);
+      background:
+        radial-gradient(circle at 8% 3%, rgba(193, 83, 42, 0.08), transparent 24rem),
+        radial-gradient(circle at 94% 36%, rgba(193, 83, 42, 0.05), transparent 20rem),
+        var(--elan-paper);
+      font-family: "Jost", Arial, sans-serif;
+      line-height: 1.5;
+      padding: clamp(76px, 9vw, 132px) 22px clamp(86px, 10vw, 148px);
+    }
+
+    #elan-blog-guide a {
+      color: inherit;
+    }
+
+    #elan-blog-guide button,
+    #elan-blog-guide a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #elan-blog-guide .elan-wrap {
+      width: min(1220px, 100%);
+      margin: 0 auto;
+    }
+
+    #elan-blog-guide .elan-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--elan-accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    #elan-blog-guide .elan-eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    #elan-blog-guide .elan-hero {
+      max-width: 920px;
+      margin-bottom: 56px;
+    }
+
+    #elan-blog-guide .elan-hero h1 {
+      max-width: 840px;
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3rem, 6.2vw, 6.4rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    #elan-blog-guide .elan-hero p {
+      max-width: 690px;
+      margin: 27px 0 0;
+      color: var(--elan-muted);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      line-height: 1.72;
+    }
+
+    #elan-blog-guide .elan-situation-label {
+      margin: 0 0 17px;
+      color: var(--elan-muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    #elan-blog-guide .elan-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 48px;
+    }
+
+    #elan-blog-guide .elan-tab {
+      position: relative;
+      min-height: 190px;
+      overflow: hidden;
+      border: 1px solid var(--elan-line);
+      border-radius: var(--elan-radius-lg);
+      background: rgba(255, 253, 249, 0.84);
+      color: var(--elan-ink);
+      text-align: left;
+      padding: 21px;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    #elan-blog-guide .elan-tab:nth-child(5),
+    #elan-blog-guide .elan-tab:nth-child(6),
+    #elan-blog-guide .elan-tab:nth-child(7) {
+      grid-column: span 1;
+    }
+
+    #elan-blog-guide .elan-tab:hover {
+      transform: translateY(-3px);
+      border-color: rgba(193, 83, 42, 0.45);
+      box-shadow: 0 15px 34px rgba(69, 40, 24, 0.08);
+    }
+
+    #elan-blog-guide .elan-tab[aria-selected="true"] {
+      border-color: var(--elan-accent);
+      background: var(--elan-accent);
+      color: #fffaf6;
+      box-shadow: 0 19px 42px rgba(150, 57, 31, 0.18);
+    }
+
+    #elan-blog-guide .elan-tab:focus-visible,
+    #elan-blog-guide .elan-link:focus-visible,
+    #elan-blog-guide .elan-more:focus-visible,
+    #elan-blog-guide .elan-cta-link:focus-visible {
+      outline: 3px solid rgba(193, 83, 42, 0.38);
+      outline-offset: 4px;
+    }
+
+    #elan-blog-guide .elan-tab-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    #elan-blog-guide .elan-tab-index {
+      color: var(--elan-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    #elan-blog-guide .elan-tab[aria-selected="true"] .elan-tab-index {
+      color: #fff7f2;
+    }
+
+    #elan-blog-guide .elan-icon-wrap {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--elan-paper-deep);
+      color: var(--elan-accent);
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    #elan-blog-guide .elan-tab[aria-selected="true"] .elan-icon-wrap {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fffaf6;
+    }
+
+    #elan-blog-guide .elan-icon {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    #elan-blog-guide .elan-tab-short {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--elan-accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    #elan-blog-guide .elan-tab[aria-selected="true"] .elan-tab-short {
+      color: #fff7f2;
+    }
+
+    #elan-blog-guide .elan-tab-title {
+      display: block;
+      max-width: 245px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.12rem, 1.55vw, 1.38rem);
+      line-height: 1.18;
+    }
+
+    #elan-blog-guide .elan-results {
+      position: relative;
+      padding: clamp(26px, 4.3vw, 54px);
+      border: 1px solid var(--elan-line);
+      border-radius: var(--elan-radius-xl);
+      background: rgba(255, 253, 249, 0.94);
+      box-shadow: var(--elan-shadow);
+    }
+
+    #elan-blog-guide .elan-panel[hidden] {
+      display: none;
+    }
+
+    #elan-blog-guide .elan-panel-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      align-items: end;
+      gap: 32px;
+      padding-bottom: 33px;
+      border-bottom: 1px solid var(--elan-line);
+    }
+
+    #elan-blog-guide .elan-panel-kicker {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--elan-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    #elan-blog-guide .elan-panel-heading h2 {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.25rem, 4.2vw, 4.45rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+    }
+
+    #elan-blog-guide .elan-panel-heading p {
+      margin: 0;
+      color: var(--elan-muted);
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    #elan-blog-guide .elan-articles-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 24px;
+      padding-top: 31px;
+    }
+
+    #elan-blog-guide .elan-featured,
+    #elan-blog-guide .elan-article-card {
+      text-decoration: none;
+    }
+
+    #elan-blog-guide .elan-featured {
+      display: flex;
+      min-height: 590px;
+      overflow: hidden;
+      flex-direction: column;
+      border: 1px solid var(--elan-line);
+      border-radius: var(--elan-radius-lg);
+      background: var(--elan-card);
+      transition: transform 190ms ease, box-shadow 190ms ease, border-color 190ms ease;
+    }
+
+    #elan-blog-guide .elan-featured:hover {
+      transform: translateY(-4px);
+      border-color: rgba(193, 83, 42, 0.42);
+      box-shadow: 0 21px 46px rgba(67, 39, 25, 0.1);
+    }
+
+    #elan-blog-guide .elan-featured-visual {
+      position: relative;
+      display: grid;
+      min-height: 305px;
+      overflow: hidden;
+      place-items: center;
+      background:
+        radial-gradient(circle at 73% 25%, rgba(193, 83, 42, 0.22), transparent 8rem),
+        linear-gradient(145deg, #f2eadf, #e9ded1);
+      color: var(--elan-accent);
+      isolation: isolate;
+    }
+
+    #elan-blog-guide .elan-featured-visual::before,
+    #elan-blog-guide .elan-featured-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      z-index: -1;
+    }
+
+    #elan-blog-guide .elan-featured-visual::before {
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(193, 83, 42, 0.22);
+    }
+
+    #elan-blog-guide .elan-featured-visual::after {
+      width: 218px;
+      height: 218px;
+      background: rgba(255, 253, 249, 0.55);
+    }
+
+    #elan-blog-guide .elan-featured-visual .elan-icon {
+      width: 114px;
+      height: 114px;
+      stroke-width: 1.18;
+    }
+
+    #elan-blog-guide .elan-visual-tag {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.78);
+      color: var(--elan-accent-dark);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 9px 12px;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    #elan-blog-guide .elan-featured-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 29px 30px 28px;
+    }
+
+    #elan-blog-guide .elan-card-category {
+      margin-bottom: 12px;
+      color: var(--elan-accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    #elan-blog-guide .elan-featured h3 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.75rem, 2.6vw, 2.55rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.11;
+    }
+
+    #elan-blog-guide .elan-featured p {
+      max-width: 600px;
+      margin: 17px 0 27px;
+      color: var(--elan-muted);
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    #elan-blog-guide .elan-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+      margin-top: auto;
+      color: var(--elan-accent-dark);
+      font-size: 0.87rem;
+      font-weight: 700;
+    }
+
+    #elan-blog-guide .elan-link-arrow {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(193, 83, 42, 0.28);
+      border-radius: 50%;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    #elan-blog-guide a:hover .elan-link-arrow {
+      transform: translateX(3px);
+      background: var(--elan-accent);
+      color: #fff;
+    }
+
+    #elan-blog-guide .elan-article-list {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+    }
+
+    #elan-blog-guide .elan-article-card {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 17px;
+      min-height: 126px;
+      border: 1px solid var(--elan-line);
+      border-radius: var(--elan-radius-md);
+      background: var(--elan-card);
+      padding: 18px 18px 18px 16px;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    #elan-blog-guide .elan-article-card:hover {
+      transform: translateX(4px);
+      border-color: rgba(193, 83, 42, 0.42);
+      box-shadow: 0 12px 28px rgba(69, 40, 24, 0.07);
+    }
+
+    #elan-blog-guide .elan-article-number {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--elan-paper-deep);
+      color: var(--elan-accent);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.2rem;
+    }
+
+    #elan-blog-guide .elan-article-card h3 {
+      margin: 4px 0 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.1rem, 1.45vw, 1.33rem);
+      font-weight: 500;
+      line-height: 1.22;
+    }
+
+    #elan-blog-guide .elan-article-card .elan-card-category {
+      margin: 0;
+      font-size: 0.63rem;
+    }
+
+    #elan-blog-guide .elan-card-arrow {
+      color: var(--elan-accent);
+      font-size: 1.35rem;
+      transition: transform 180ms ease;
+    }
+
+    #elan-blog-guide .elan-article-card:hover .elan-card-arrow {
+      transform: translateX(4px);
+    }
+
+    #elan-blog-guide .elan-extra[hidden] {
+      display: none;
+    }
+
+    #elan-blog-guide .elan-more {
+      justify-self: start;
+      border: 0;
+      border-bottom: 1px solid currentColor;
+      background: transparent;
+      color: var(--elan-accent-dark);
+      font: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 9px 0 5px;
+      cursor: pointer;
+    }
+
+    #elan-blog-guide .elan-panel-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 31px;
+      border-radius: var(--elan-radius-lg);
+      background: var(--elan-ink);
+      color: #fffaf6;
+      padding: 24px 27px;
+    }
+
+    #elan-blog-guide .elan-panel-cta strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.22rem, 2vw, 1.7rem);
+      font-weight: 500;
+    }
+
+    #elan-blog-guide .elan-panel-cta span {
+      color: rgba(255, 250, 246, 0.7);
+      font-size: 0.86rem;
+    }
+
+    #elan-blog-guide .elan-cta-link {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      background: #fffaf6;
+      color: var(--elan-ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 13px 18px;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    #elan-blog-guide .elan-cta-link:hover {
+      transform: translateY(-2px);
+      background: var(--elan-soft-accent);
+    }
+
+    #elan-blog-guide .elan-global-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      align-items: center;
+      gap: 30px;
+      margin-top: 40px;
+      border: 1px solid var(--elan-line);
+      border-radius: var(--elan-radius-xl);
+      background: var(--elan-paper-deep);
+      padding: clamp(28px, 4vw, 48px);
+    }
+
+    #elan-blog-guide .elan-global-cta h2 {
+      max-width: 720px;
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 3.7vw, 3.75rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.06;
+    }
+
+    #elan-blog-guide .elan-global-cta p {
+      max-width: 670px;
+      margin: 14px 0 0;
+      color: var(--elan-muted);
+    }
+
+    #elan-blog-guide .elan-global-cta .elan-cta-link {
+      background: var(--elan-accent);
+      color: #fffaf6;
+      padding: 15px 21px;
+    }
+
+    #elan-blog-guide .elan-global-cta .elan-cta-link:hover {
+      background: var(--elan-accent-dark);
+    }
+
+    @media (max-width: 1030px) {
+      #elan-blog-guide .elan-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #elan-blog-guide .elan-panel-heading,
+      #elan-blog-guide .elan-articles-layout {
+        grid-template-columns: 1fr;
+      }
+
+      #elan-blog-guide .elan-featured {
+        min-height: 0;
+      }
+
+      #elan-blog-guide .elan-featured-visual {
+        min-height: 260px;
+      }
+
+      #elan-blog-guide .elan-panel-heading p {
+        max-width: 710px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      #elan-blog-guide {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      #elan-blog-guide .elan-hero {
+        margin-bottom: 39px;
+      }
+
+      #elan-blog-guide .elan-hero h1 {
+        font-size: clamp(2.65rem, 14vw, 4.4rem);
+      }
+
+      #elan-blog-guide .elan-tabs {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        margin-right: -14px;
+        margin-left: -14px;
+        padding: 0 14px 15px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      #elan-blog-guide .elan-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      #elan-blog-guide .elan-tab {
+        min-width: 260px;
+        min-height: 174px;
+        scroll-snap-align: start;
+      }
+
+      #elan-blog-guide .elan-results {
+        border-radius: 25px;
+        padding: 23px 16px 17px;
+      }
+
+      #elan-blog-guide .elan-panel-heading {
+        gap: 16px;
+        padding: 3px 5px 25px;
+      }
+
+      #elan-blog-guide .elan-panel-heading h2 {
+        font-size: clamp(2.15rem, 11vw, 3.65rem);
+      }
+
+      #elan-blog-guide .elan-articles-layout {
+        padding-top: 18px;
+      }
+
+      #elan-blog-guide .elan-featured-visual {
+        min-height: 226px;
+      }
+
+      #elan-blog-guide .elan-featured-visual .elan-icon {
+        width: 90px;
+        height: 90px;
+      }
+
+      #elan-blog-guide .elan-featured-body {
+        padding: 24px 21px 22px;
+      }
+
+      #elan-blog-guide .elan-article-card {
+        grid-template-columns: 44px minmax(0, 1fr) auto;
+        gap: 13px;
+        min-height: 112px;
+        padding: 15px 13px;
+      }
+
+      #elan-blog-guide .elan-article-number {
+        width: 44px;
+        height: 44px;
+      }
+
+      #elan-blog-guide .elan-panel-cta,
+      #elan-blog-guide .elan-global-cta {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #elan-blog-guide .elan-panel-cta {
+        padding: 23px 21px;
+      }
+
+      #elan-blog-guide .elan-global-cta {
+        align-items: start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #elan-blog-guide *,
+      #elan-blog-guide *::before,
+      #elan-blog-guide *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <nav id="nav">
@@ -297,223 +993,554 @@ footer{background:var(--ivory);padding:1.2rem clamp(1.5rem,5vw,4rem);display:fle
   </button>
 </nav>
 <main style="padding-top:72px">
-<section class="hero-p">
-  <div class="pw">
-    <div class="hero-inner">
-      <div class="ptag rv">Ressources & réflexions</div>
-      <h1 class="hero-h1 rv">Le blog <em>ÉLAN</em></h1>
-      <p class="hero-sub rv" style="max-width:600px;margin-top:1rem">Des articles concrets sur le management, la prise de poste et la délégation. Du terrain, des situations réelles, des outils activables.</p>
+  <section id="elan-blog-guide" aria-labelledby="elan-blog-title">
+    <!-- Bibliothèque d'icônes, invisible -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="elan-icon-autonomie" viewBox="0 0 32 32">
+        <circle cx="16" cy="8" r="3.2"></circle>
+        <circle cx="7" cy="22.5" r="3"></circle>
+        <circle cx="25" cy="22.5" r="3"></circle>
+        <path d="M13.5 10.3 9 19.5M18.5 10.3l4.5 9.2M10 22.5h12"></path>
+        <path d="M16 13.5v9"></path>
+      </symbol>
+      <symbol id="elan-icon-poste" viewBox="0 0 32 32">
+        <path d="M7 27V7.5M7 8h15l-3.2 4 3.2 4H7"></path>
+        <path d="M12 27h10"></path>
+        <circle cx="7" cy="5" r="2"></circle>
+      </symbol>
+      <symbol id="elan-icon-pairs" viewBox="0 0 32 32">
+        <circle cx="9" cy="11" r="3"></circle>
+        <circle cx="23" cy="11" r="3"></circle>
+        <path d="M4.5 24c.4-4 2-6 4.5-6s4.1 2 4.5 6M18.5 24c.4-4 2-6 4.5-6s4.1 2 4.5 6"></path>
+        <path d="M13.5 13.8h5M16 11.5v4.7"></path>
+      </symbol>
+      <symbol id="elan-icon-tension" viewBox="0 0 32 32">
+        <path d="M4 7.5h15v10H9l-5 4z"></path>
+        <path d="M15 14.5h13v9H23l-4 3v-3h-4"></path>
+        <path d="m10 10 3 2.5-3 2.5M22 17l-3 2.5 3 2.5"></path>
+      </symbol>
+      <symbol id="elan-icon-coaching" viewBox="0 0 32 32">
+        <circle cx="12" cy="11" r="4"></circle>
+        <path d="M4.5 26c.6-5.4 3.1-8 7.5-8s6.9 2.6 7.5 8"></path>
+        <path d="M20 6.5h8v8h-4l-3.5 3v-3H20z"></path>
+      </symbol>
+      <symbol id="elan-icon-collectif" viewBox="0 0 32 32">
+        <circle cx="16" cy="8" r="3"></circle>
+        <circle cx="7" cy="19" r="3"></circle>
+        <circle cx="25" cy="19" r="3"></circle>
+        <path d="M11.8 13.5 9.2 16M20.2 13.5l2.6 2.5M10.5 22h11"></path>
+        <path d="M12 27c.4-3.6 1.7-5.3 4-5.3s3.6 1.7 4 5.3"></path>
+      </symbol>
+      <symbol id="elan-icon-croissance" viewBox="0 0 32 32">
+        <path d="M5 26h22"></path>
+        <path d="M7 24v-5h5v5M14 24v-9h5v9M21 24V9h5v15"></path>
+        <path d="m7 13 6-5 5 3 8-7"></path>
+        <path d="M22 4h4v4"></path>
+      </symbol>
+    </svg>
+
+    <div class="elan-wrap">
+      <header class="elan-hero">
+        <div class="elan-eyebrow">Ressources &amp; réflexions</div>
+        <h1 id="elan-blog-title">Toutes les ressources qui répondent à ce que vous traversez</h1>
+        <p>Pas une liste de contenus à parcourir au hasard. Choisissez la situation qui vous ressemble aujourd'hui : les ressources les plus utiles apparaissent directement.</p>
+      </header>
+
+      <p class="elan-situation-label">Quelle situation vivez-vous en ce moment ?</p>
+
+      <div class="elan-tabs" role="tablist" aria-label="Situations managériales">
+        <button class="elan-tab" id="tab-autonomie" role="tab" aria-selected="true" aria-controls="panel-autonomie" data-panel="panel-autonomie" data-hash="equipe-sans-moi">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">01</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-autonomie"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Délégation &amp; autonomie</span>
+          <span class="elan-tab-title">« Mon équipe ne fait rien sans moi »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-poste" role="tab" aria-selected="false" aria-controls="panel-poste" data-panel="panel-poste" data-hash="prise-de-poste" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">02</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-poste"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Prise de poste</span>
+          <span class="elan-tab-title">« Je viens de prendre le poste, je ne sais pas par où commencer »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-pairs" role="tab" aria-selected="false" aria-controls="panel-pairs" data-panel="panel-pairs" data-hash="anciens-collegues" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">03</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-pairs"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Posture &amp; légitimité</span>
+          <span class="elan-tab-title">« Je dois manager des gens qui me connaissaient avant »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-tension" role="tab" aria-selected="false" aria-controls="panel-tension" data-panel="panel-tension" data-hash="tension-equipe" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">04</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-tension"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Tensions &amp; conflits</span>
+          <span class="elan-tab-title">« Il y a une tension que je ne sais pas comment désamorcer »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-coaching" role="tab" aria-selected="false" aria-controls="panel-coaching" data-panel="panel-coaching" data-hash="se-faire-accompagner" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">05</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-coaching"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Coaching</span>
+          <span class="elan-tab-title">« Je me demande si je devrais me faire accompagner »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-collectif" role="tab" aria-selected="false" aria-controls="panel-collectif" data-panel="panel-collectif" data-hash="former-mes-managers" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">06</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-collectif"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Formation collective</span>
+          <span class="elan-tab-title">« Je veux faire monter mes managers en compétence, à plusieurs »</span>
+        </button>
+
+        <button class="elan-tab" id="tab-croissance" role="tab" aria-selected="false" aria-controls="panel-croissance" data-panel="panel-croissance" data-hash="equipe-grandit-vite" tabindex="-1">
+          <span class="elan-tab-top">
+            <span class="elan-tab-index">07</span>
+            <span class="elan-icon-wrap"><svg class="elan-icon"><use href="#elan-icon-croissance"></use></svg></span>
+          </span>
+          <span class="elan-tab-short">Croissance d'équipe</span>
+          <span class="elan-tab-title">« Mon équipe grandit vite »</span>
+        </button>
+      </div>
+
+      <div class="elan-results" aria-live="polite">
+        <!-- 01 — AUTONOMIE -->
+        <section class="elan-panel" id="panel-autonomie" role="tabpanel" aria-labelledby="tab-autonomie">
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 01 · Délégation &amp; autonomie</span>
+              <h2>« Mon équipe ne fait rien sans moi »</h2>
+            </div>
+            <p>Vous êtes devenu le point de passage obligé : décisions, validations, urgences. Ces articles vous aident à sortir du contrôle permanent sans abandonner votre rôle.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/guide-autonomie-management">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Le guide complet</span>
+                <svg class="elan-icon"><use href="#elan-icon-autonomie"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Guide</span>
+                <h3>Micro-management et autonomie : lâcher sans perdre le cadre</h3>
+                <p>Le guide complet pour sortir du micro-management, déléguer efficacement, motiver sans le salaire et construire une équipe autonome sans perdre le cadre.</p>
+                <span class="elan-link">Lire le guide <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/micro-management">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Micro-management</span><h3>Pourquoi on y tombe et comment en sortir</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/deleguer-efficacement">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Délégation</span><h3>Déléguer efficacement : comment s'y prendre pour débuter</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/equipe-autonome">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Autonomie</span><h3>Équipe autonome : comment y arriver sans perdre le contrôle</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/role-du-manager" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Rôle du manager</span><h3>Ce que manager veut vraiment dire au quotidien</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/motiver-equipe-sans-salaire" hidden>
+                <span class="elan-article-number">06</span>
+                <span><span class="elan-card-category">Motivation</span><h3>Motiver son équipe sans miser uniquement sur le salaire</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir 2 articles de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>Vous dirigez et tout repose encore sur vous ?</strong><span>Découvrez l'accompagnement pensé pour déléguer sans perdre le cap.</span></div>
+            <a class="elan-cta-link" href="/entrepreneur-manager">Coaching de dirigeant <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 02 — PRISE DE POSTE -->
+        <section class="elan-panel" id="panel-poste" role="tabpanel" aria-labelledby="tab-poste" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 02 · Prise de poste</span>
+              <h2>« Je viens de prendre le poste, je ne sais pas par où commencer »</h2>
+            </div>
+            <p>Vous avez le titre et l'équipe, mais peu de repères. Commencez par clarifier votre rôle, vos priorités et ce que les premières semaines installent durablement.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/prise-de-poste-manager">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Point de départ</span>
+                <svg class="elan-icon"><use href="#elan-icon-poste"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Prise de poste</span>
+                <h3>Les 30 premiers jours qui impriment des dynamiques durables</h3>
+                <p>Une feuille de route pour observer, poser le cadre et éviter de se précipiter dans l'action avant d'avoir compris son nouvel environnement.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/manager-equipe-premiere-fois">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Première équipe</span><h3>Manager une équipe pour la première fois : les angles morts</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/devenir-manager">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Transition</span><h3>Devenir manager : ce que personne ne prépare vraiment</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/posture-manageriale">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Posture</span><h3>Développer votre posture sans vous renier</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/formation-manager-debutant" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Formation</span><h3>Ce que les formations de managers débutants transmettent mal</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/prise-de-poste-manager-30-premiers-jours" hidden>
+                <span class="elan-article-number">06</span>
+                <span><span class="elan-card-category">Prise de poste</span><h3>Les 30 premiers jours qui comptent</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir 2 articles de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>Vous cherchez des repères dans votre nouveau rôle ?</strong><span>Travaillez vos situations réelles dans un espace confidentiel.</span></div>
+            <a class="elan-cta-link" href="/accompagnement-manager">Coaching de manager <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 03 — ANCIENS COLLÈGUES -->
+        <section class="elan-panel" id="panel-pairs" role="tabpanel" aria-labelledby="tab-pairs" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 03 · Posture &amp; légitimité</span>
+              <h2>« Je dois manager des gens qui me connaissaient avant »</h2>
+            </div>
+            <p>La relation a changé, même si personne ne le formule. L'enjeu n'est pas de devenir distant, mais de rendre votre nouveau rôle lisible et cohérent.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/manager-anciens-collegues">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Article essentiel</span>
+                <svg class="elan-icon"><use href="#elan-icon-pairs"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Prise de poste</span>
+                <h3>Manager ses anciens collègues sans perdre leur confiance</h3>
+                <p>Poser un nouveau cadre, assumer les décisions qui vous reviennent et conserver une relation saine sans rester dans l'ancien fonctionnement.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/posture-manageriale">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Posture</span><h3>Construire une posture qui vous ressemble vraiment</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/feedback-management">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Feedback</span><h3>Faire des retours qui changent réellement quelque chose</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/role-du-manager">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Responsabilité</span><h3>Clarifier ce qui relève désormais de votre rôle</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/gerer-conflit-equipe" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Conflit</span><h3>Gérer un conflit sans perdre votre place</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir un article de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>La bonne distance ne se trouve pas dans une recette.</strong><span>Elle se construit à partir de vos relations et de votre contexte.</span></div>
+            <a class="elan-cta-link" href="/accompagnement-manager">Travailler ma posture <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 04 — TENSIONS -->
+        <section class="elan-panel" id="panel-tension" role="tabpanel" aria-labelledby="tab-tension" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 04 · Tensions &amp; conflits</span>
+              <h2>« Il y a une tension que je ne sais pas comment désamorcer »</h2>
+            </div>
+            <p>Plus vous attendez, plus les interprétations prennent la place des faits. Ces ressources vous aident à regarder la situation, préparer la conversation et rester dans votre rôle.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/gerer-conflit-equipe">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">À traiter maintenant</span>
+                <svg class="elan-icon"><use href="#elan-icon-tension"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Conflit</span>
+                <h3>Gérer un conflit dans une équipe sans y laisser sa place</h3>
+                <p>Une méthode pour sortir des impressions, comprendre ce qui se joue et intervenir avant que la tension ne devienne le fonctionnement normal.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/feedback-management">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Feedback</span><h3>Formuler un retour qui puisse réellement être entendu</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/dynamique-equipe">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Dynamique d'équipe</span><h3>10 leviers concrets pour agir sur le collectif</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/posture-manageriale">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Posture</span><h3>Tenir un désaccord sans durcir le ton ni l'éviter</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/motiver-equipe-sans-salaire" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Motivation</span><h3>Comprendre ce qui désengage réellement une équipe</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir un article de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>Une conversation difficile se prépare.</strong><span>Travaillez votre situation avant de la laisser s'installer.</span></div>
+            <a class="elan-cta-link" href="/accompagnement-manager">Parler de ma situation <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 05 — COACHING -->
+        <section class="elan-panel" id="panel-coaching" role="tabpanel" aria-labelledby="tab-coaching" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 05 · Coaching</span>
+              <h2>« Je me demande si je devrais me faire accompagner »</h2>
+            </div>
+            <p>Vous n'avez pas forcément besoin de plus de conseils. Peut-être avez-vous besoin d'un espace pour penser, décider et expérimenter autrement. Voici ce qu'un accompagnement peut réellement apporter.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/coaching-de-manager">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Pour y voir clair</span>
+                <svg class="elan-icon"><use href="#elan-icon-coaching"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Coaching de manager</span>
+                <h3>Ce qu'un coaching de manager vous apporte concrètement</h3>
+                <p>Ce que l'on travaille, ce qui change dans les décisions et les relations, et les situations dans lesquelles cet espace devient particulièrement utile.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/coach-manager">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Choisir son coach</span><h3>Reconnaître un bon accompagnateur avant de s'engager</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/coaching-individuel-manager">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Coaching individuel</span><h3>Les critères concrets pour choisir sans se tromper</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/coaching-leadership">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Leadership</span><h3>Développer sa posture sans copier un modèle</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/coaching-managerial" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Méthode</span><h3>Coaching managérial : définition, méthode et résultats</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/coaching-entrepreneur" hidden>
+                <span class="elan-article-number">06</span>
+                <span><span class="elan-card-category">Entrepreneuriat</span><h3>Les moments où un coaching d'entrepreneur change vraiment la donne</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir 2 articles de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>Vous hésitez encore ? Le premier échange sert aussi à cela.</strong><span>30 minutes pour comprendre votre situation, sans engagement.</span></div>
+            <a class="elan-cta-link" href="https://calendly.com/elan-by-marie-bras/30min">Réserver un échange <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 06 — COLLECTIF -->
+        <section class="elan-panel" id="panel-collectif" role="tabpanel" aria-labelledby="tab-collectif" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 06 · Formation collective</span>
+              <h2>« Je veux faire monter mes managers en compétence, à plusieurs »</h2>
+            </div>
+            <p>Vous cherchez un langage commun et des changements visibles sur le terrain, pas une formation catalogue. Comparez les formats : atelier, co-développement et coaching collectif.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/co-developpement-managerial">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Apprendre entre pairs</span>
+                <svg class="elan-icon"><use href="#elan-icon-collectif"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Co-développement</span>
+                <h3>Co-développement managérial : pourquoi ça marche vraiment</h3>
+                <p>Un format où les managers travaillent sur leurs situations réelles, apprennent les uns des autres et construisent progressivement des pratiques communes.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/coaching-collectif-pourquoi">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Coaching collectif</span><h3>Pourquoi le collectif fonctionne, et pour quelles équipes</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/formation-management">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Choisir une formation</span><h3>Les critères pour choisir la bonne formation management</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/formation-jeune-manager">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Jeunes managers</span><h3>Ce qu'une formation utile doit vraiment couvrir</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/formation-posture-manageriale" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Posture</span><h3>Ce que l'on travaille réellement en formation</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/coaching-collectif-entreprise" hidden>
+                <span class="elan-article-number">06</span>
+                <span><span class="elan-card-category">Équipe managériale</span><h3>Ce qui bouge quand tout le groupe s'y met</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/formation-devenir-manager" hidden>
+                <span class="elan-article-number">07</span>
+                <span><span class="elan-card-category">Prise de rôle</span><h3>Ce qu'une formation change avant la première décision difficile</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir 3 articles de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>Vos managers ont besoin d'un cadre commun ?</strong><span>Découvrez l'Atelier BASCULE et les formats d'ancrage collectif.</span></div>
+            <a class="elan-cta-link" href="/formation-primo-manager">Former mes managers <span>→</span></a>
+          </div>
+        </section>
+
+        <!-- 07 — CROISSANCE -->
+        <section class="elan-panel" id="panel-croissance" role="tabpanel" aria-labelledby="tab-croissance" hidden>
+          <div class="elan-panel-heading">
+            <div>
+              <span class="elan-panel-kicker">Situation 07 · Croissance d'équipe</span>
+              <h2>« Mon équipe grandit vite »</h2>
+            </div>
+            <p>Les recrutements s'enchaînent plus vite que les pratiques managériales. Ces articles vous aident à structurer sans alourdir et à faire évoluer votre rôle à mesure que l'équipe change d'échelle.</p>
+          </div>
+
+          <div class="elan-articles-layout">
+            <a class="elan-featured" href="/blog/startup-manager">
+              <div class="elan-featured-visual">
+                <span class="elan-visual-tag">Changer d'échelle</span>
+                <svg class="elan-icon"><use href="#elan-icon-croissance"></use></svg>
+              </div>
+              <div class="elan-featured-body">
+                <span class="elan-card-category">Startup &amp; scale-up</span>
+                <h3>Startup manager : les défis du management quand l'équipe grandit</h3>
+                <p>Ce qui fonctionnait à dix personnes ne tient plus à cinquante. Identifiez les pratiques à formaliser et les réflexes de dirigeant à faire évoluer.</p>
+                <span class="elan-link">Lire l'article <span class="elan-link-arrow">→</span></span>
+              </div>
+            </a>
+
+            <div class="elan-article-list">
+              <a class="elan-article-card" href="/blog/management-hybride">
+                <span class="elan-article-number">02</span>
+                <span><span class="elan-card-category">Management hybride</span><h3>Manager à distance sans perdre le fil</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/dynamique-equipe">
+                <span class="elan-article-number">03</span>
+                <span><span class="elan-card-category">Collectif</span><h3>10 leviers pour préserver une vraie dynamique d'équipe</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card" href="/blog/equipe-autonome">
+                <span class="elan-article-number">04</span>
+                <span><span class="elan-card-category">Autonomie</span><h3>Construire une équipe autonome sans perdre le contrôle</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/formation-management-hybride" hidden>
+                <span class="elan-article-number">05</span>
+                <span><span class="elan-card-category">Formation</span><h3>Ce que vos managers doivent savoir pour encadrer à distance</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <a class="elan-article-card elan-extra" href="/blog/deleguer-efficacement" hidden>
+                <span class="elan-article-number">06</span>
+                <span><span class="elan-card-category">Délégation</span><h3>Déléguer quand le volume et les responsabilités augmentent</h3></span>
+                <span class="elan-card-arrow">→</span>
+              </a>
+              <button class="elan-more" type="button" aria-expanded="false">Voir 2 articles de plus</button>
+            </div>
+          </div>
+
+          <div class="elan-panel-cta">
+            <div><strong>La croissance change aussi votre métier de dirigeant.</strong><span>Structurez le management avant que tout ne remonte vers vous.</span></div>
+            <a class="elan-cta-link" href="/entrepreneur-manager">Accompagnement dirigeant <span>→</span></a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="elan-global-cta" aria-label="Prendre rendez-vous">
+        <div>
+          <h2>Vous vous reconnaissez dans plusieurs situations à la fois ?</h2>
+          <p>C'est souvent le cas. Un échange de 30 minutes permet de remettre de l'ordre dans ce qui se joue et d'identifier le bon point de départ.</p>
+        </div>
+        <a class="elan-cta-link" href="https://calendly.com/elan-by-marie-bras/30min">Parlons de votre situation <span>→</span></a>
+      </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="sec">
-  <div class="pw">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
-      <a href="/blog/posture-manageriale" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Posture managériale : développer la vôtre sans vous renier</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Développer sa posture managériale ne veut pas dire jouer un rôle qui ne vous ressemble pas. Comment la construire sans vous renier.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/dynamique-equipe" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Dynamique d'équipe</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Dynamique d'équipe : 10 leviers concrets pour les managers</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une dynamique d'équipe qui fonctionne ne doit rien au hasard. Les leviers concrets qu'un manager peut activer, semaine après semaine.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/manager-anciens-collegues" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager ses anciens collègues sans perdre leur confiance</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir le manager de ses anciens collègues bouscule des repères installés. Comment poser un nouveau cadre sans rompre la confiance.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/motiver-equipe-sans-salaire" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Motivation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Motiver son équipe sans miser sur le salaire : ce qui marche</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Augmenter les salaires n'est pas toujours possible. Ce qui motive réellement une équipe, observé sur le terrain, sans grand discours.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/manager-equipe-premiere-fois" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager une équipe pour la première fois : les angles morts que personne ne vous signale</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Prendre la tête d'une équipe pour la première fois ne ressemble jamais à ce qu'on avait imaginé. Ce que personne ne vous dit avant de commencer.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/prise-de-poste-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Prise de poste manager : les 30 premiers jours qui impriment des dynamiques durables</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Les 30 premiers jours d'une prise de poste s'impriment durablement. Ce que vous faites maintenant détermine la suite, ce qu'il faut faire et ce qu'il faut éviter.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/prise-de-poste-manager-30-premiers-jours" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Prise de poste manager : les 30 premiers jours qui comptent</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce qui se joue concrètement dans les 30 premiers jours d'une prise de poste manager, et comment les aborder sans se précipiter.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/micro-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Micro management : pourquoi on y tombe et comment en sortir</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/role-du-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Rôle du manager</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Rôle du manager : ce que ça veut vraiment dire au quotidien</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le rôle du manager va bien au-delà des entretiens annuels et des réunions. Ce que ça veut concrètement dire d'encadrer une équipe au jour le jour.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/devenir-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Devenir manager : ce que personne ne prépare vraiment</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir manager, ce n'est pas juste un nouveau titre. C'est un changement d'identité professionnelle pour lequel presque personne n'est préparé.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/deleguer-efficacement" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Déléguer efficacement : comment s'y prendre pour débuter</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Déléguer efficacement est une compétence qui s'apprend. Une méthode concrète pour confier du travail sans perdre en qualité.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/equipe-autonome" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Équipe autonome : comment y arriver sans perdre le contrôle</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance sans perdre de vue les résultats.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-manager-debutant" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation manager débutant : ce que les formations ne transmettent pas</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Les formations pour managers débutants se multiplient. Pourtant la plupart ne résolvent pas ce qui coince vraiment. Une analyse depuis le terrain.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-leadership" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching leadership : développer sa posture sans modèle</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce que le coaching leadership produit sur la posture, les décisions et la relation aux équipes. Pas de recette, mais des changements durables.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-entrepreneur" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching entrepreneur : les moments où ça change vraiment</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Faire appel à un coach quand on est entrepreneur n'est pas un aveu. C'est souvent la décision qui fait la différence entre stagner et avancer.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/startup-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Startup manager : les défis du management en scale-up</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Manager une équipe en startup à 10 personnes, c'est un métier. À 50, c'en est un autre. Ce qui change et comment s'adapter quand la croissance s'accélère.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/management-hybride" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management hybride</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Management hybride : manager à distance sans perdre le fil</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément dans la façon de construire la confiance et la cohésion d'équipe.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/feedback-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Feedback</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Feedback management : des retours qui changent quelque chose</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le feedback management le plus fréquent ne change rien. Ce qui fait qu'un retour est vraiment entendu, et la méthode pour le formuler sans l'édulcorer.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/co-developpement-managerial" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Co-développement managérial : pourquoi ça marche vraiment</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le co-développement managérial mise sur l'intelligence du groupe plutôt que sur l'expert seul. Pourquoi cette méthode fonctionne pour les primo-managers.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/gerer-conflit-equipe" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Management d'équipe</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Gérer un conflit dans une équipe sans y laisser sa place</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Gérer un conflit dans une équipe demande une méthode, pas de l'instinct. Ce qu'un primo-manager peut faire concrètement avant que la tension ne s'installe.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-de-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching de manager : ce que ça vous apporte concrètement</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le coaching de manager n'est ni une formation, ni une thérapie. Ce que ça change vraiment pour un manager qui vient de prendre son tout premier poste.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coach-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coach manager : comment reconnaître un bon accompagnateur avant de vous engager</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Un bon coach manager pose des questions justes, ne donne pas de recette toute faite et sait vous laisser seul face à vos décisions. Comment le reconnaître.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation sur le management : les critères pour choisir la bonne, pas la plus vendue</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Face à l'offre de formation sur le management, difficile de savoir ce qui va servir. Voici les critères pour choisir une formation qui change les choses.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-individuel-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching individuel pour managers : les critères pour choisir sans se tromper</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le coaching individuel manager coûte cher et engage dans la durée. Voici les critères concrets pour choisir le bon accompagnement, sans se fier au feeling.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-jeune-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation pour jeunes managers : ce qu'elle doit couvrir pour être utile</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une formation jeune manager ratée coûte du temps et de la crédibilité. Voici ce qu'elle doit vraiment couvrir pour préparer une prise de poste solide.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-collectif-pourquoi" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Pourquoi faire un coaching collectif en entreprise, et pas seulement individuel</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le coaching collectif en entreprise fait peur avant d'être testé. Voici pourquoi il fonctionne et pour quel type d'équipe ce format est vraiment fait.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-posture-manageriale" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation posture managériale : ce qu'on y travaille concrètement</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">La posture managériale s'apprend, mais rarement dans les livres. Voici ce qu'on travaille vraiment dans une formation dédiée à ce sujet, concrètement.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-management-hybride" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation management hybride : ce que vos managers doivent vraiment savoir</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Manager à distance ne s'improvise pas. Voici ce qu'une formation management hybride doit vraiment apporter à vos équipes pour que ça marche au quotidien.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/formation-devenir-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Formation</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation devenir manager : ce qui change vraiment avant la première décision difficile</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une formation devenir manager change la façon de trancher, pas seulement le discours tenu ensuite face à l'équipe et aux premières décisions difficiles.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-collectif-entreprise" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching collectif en entreprise : ce qui bouge réellement une fois que le groupe s'y met</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le coaching collectif en entreprise ne change pas d'abord l'ambiance : il change la façon dont un groupe entier décide et traverse ses tensions réelles.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/coaching-managerial" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Coaching</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching managérial : ce à quoi s'attendre vraiment avant de s'engager</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le coaching managérial ne se résume pas à des conseils de gestion. Définition claire, méthode réelle et résultats à attendre avant de s'engager vraiment.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a href="/blog/guide-autonomie-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Guide</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Micro-management et autonomie d'équipe : le guide complet pour lâcher le contrôle sans perdre le cadre</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le guide complet pour sortir du micro-management, déléguer efficacement, motiver sans le salaire et construire une équipe autonome sans perdre le cadre.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section class="sec sec-alt" style="text-align:center">
-  <div class="pw">
-    <h2 class="sh2 rv">Vous voulez aller plus loin ?</h2>
-    <p class="sbdy rv" style="max-width:500px;margin:1rem auto 2rem">Un échange de 30 minutes pour voir comment ÉLAN peut vous accompagner.</p>
-    <a href="https://calendly.com/elan-by-marie-bras/30min" target="_blank" class="cta-btn rv">Prendre rendez-vous →</a>
-  </div>
-</section>
+</main>
 
 <footer>
   <span class="footer-brand"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em>, Marie Bras</span>
@@ -540,5 +1567,70 @@ function closeBurger(){
   document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
 })();
 </script>
+  <script>
+    (() => {
+      const root = document.getElementById('elan-blog-guide');
+      if (!root) return;
+
+      const tabs = [...root.querySelectorAll('[role="tab"]')];
+      const panels = [...root.querySelectorAll('[role="tabpanel"]')];
+
+      function activateTab(tab, updateHash = true) {
+        tabs.forEach((item) => {
+          const selected = item === tab;
+          item.setAttribute('aria-selected', String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.id !== tab.dataset.panel;
+        });
+
+        if (updateHash && tab.dataset.hash && history.replaceState) {
+          history.replaceState(null, '', `#${tab.dataset.hash}`);
+        }
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          activateTab(tab);
+          if (window.matchMedia('(max-width: 680px)').matches) {
+            root.querySelector('.elan-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        tab.addEventListener('keydown', (event) => {
+          let targetIndex = null;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') targetIndex = (index + 1) % tabs.length;
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') targetIndex = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === 'Home') targetIndex = 0;
+          if (event.key === 'End') targetIndex = tabs.length - 1;
+          if (targetIndex === null) return;
+          event.preventDefault();
+          tabs[targetIndex].focus();
+          activateTab(tabs[targetIndex]);
+        });
+      });
+
+      root.querySelectorAll('.elan-more').forEach((button) => {
+        button.addEventListener('click', () => {
+          const list = button.closest('.elan-article-list');
+          const extras = [...list.querySelectorAll('.elan-extra')];
+          const isOpen = button.getAttribute('aria-expanded') === 'true';
+          extras.forEach((item) => { item.hidden = isOpen; });
+          button.setAttribute('aria-expanded', String(!isOpen));
+          const count = extras.length;
+          button.textContent = isOpen
+            ? `Voir ${count} article${count > 1 ? 's' : ''} de plus`
+            : 'Réduire la liste';
+        });
+      });
+
+      const requestedHash = window.location.hash.replace('#', '');
+      const requestedTab = tabs.find((tab) => tab.dataset.hash === requestedHash);
+      if (requestedTab) activateTab(requestedTab, false);
+    })();
+  </script>
+
 </body>
 </html>
