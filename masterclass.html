@@ -1040,6 +1040,44 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
   window.translation = {common:{selectedList:'{quantity} liste sélectionnée',selectedLists:'{quantity} listes sélectionnées',selectedOption:'{quantity} sélectionné',selectedOptions:'{quantity} sélectionnés'}};
   var AUTOHIDE = Boolean(0);
 </script>
+<script>
+(function(){
+  function showMcConfirm(){
+    var existing=document.getElementById('mc-confirm-box');
+    if(existing){existing.style.display='flex';existing.scrollIntoView({behavior:'smooth',block:'center'});return;}
+    var box=document.createElement('div');
+    box.id='mc-confirm-box';
+    box.style.cssText='display:flex;align-items:flex-start;gap:12px;background:#e8f6ee;border:1px solid #9fd0b4;border-radius:12px;padding:16px 18px;margin-top:16px;color:#1f5c3a;font-family:"DM Sans",system-ui,sans-serif;font-size:15px;line-height:1.5;';
+    box.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="12" fill="#1f5c3a"></circle><path d="M7 12.5l3 3 7-7" stroke="#e8f6ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><strong>Inscription confirmée.</strong> Vous allez recevoir le lien de connexion par email.</span>';
+    var formCard=document.querySelector('.form-card');
+    if(formCard){formCard.insertAdjacentElement('afterend',box);}
+    box.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  var origFetch=window.fetch;
+  if(origFetch){
+    window.fetch=function(){
+      var args=arguments;
+      var p=origFetch.apply(this,args);
+      try{
+        var url=args[0]&&(args[0].url||args[0]);
+        if(typeof url==='string'&&url.indexOf('sibforms.com')!==-1){
+          p.then(function(res){ if(res&&res.ok){showMcConfirm();} }).catch(function(){});
+        }
+      }catch(e){}
+      return p;
+    };
+  }
+  var origOpen=XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open=function(method,url){
+    if(typeof url==='string'&&url.indexOf('sibforms.com')!==-1){
+      this.addEventListener('load',function(){
+        if(this.status>=200&&this.status<300){showMcConfirm();}
+      });
+    }
+    return origOpen.apply(this,arguments);
+  };
+})();
+</script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
