@@ -1042,16 +1042,11 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
 </script>
 <script>
 (function(){
+  var mcRedirected=false;
   function showMcConfirm(){
-    var existing=document.getElementById('mc-confirm-box');
-    if(existing){existing.style.display='flex';existing.scrollIntoView({behavior:'smooth',block:'center'});return;}
-    var box=document.createElement('div');
-    box.id='mc-confirm-box';
-    box.style.cssText='display:flex;align-items:flex-start;gap:12px;background:#e8f6ee;border:1px solid #9fd0b4;border-radius:12px;padding:16px 18px;margin-top:16px;color:#1f5c3a;font-family:"DM Sans",system-ui,sans-serif;font-size:15px;line-height:1.5;';
-    box.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="12" fill="#1f5c3a"></circle><path d="M7 12.5l3 3 7-7" stroke="#e8f6ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><strong>Inscription confirmée.</strong> Vous allez recevoir le lien de connexion par email.</span>';
-    var formCard=document.querySelector('.form-card');
-    if(formCard){formCard.insertAdjacentElement('afterend',box);}
-    box.scrollIntoView({behavior:'smooth',block:'center'});
+    if(mcRedirected)return;
+    mcRedirected=true;
+    window.location.href='/masterclass-merci';
   }
   var origFetch=window.fetch;
   if(origFetch){
