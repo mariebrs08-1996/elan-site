@@ -31,6 +31,57 @@
 </script>
 </head>
 <body>
+<div id="mc-cd-bar" style="position:relative;overflow:hidden;">
+  <button id="mc-cd-toggle" type="button" style="all:unset;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-sizing:border-box;padding:11px 16px;background:linear-gradient(270deg,#C1532A,#E4772F,#8f3a1e,#C04E2A);background-size:600% 600%;animation:mcCdGradient 6s ease infinite,mcCdPulse 2.4s ease-in-out infinite;color:#FAF7F2;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;text-align:center;">
+    <span>Masterclass gratuite le 17 septembre : plus que <strong id="mc-cd-days">…</strong> jours <span id="mc-cd-label-days">pour vous inscrire</span></span>
+    <span id="mc-cd-caret" style="display:inline-block;transition:transform .3s ease;font-size:11px;">▾</span>
+  </button>
+  <div id="mc-cd-panel" class="mc-cd-panel" style="max-height:0;overflow:hidden;transition:max-height .4s ease;background:#3F302A;">
+    <div style="padding:22px 16px;text-align:center;color:#FAF7F2;">
+      <div style="display:flex;justify-content:center;gap:22px;margin-bottom:16px;font-family:'Playfair Display',serif;">
+        <div><span id="mc-cd-d" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">jours</span></div>
+        <div><span id="mc-cd-h" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">heures</span></div>
+        <div><span id="mc-cd-m" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">min</span></div>
+      </div>
+      <a href="/masterclass" style="display:inline-block;background:#C1532A;color:#FAF7F2;text-decoration:none;font-weight:700;font-family:'Jost',sans-serif;font-size:14px;padding:11px 24px;border-radius:6px;">Je réserve ma place →</a>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes mcCdGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes mcCdPulse{0%,100%{box-shadow:inset 0 0 0 0 rgba(255,255,255,0)}50%{box-shadow:inset 0 0 24px 2px rgba(255,255,255,0.18)}}
+.mc-cd-panel.mc-cd-open{max-height:220px !important;}
+</style>
+<script>
+(function(){
+  var target=new Date("2026-09-17T12:00:00+02:00").getTime();
+  var bar=document.getElementById('mc-cd-bar');
+  var btn=document.getElementById('mc-cd-toggle');
+  var panel=document.getElementById('mc-cd-panel');
+  var caret=document.getElementById('mc-cd-caret');
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var diff=target-new Date().getTime();
+    if(diff<=0){if(bar)bar.style.display='none';return;}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor((diff%86400000)/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var dEl=document.getElementById('mc-cd-d'),hEl=document.getElementById('mc-cd-h'),mEl=document.getElementById('mc-cd-m'),daysInline=document.getElementById('mc-cd-days');
+    if(dEl)dEl.textContent=d;
+    if(hEl)hEl.textContent=pad(h);
+    if(mEl)mEl.textContent=pad(m);
+    if(daysInline)daysInline.textContent=d;
+  }
+  tick();
+  setInterval(tick,60000);
+  if(btn&&panel&&caret){
+    btn.addEventListener('click',function(){
+      panel.classList.toggle('mc-cd-open');
+      caret.style.transform=panel.classList.contains('mc-cd-open')?'rotate(180deg)':'rotate(0deg)';
+    });
+  }
+})();
+</script>
 <nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">Élan</a><div class="nav-links"><a href="/blog">Blog</a><a href="mailto:mariebrs.08@gmail.com" class="nav-cta">Accompagnement</a></div></div></nav>
 <header class="art-hero"><div class="art-hero-inner"><p class="art-cat">Formation</p><h1 class="art-h1">Formation pour jeunes managers : ce qu'elle doit couvrir pour être utile</h1><p class="art-meta-date">2026-07-27</p></div></header>
 <main class="art-wrap">
