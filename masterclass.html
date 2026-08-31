@@ -1048,6 +1048,28 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
     mcRedirected=true;
     window.location.href='/masterclass-merci';
   }
+  function showMcError(){
+    var btn=document.querySelector('.sib-form-block__button');
+    if(btn){
+      btn.disabled=false;
+      btn.classList.remove('sib-form-block__button-disabled');
+    }
+    var err=document.getElementById('error-message');
+    if(err){ err.style.display='block'; }
+  }
+
+  /* Signal principal : on observe directement le panneau de succès affiché par Brevo.
+     Fiable quelle que soit la méthode réellement utilisée par Brevo pour soumettre
+     (fetch, XHR, iframe caché...), contrairement à une simple interception réseau. */
+  var successEl=document.getElementById('success-message');
+  if(successEl && window.MutationObserver){
+    var mo=new MutationObserver(function(){
+      if(getComputedStyle(successEl).display!=='none'){ showMcConfirm(); }
+    });
+    mo.observe(successEl,{attributes:true,attributeFilter:['class','style'],childList:true,subtree:true});
+  }
+
+  /* Signal de secours : interception des requêtes réseau vers Brevo */
   var origFetch=window.fetch;
   if(origFetch){
     window.fetch=function(){
@@ -1071,6 +1093,21 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
     }
     return origOpen.apply(this,arguments);
   };
+
+  /* Filet de sécurité mobile : si le bouton reste bloqué en chargement (réseau lent,
+     script Brevo ralenti ou bloqué) plus de 9 secondes sans succès détecté, on redonne
+     la main à la personne au lieu de la laisser avec un bouton grisé sans réaction. */
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.querySelector('.sib-form-block__button');
+    if(!btn) return;
+    var watchTimer=null;
+    btn.addEventListener('click',function(){
+      if(watchTimer) clearTimeout(watchTimer);
+      watchTimer=setTimeout(function(){
+        if(!mcRedirected && btn.disabled){ showMcError(); }
+      },9000);
+    });
+  });
 })();
 </script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
