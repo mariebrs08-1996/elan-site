@@ -1013,6 +1013,7 @@ header{background:#fbf7f2!important;border-bottom:1px solid #eadfd7!important}
 <input class="input--hidden" name="email_address_check" type="text" value=""/>
 <input name="locale" type="hidden" value="fr"/>
 </form>
+<iframe name="mc_fallback_frame" style="display:none" title="soumission de secours"></iframe>
 </div>
 <span class="cta-note">30 min de contenu + 15 min de questions · En ligne</span>
 <span class="scarcity">Masterclass en direct, sans replay - places limitées</span>
@@ -1059,8 +1060,7 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
   }
 
   /* Signal principal : on observe directement le panneau de succès affiché par Brevo.
-     Fiable quelle que soit la méthode réellement utilisée par Brevo pour soumettre
-     (fetch, XHR, iframe caché...), contrairement à une simple interception réseau. */
+     Fiable quelle que soit la méthode réellement utilisée par Brevo pour soumettre. */
   var successEl=document.getElementById('success-message');
   if(successEl && window.MutationObserver){
     var mo=new MutationObserver(function(){
@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
     mo.observe(successEl,{attributes:true,attributeFilter:['class','style'],childList:true,subtree:true});
   }
 
-  /* Signal de secours : interception des requêtes réseau vers Brevo */
+  /* Signal de secours : interception des requêtes réseau vers Brevo (fetch/XHR) */
   var origFetch=window.fetch;
   if(origFetch){
     window.fetch=function(){
@@ -1094,18 +1094,47 @@ document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementByI
     return origOpen.apply(this,arguments);
   };
 
-  /* Filet de sécurité mobile : si le bouton reste bloqué en chargement (réseau lent,
-     script Brevo ralenti ou bloqué) plus de 9 secondes sans succès détecté, on redonne
-     la main à la personne au lieu de la laisser avec un bouton grisé sans réaction. */
+  /* Filet de secours mobile : le script Brevo passe par fetch/XHR, souvent bloqué ou
+     en échec silencieux sur certains réseaux/navigateurs mobiles (protections anti-
+     tracking, bloqueurs de pub). Si rien n'a confirmé le succès au bout de 8s, on
+     envoie une soumission NATIVE du formulaire dans un cadre invisible : ce mécanisme
+     est une simple requête HTTP de formulaire, pas un appel fetch/XHR, donc il n'est
+     pas soumis aux mêmes blocages et fonctionne sur la quasi-totalité des navigateurs
+     et réseaux. */
   document.addEventListener('DOMContentLoaded',function(){
     var btn=document.querySelector('.sib-form-block__button');
-    if(!btn) return;
+    var form=document.getElementById('sib-form');
+    var fallbackFrame=document.querySelector('iframe[name="mc_fallback_frame"]');
+    if(!btn||!form) return;
     var watchTimer=null;
+    var errorTimer=null;
+    var fallbackTried=false;
+    var fallbackArmed=false;
+
+    if(fallbackFrame){
+      fallbackFrame.addEventListener('load',function(){
+        if(fallbackArmed){ showMcConfirm(); }
+      });
+    }
+
     btn.addEventListener('click',function(){
       if(watchTimer) clearTimeout(watchTimer);
+      if(errorTimer) clearTimeout(errorTimer);
+      fallbackTried=false;
       watchTimer=setTimeout(function(){
-        if(!mcRedirected && btn.disabled){ showMcError(); }
-      },9000);
+        if(mcRedirected || fallbackTried || !fallbackFrame) return;
+        fallbackTried=true;
+        try{
+          fallbackArmed=true;
+          var previousTarget=form.getAttribute('target');
+          form.setAttribute('target','mc_fallback_frame');
+          form.submit();
+          if(previousTarget){ form.setAttribute('target',previousTarget); } else { form.removeAttribute('target'); }
+        }catch(e){}
+        errorTimer=setTimeout(function(){
+          if(!mcRedirected){ showMcError(); }
+        },6000);
+      },8000);
     });
   });
 })();
