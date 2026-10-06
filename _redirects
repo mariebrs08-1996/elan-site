@@ -1,7 +1,0 @@
-# Redirections 301 des anciennes pages supprimées (forcees: s'appliquent meme si le vieux fichier existe encore)
-/coaching-manager            /accompagnement-manager   301!
-/passer-de-pair-a-manager    /entrepreneur-manager     301!
-# Anciens slugs blog éventuels vers nouveaux
-/blog/role-manager-ce-qui-change          /blog/role-du-manager            301
-/blog/prise-de-poste-manager-angles-morts /blog/prise-de-poste-manager     301
-/blog/formation-management-terrain        /blog/formation-manager-debutant 301

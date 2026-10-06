@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://mariebras.fr/sitemap.xml
