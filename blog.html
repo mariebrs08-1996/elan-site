@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Blog management : prise de poste, posture et rôle du manager | ÉLAN</title>
-<meta name="description" content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste.">
-<meta property="og:title" content="Blog management : prise de poste, posture et rôle du manager | ÉLAN">
-<meta property="og:description" content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste.">
-<meta property="og:url" content="https://mariebras.fr/blog">
-<meta property="og:image" content="https://mariebras.fr/images/marie-bras-portrait.jpg">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://mariebras.fr/blog">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste." name="description"/>
+<meta content="Blog management : prise de poste, posture et rôle du manager | ÉLAN" property="og:title"/>
+<meta content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste." property="og:description"/>
+<meta content="https://mariebras.fr/blog" property="og:url"/>
+<meta content="https://mariebras.fr/images/marie-bras-portrait.jpg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<link href="https://mariebras.fr/blog" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap" rel="stylesheet"/>
 <style id="resp-fix">
 @media(max-width:780px){
   [style*="grid-template-columns"]{grid-template-columns:1fr!important}
@@ -238,158 +239,193 @@ main[style]{padding-top:var(--nav-h)!important}
 @media(prefers-reduced-motion:reduce){.blog-grid > a.is-in{animation:none}}
 </style>
 <style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
+
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
 </head>
 <body>
 <nav id="nav">
-  <a href="/" class="nav-brand" aria-label="ÉLAN by Marie Bras, accueil">
-    <span class="nav-brand-top"><em><strong>ÉLAN</strong></em> <span>by Marie Bras</span></span>
-  </a>
-  <div class="nav-right" id="nav-links">
-    <a href="/formation-primo-manager" class="nav-link" onclick="closeBurger()">Entreprises</a>
-    <a href="/accompagnement-manager" class="nav-link" onclick="closeBurger()">Coaching individuel</a>
-    <a href="/marie-bras" class="nav-link" onclick="closeBurger()">À propos</a>
-    <a href="/blog" class="nav-link" onclick="closeBurger()">Blog</a>
-    <a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta" onclick="closeBurger()">Parlons de votre besoin</a>
-  </div>
-  <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<a aria-label="ÉLAN by Marie Bras, accueil" class="nav-brand" href="/">
+<span class="nav-brand-top"><em><strong>ÉLAN</strong></em> <span>by Marie Bras</span></span>
+</a>
+<div class="nav-right elan-mobile-menu" id="nav-links">
+<a class="nav-link" href="/formation-primo-manager" onclick="closeBurger()">Entreprises</a>
+<a class="nav-link" href="/accompagnement-manager" onclick="closeBurger()">Coaching individuel</a>
+<a class="nav-link" href="/marie-bras" onclick="closeBurger()">À propos</a>
+<a class="nav-link" href="/blog" onclick="closeBurger()">Blog</a>
+<a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min" onclick="closeBurger()">Parlons de votre besoin</a>
+</div>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-burger elan-mobile-burger" id="nav-burger"><span></span><span></span><span></span></button>
 </nav>
 <main style="padding-top:72px">
 <section class="hero-p">
-  <div class="pw">
-    <div class="hero-inner">
-      <div class="ptag rv">Ressources & réflexions</div>
-      <h1 class="hero-h1 rv">Le blog <em>ÉLAN</em></h1>
-      <p class="hero-sub rv" style="max-width:600px;margin-top:1rem">Des articles concrets sur le management, la prise de poste et la délégation. Du terrain, des situations réelles, des outils activables.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="pw">
-    <div class="blog-filters" role="group" aria-label="Filtrer les articles par thème">
-  <button type="button" class="bf on" data-filter="tous" aria-pressed="true">Tous <span>16</span></button>
-  <button type="button" class="bf" data-filter="prise-de-poste" aria-pressed="false">Prise de poste <span>5</span></button>
-  <button type="button" class="bf" data-filter="posture" aria-pressed="false">Posture & leadership <span>3</span></button>
-  <button type="button" class="bf" data-filter="equipe" aria-pressed="false">Vie d’équipe <span>3</span></button>
-  <button type="button" class="bf" data-filter="delegation" aria-pressed="false">Délégation & autonomie <span>3</span></button>
-  <button type="button" class="bf" data-filter="dirigeants" aria-pressed="false">Startups & dirigeants <span>2</span></button>
+<div class="pw">
+<div class="hero-inner">
+<div class="ptag rv">Ressources &amp; réflexions</div>
+<h1 class="hero-h1 rv">Le blog <em>ÉLAN</em></h1>
+<p class="hero-sub rv" style="max-width:600px;margin-top:1rem">Des articles concrets sur le management, la prise de poste et la délégation. Du terrain, des situations réelles, des outils activables.</p>
 </div>
-<p class="bf-empty" hidden>Aucun article dans ce thème pour l’instant.</p>
+</div>
+</section>
+<section class="sec">
+<div class="pw">
+<div aria-label="Filtrer les articles par thème" class="blog-filters" role="group">
+<button aria-pressed="true" class="bf on" data-filter="tous" type="button">Tous <span>16</span></button>
+<button aria-pressed="false" class="bf" data-filter="prise-de-poste" type="button">Prise de poste <span>5</span></button>
+<button aria-pressed="false" class="bf" data-filter="posture" type="button">Posture &amp; leadership <span>3</span></button>
+<button aria-pressed="false" class="bf" data-filter="equipe" type="button">Vie d’équipe <span>3</span></button>
+<button aria-pressed="false" class="bf" data-filter="delegation" type="button">Délégation &amp; autonomie <span>3</span></button>
+<button aria-pressed="false" class="bf" data-filter="dirigeants" type="button">Startups &amp; dirigeants <span>2</span></button>
+</div>
+<p class="bf-empty" hidden="">Aucun article dans ce thème pour l’instant.</p>
 <div class="rv blog-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
-      <a data-theme="posture" href="/blog/posture-manageriale" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Posture managériale : développer la vôtre sans vous renier</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Développer sa posture managériale ne veut pas dire jouer un rôle qui ne vous ressemble pas. Comment la construire sans vous renier.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="equipe" href="/blog/dynamique-equipe" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Dynamique d'équipe : 10 leviers concrets pour les managers</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une dynamique d'équipe qui fonctionne ne doit rien au hasard. Les leviers concrets qu'un manager peut activer, semaine après semaine.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="prise-de-poste" href="/blog/manager-anciens-collegues" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager ses anciens collègues sans perdre leur confiance</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir le manager de ses anciens collègues bouscule des repères installés. Comment poser un nouveau cadre sans rompre la confiance.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="equipe" href="/blog/motiver-equipe-sans-salaire" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Motiver son équipe sans miser sur le salaire : ce qui marche</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Augmenter les salaires n'est pas toujours possible. Ce qui motive réellement une équipe, observé sur le terrain, sans grand discours.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="prise-de-poste" href="/blog/manager-equipe-premiere-fois" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager une équipe pour la première fois : les angles morts que personne ne vous signale</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Prendre la tête d'une équipe pour la première fois ne ressemble jamais à ce qu'on avait imaginé. Ce que personne ne vous dit avant de commencer.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="prise-de-poste" href="/blog/prise-de-poste-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Prise de poste manager : ce qui se joue vraiment dans les 30 premiers jours</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce qui se joue vraiment dans les 30 premiers jours, les erreurs à éviter et les premières actions concrètes pour poser les bases.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="delegation" href="/blog/micro-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Micro management : pourquoi on y tombe et comment en sortir</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="posture" href="/blog/role-du-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Rôle du manager : ce que ça veut vraiment dire au quotidien</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le rôle du manager va bien au-delà des entretiens annuels et des réunions. Ce que ça veut concrètement dire d'encadrer une équipe au jour le jour.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="prise-de-poste" href="/blog/devenir-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Devenir manager : ce que personne ne prépare vraiment</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir manager, ce n'est pas juste un nouveau titre. C'est un changement d'identité professionnelle pour lequel presque personne n'est préparé.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="delegation" href="/blog/deleguer-efficacement" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Déléguer efficacement : comment s'y prendre pour débuter</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Déléguer efficacement est une compétence qui s'apprend. Une méthode concrète pour confier du travail sans perdre en qualité.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="delegation" href="/blog/equipe-autonome" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Équipe autonome : comment y arriver sans perdre le contrôle</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance sans perdre de vue les résultats.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="prise-de-poste" href="/blog/formation-manager-debutant" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation manager débutant : ce que les formations ne transmettent pas</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Les formations pour managers débutants se multiplient. Pourtant la plupart ne résolvent pas ce qui coince vraiment. Une analyse depuis le terrain.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="posture" href="/blog/coaching-leadership" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching leadership : développer sa posture sans modèle</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce que le coaching leadership produit sur la posture, les décisions et la relation aux équipes. Pas de recette, mais des changements durables.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="dirigeants" href="/blog/coaching-entrepreneur" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching entrepreneur : les moments où ça change vraiment</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Faire appel à un coach quand on est entrepreneur n'est pas un aveu. C'est souvent la décision qui fait la différence entre stagner et avancer.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="dirigeants" href="/blog/startup-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Startup manager : les défis du management en scale-up</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Manager une équipe en startup à 10 personnes, c'est un métier. À 50, c'en est un autre. Ce qui change et comment s'adapter quand la croissance s'accélère.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-      <a data-theme="equipe" href="/blog/management-hybride" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
-        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Management hybride : manager à distance sans perdre le fil</h2>
-        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément dans la façon de construire la confiance et la cohésion d'équipe.</p>
-        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
-      </a>
-    </div>
-
-  </div>
+<a data-theme="posture" href="/blog/posture-manageriale" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Posture managériale : développer la vôtre sans vous renier</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Développer sa posture managériale ne veut pas dire jouer un rôle qui ne vous ressemble pas. Comment la construire sans vous renier.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="equipe" href="/blog/dynamique-equipe" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Dynamique d'équipe : 10 leviers concrets pour les managers</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une dynamique d'équipe qui fonctionne ne doit rien au hasard. Les leviers concrets qu'un manager peut activer, semaine après semaine.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="prise-de-poste" href="/blog/manager-anciens-collegues" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager ses anciens collègues sans perdre leur confiance</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir le manager de ses anciens collègues bouscule des repères installés. Comment poser un nouveau cadre sans rompre la confiance.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="equipe" href="/blog/motiver-equipe-sans-salaire" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Motiver son équipe sans miser sur le salaire : ce qui marche</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Augmenter les salaires n'est pas toujours possible. Ce qui motive réellement une équipe, observé sur le terrain, sans grand discours.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="prise-de-poste" href="/blog/manager-equipe-premiere-fois" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager une équipe pour la première fois : les angles morts que personne ne vous signale</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Prendre la tête d'une équipe pour la première fois ne ressemble jamais à ce qu'on avait imaginé. Ce que personne ne vous dit avant de commencer.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="prise-de-poste" href="/blog/prise-de-poste-manager" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Prise de poste manager : ce qui se joue vraiment dans les 30 premiers jours</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce qui se joue vraiment dans les 30 premiers jours, les erreurs à éviter et les premières actions concrètes pour poser les bases.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="delegation" href="/blog/micro-management" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Micro management : pourquoi on y tombe et comment en sortir</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="posture" href="/blog/role-du-manager" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Rôle du manager : ce que ça veut vraiment dire au quotidien</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le rôle du manager va bien au-delà des entretiens annuels et des réunions. Ce que ça veut concrètement dire d'encadrer une équipe au jour le jour.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="prise-de-poste" href="/blog/devenir-manager" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Devenir manager : ce que personne ne prépare vraiment</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir manager, ce n'est pas juste un nouveau titre. C'est un changement d'identité professionnelle pour lequel presque personne n'est préparé.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="delegation" href="/blog/deleguer-efficacement" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Déléguer efficacement : comment s'y prendre pour débuter</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Déléguer efficacement est une compétence qui s'apprend. Une méthode concrète pour confier du travail sans perdre en qualité.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="delegation" href="/blog/equipe-autonome" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Équipe autonome : comment y arriver sans perdre le contrôle</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance sans perdre de vue les résultats.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="prise-de-poste" href="/blog/formation-manager-debutant" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation manager débutant : ce que les formations ne transmettent pas</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Les formations pour managers débutants se multiplient. Pourtant la plupart ne résolvent pas ce qui coince vraiment. Une analyse depuis le terrain.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="posture" href="/blog/coaching-leadership" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching leadership : développer sa posture sans modèle</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce que le coaching leadership produit sur la posture, les décisions et la relation aux équipes. Pas de recette, mais des changements durables.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="dirigeants" href="/blog/coaching-entrepreneur" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching entrepreneur : les moments où ça change vraiment</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Faire appel à un coach quand on est entrepreneur n'est pas un aveu. C'est souvent la décision qui fait la différence entre stagner et avancer.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="dirigeants" href="/blog/startup-manager" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Startup manager : les défis du management en scale-up</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Manager une équipe en startup à 10 personnes, c'est un métier. À 50, c'en est un autre. Ce qui change et comment s'adapter quand la croissance s'accélère.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+<a data-theme="equipe" href="/blog/management-hybride" onmouseout="this.style.boxShadow=''" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s">
+<span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Management hybride : manager à distance sans perdre le fil</h2>
+<p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément dans la façon de construire la confiance et la cohésion d'équipe.</p>
+<p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+</a>
+</div>
+</div>
 </section>
-
 <section class="sec sec-alt" style="text-align:center">
-  <div class="pw">
-    <h2 class="sh2 rv">Vous voulez aller plus loin ?</h2>
-    <p class="sbdy rv" style="max-width:500px;margin:1rem auto 2rem">Un échange de 30 minutes pour voir comment ÉLAN peut vous accompagner.</p>
-    <a href="https://calendly.com/elan-by-marie-bras/30min" target="_blank" class="cta-btn rv">Prendre rendez-vous →</a>
-  </div>
+<div class="pw">
+<h2 class="sh2 rv">Vous voulez aller plus loin ?</h2>
+<p class="sbdy rv" style="max-width:500px;margin:1rem auto 2rem">Un échange de 30 minutes pour voir comment ÉLAN peut vous accompagner.</p>
+<a class="cta-btn rv" href="https://calendly.com/elan-by-marie-bras/30min" target="_blank">Prendre rendez-vous →</a>
+</div>
 </section>
-
 <footer>
-  <span class="footer-brand"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em>, Marie Bras</span>
-  <span class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></span>
+<span class="footer-brand"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em>, Marie Bras</span>
+<span class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></span>
 </footer>
 <script>
 function toggleBurger(){
@@ -460,6 +496,53 @@ function closeBurger(){
   var start=(location.hash||'').slice(1)||new URLSearchParams(location.search).get('theme')||'tous';
   apply(start,false);
   var act=bar.querySelector('.bf.on'); if(act&&bar.scrollWidth>bar.clientWidth) bar.scrollLeft=act.offsetLeft-bar.offsetLeft-20;
+})();
+</script>
+</main>
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
 })();
 </script>
 </body>

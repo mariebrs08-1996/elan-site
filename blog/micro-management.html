@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Micro management : pourquoi on y tombe et comment en sortir | ÉLAN by Marie Bras</title>
-<meta name="description" content="Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://mariebras.fr/blog/micro-management">
-<meta property="og:url" content="https://mariebras.fr/blog/micro-management">
-<meta property="og:image" content="https://mariebras.fr/images/marie-bras-portrait.jpg">
-<meta property="og:title" content="Micro management : pourquoi on y tombe et comment en sortir | ÉLAN by Marie Bras">
-<meta property="og:description" content="Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.">
-<meta name="twitter:card" content="summary_large_image">
+<meta content="Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://mariebras.fr/blog/micro-management" rel="canonical"/>
+<meta content="https://mariebras.fr/blog/micro-management" property="og:url"/>
+<meta content="https://mariebras.fr/images/marie-bras-portrait.jpg" property="og:image"/>
+<meta content="Micro management : pourquoi on y tombe et comment en sortir | ÉLAN by Marie Bras" property="og:title"/>
+<meta content="Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied." property="og:description"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -232,29 +233,69 @@ main[style]{padding-top:var(--nav-h)!important}
 .back-link{display:flex!important;width:fit-content}
 </style>
 <style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
+
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
 </head>
 <body>
 <nav>
-  <a class="nav-brand" href="/">
-    <span class="nav-brand-top"><em>ÉLAN</em> by Marie Bras</span>
-  </a>
-  <div class="nav-right">
-    <a class="nav-link" href="/#parcours">POUR QUI ?</a>
-    <a class="nav-link" href="/formation-primo-manager#situations">LES ANGLES MORTS</a>
-    <a class="nav-link" href="/formation-primo-manager#methode">LA MÉTHODE BASCULE</a>
-    <a class="nav-link" href="/blog">RESSOURCES &amp; RÉFLEXIONS</a>
-    <a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">PARLONS-EN</a>
-  </div>
-</nav>
-
+<a class="nav-brand" href="/">
+<span class="nav-brand-top"><em>ÉLAN</em> by Marie Bras</span>
+</a>
+<div class="nav-right elan-mobile-menu">
+<a class="nav-link" href="/#parcours">POUR QUI ?</a>
+<a class="nav-link" href="/formation-primo-manager#situations">LES ANGLES MORTS</a>
+<a class="nav-link" href="/formation-primo-manager#methode">LA MÉTHODE BASCULE</a>
+<a class="nav-link" href="/blog">RESSOURCES &amp; RÉFLEXIONS</a>
+<a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">PARLONS-EN</a>
+</div>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="elan-mobile-burger" type="button"><span></span><span></span><span></span></button></nav>
 <main>
 <div class="article-wrap">
-  <a class="back-link" href="/blog">← Retour au blog</a>
-  <span class="art-tag">Délégation &amp; autonomie</span>
-  <h1 class="art-title">Micro management : pourquoi on y tombe et comment en sortir</h1>
-  <p class="art-desc">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
-  <time class="art-date" datetime="2026-05-27">27 mai 2026</time>
-  <div class="art-body">
+<a class="back-link" href="/blog">← Retour au blog</a>
+<span class="art-tag">Délégation &amp; autonomie</span>
+<h1 class="art-title">Micro management : pourquoi on y tombe et comment en sortir</h1>
+<p class="art-desc">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
+<time class="art-date" datetime="2026-05-27">27 mai 2026</time>
+<div class="art-body">
 <h2>Micro management : pourquoi les meilleurs managers y tombent aussi, et comment s'en sortir</h2>
 <p>Vous regardez par-dessus l'épaule de quelqu'un qui fait quelque chose que vous sauriez faire en deux fois moins de temps. Vous relisez un email avant qu'il soit envoyé. Vous demandez des points d'avancement tous les jours sur un sujet qui n'en justifie pas plus d'un par semaine. Vous n'avez pas décidé de micro-manager, vous avez juste essayé de vous assurer que tout se passait bien. C'est là que ça commence.</p>
 <h2>Le micro-management n'est pas un trait de caractère, c'est un glissement</h2>
@@ -271,24 +312,70 @@ main[style]{padding-top:var(--nav-h)!important}
 <div style="background:var(--ivory2);border-left:4px solid var(--terra);padding:1.8rem 2rem;margin:2rem 0;border-radius:0 2px 2px 0"><p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:0.9rem">Quoi faire en pratique cette semaine</p><p style="font-size:0.97rem;color:var(--dark);line-height:1.85;margin:0">Lors de votre prochain one-to-one avec un collaborateur, posez-lui cette question directement : "Est-ce qu'il y a des sujets sur lesquels tu aimerais avoir plus d'autonomie ?" Écoutez la réponse sans vous justifier. Ce que vous apprendrez vaut plus que n'importe quelle grille d'auto-évaluation.</p></div>
 <h2>Comment sortir du micro management</h2>
 <p>Sortir du micro management ne se fait pas en un mouvement. C'est une décompression progressive qui demande de clarifier trois choses : ce que vous attendez comme résultats, dans quel délai, et selon quels critères de qualité. Quand ces trois dimensions sont explicites, vous n'avez plus besoin de contrôler le chemin, vous vérifiez l'arrivée.</p>
-<p>La première étape est de distinguer ce qui relève d'un standard de qualité non négociable de ce qui relève simplement de votre préférence personnelle. Beaucoup de corrections et de reprises dans les équipes micro-managées concernent des choses qui auraient pu être faites différemment sans que ça pose de vrai problème. Être capable de dire &quot;ce n'est pas comme je l'aurais fait, mais le résultat est là&quot; est une compétence managériale importante.</p>
+<p>La première étape est de distinguer ce qui relève d'un standard de qualité non négociable de ce qui relève simplement de votre préférence personnelle. Beaucoup de corrections et de reprises dans les équipes micro-managées concernent des choses qui auraient pu être faites différemment sans que ça pose de vrai problème. Être capable de dire "ce n'est pas comme je l'aurais fait, mais le résultat est là" est une compétence managériale importante.</p>
 <p>La deuxième étape est de calibrer votre niveau d'intervention selon le niveau de compétence et d'expérience de la personne. Un collaborateur qui apprend a besoin de plus de soutien et de retours fréquents. Un collaborateur expérimenté a besoin de clarté sur les objectifs et d'espace pour travailler. Appliquer le même niveau de contrôle aux deux n'est ni juste ni efficace.</p>
 <div style="background:var(--ivory2);border-left:4px solid var(--terra);padding:1.8rem 2rem;margin:2rem 0;border-radius:0 2px 2px 0"><p style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--terra);margin-bottom:0.9rem">Quoi faire en pratique cette semaine</p><p style="font-size:0.97rem;color:var(--dark);line-height:1.85;margin:0">Pour chaque membre de votre équipe, notez mentalement leur niveau d'autonomie sur les principales tâches de leur périmètre. Là où vous contrôlez beaucoup une personne expérimentée, demandez-vous si ce contrôle est lié à un vrai risque ou à votre propre besoin de sécurité. Cette distinction change tout à la façon dont vous vous positionnez.</p></div>
 <h2>Lâcher le contrôle ne veut pas dire se désengager</h2>
 <p>Lâcher le contrôle ne signifie pas se désengager. Ça signifie trouver un autre mode d'engagement : être disponible pour les questions, donner du feedback sur les résultats, créer des conditions de travail qui permettent à l'équipe de réussir. Ce déplacement demande de faire confiance à des personnes dont vous ne maîtrisez pas complètement les méthodes, et c'est inconfortable. Mais c'est précisément ce qui permet à une équipe de devenir autonome et à vous de jouer votre rôle de manager, plutôt que celui de super-exécutant.</p>
-  </div>
-  <div class="art-cta-dual">
-<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a href="/accompagnement-manager" class="art-cta-card-btn">Découvrir l'accompagnement individuel</a></div>
-<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a href="/formation-primo-manager" class="art-cta-card-btn">Découvrir la formation en entreprise</a></div>
+</div>
+<div class="art-cta-dual">
+<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a class="art-cta-card-btn" href="/accompagnement-manager">Découvrir l'accompagnement individuel</a></div>
+<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a class="art-cta-card-btn" href="/formation-primo-manager">Découvrir la formation en entreprise</a></div>
 </div>
 <p class="art-cta-direct">Une question avant de choisir ? <a href="mailto:contact@mariebras.fr">Écrivez-moi directement</a>.</p>
 </div>
 <div class="art-related"><p class="art-related-title">Pour aller plus loin</p><ul><li><a href="/blog/deleguer-efficacement">Déléguer efficacement</a></li><li><a href="/blog/posture-manageriale">Posture managériale</a></li></ul></div>
 </main>
-
 <footer>
-  <div class="footer-brand"><em>ÉLAN</em>, Marie Bras</div>
-  <div class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></div>
+<div class="footer-brand"><em>ÉLAN</em>, Marie Bras</div>
+<div class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></div>
 </footer>
+
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
+})();
+</script>
 </body>
 </html>

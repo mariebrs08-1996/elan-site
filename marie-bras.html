@@ -997,23 +997,62 @@ footer{background:var(--cacao)}
     transform:none!important;
   }
 }
-</style></head>
+</style>
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
+</head>
 <body>
 <nav>
 <a aria-label="ÉLAN by Marie Bras, accueil" class="nav-brand" href="/">
 <span class="nav-brand-main">ÉLAN</span>
 <span class="nav-brand-sub">by Marie Bras</span>
 </a>
-<div class="nav-right" id="nav-links">
+<div class="nav-right elan-mobile-menu" id="nav-links">
 <a class="nav-link" href="/formation-primo-manager">Entreprises</a>
 <a class="nav-link" href="/accompagnement-manager">Coaching individuel</a>
 <a class="nav-link" href="/marie-bras">À propos</a>
 <a class="nav-link" href="/blog">Blog</a>
 <a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">Parlons de votre besoin</a>
 </div>
-<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-burger" id="nav-burger">
-<span></span><span></span><span></span>
-</button>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="nav-burger elan-mobile-burger" id="nav-burger"><span></span><span></span><span></span></button>
 </nav>
 <main>
 <section class="about-hero">
@@ -1448,5 +1487,52 @@ if(b&&n){b.addEventListener('click',()=>n.classList.toggle('open'));}
   window.addEventListener('scroll',renderApproach,{passive:true});
   window.addEventListener('resize',renderApproach);
 })();
-</script></body>
+</script>
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
+})();
+</script>
+</body>
 </html>

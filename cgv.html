@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>CGV | ÉLAN by Marie Bras</title>
-<meta name="description" content="Conditions générales de prestation de services d’ÉLAN by Marie Bras : coaching professionnel, formation et accompagnement de managers et dirigeants.">
-<link rel="canonical" href="https://mariebras.fr/cgv">
-<meta name="robots" content="index,follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta content="Conditions générales de prestation de services d’ÉLAN by Marie Bras : coaching professionnel, formation et accompagnement de managers et dirigeants." name="description"/>
+<link href="https://mariebras.fr/cgv" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap" rel="stylesheet"/>
 <style>
 /* ===== ÉLAN by Marie Bras : blog, même DA que la home v26 et la page entreprise v38 =====
    Brun cacao, terracotta du logo, miel, sable, blanc.
@@ -226,16 +227,57 @@ main[style]{padding-top:var(--nav-h)!important}
 footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
 footer a:hover{color:#fff}
 </style>
+
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">Élan</a><div class="nav-links"><a href="/blog">Blog</a><a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta">Parlons-en</a></div></div></nav>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="/">Élan</a><div class="nav-links elan-mobile-menu"><a href="/blog">Blog</a><a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">Parlons-en</a></div><button aria-expanded="false" aria-label="Ouvrir le menu" class="elan-mobile-burger" type="button"><span></span><span></span><span></span></button></div></nav>
 <header class="art-hero"><div class="art-hero-inner"><p class="art-cat">Informations légales</p><h1 class="art-h1">Conditions générales de prestation de services</h1><p class="art-meta-date">Mises à jour le 6 octobre 2026</p></div></header>
 <main class="art-wrap">
 <p class="art-p">Les présentes Conditions Générales de Prestation de Services (ci-après les « CGPS ») sont conclues entre Marie Bras EI, exerçant sous le nom commercial « Elan by Marie Bras », entrepreneur individuel immatriculé sous le numéro SIRET 10306684100018, dont l'établissement est situé 24 rue Dombasle, 75015 Paris, joignable par téléphone au 06 01 31 14 65 et par courriel à l'adresse contact@mariebras.fr, bénéficiant de la franchise en base de TVA, représentée par Marie Bras, en qualité d'entrepreneur individuel, ci-après dénommée « le Prestataire », d'une part,</p>
 <p class="art-p">et toute personne, physique majeure ou morale, ayant accepté les présentes Conditions Générales en passant commande, ci-après dénommée « le Client », d'autre part.</p>
 <p class="art-p">Le Prestataire a souscrit une assurance responsabilité civile professionnelle auprès de l'organisme ORUS.</p>
 <p class="art-p">Les présentes Conditions Générales s'appliquent indifféremment aux clients professionnels et aux clients particuliers (consommateurs). Lorsque des dispositions divergent selon la qualité du Client, elles sont clairement distinguées en précisant si elles s'appliquent « aux clients professionnels » ou « aux clients consommateurs ».</p>
-<div class="cgv-toc" role="navigation" aria-label="Sommaire des conditions générales"><p class="cgv-toc-title">Sommaire</p><ol><li><a href="#article-1">1. Objet et champ d'application</a></li><li><a href="#article-2">2. Description de l'activité et des offres</a></li><li><a href="#article-3">3. Commande et devis</a></li><li><a href="#article-4">4. Modalités de fourniture des prestations</a></li><li><a href="#article-5">5. Modification, report et annulation</a></li><li><a href="#article-6">6. Obligations des parties</a></li><li><a href="#article-7">7. Prix et tarification</a></li><li><a href="#article-8">8. Paiement</a></li><li><a href="#article-9">9. Livrables et propriété intellectuelle</a></li><li><a href="#article-10">10. Confidentialité</a></li><li><a href="#article-11">11. Responsabilité</a></li><li><a href="#article-12">12. Droit de rétractation : clients consommateurs</a></li><li><a href="#article-13">13. Protection des données personnelles (RGPD)</a></li><li><a href="#article-14">14. Médiation de la consommation : clients consommateurs</a></li><li><a href="#article-15">15. Droit applicable et litiges</a></li><li><a href="#annexe">Annexe : formulaire de rétractation</a></li></ol></div>
+<div aria-label="Sommaire des conditions générales" class="cgv-toc" role="navigation"><p class="cgv-toc-title">Sommaire</p><ol><li><a href="#article-1">1. Objet et champ d'application</a></li><li><a href="#article-2">2. Description de l'activité et des offres</a></li><li><a href="#article-3">3. Commande et devis</a></li><li><a href="#article-4">4. Modalités de fourniture des prestations</a></li><li><a href="#article-5">5. Modification, report et annulation</a></li><li><a href="#article-6">6. Obligations des parties</a></li><li><a href="#article-7">7. Prix et tarification</a></li><li><a href="#article-8">8. Paiement</a></li><li><a href="#article-9">9. Livrables et propriété intellectuelle</a></li><li><a href="#article-10">10. Confidentialité</a></li><li><a href="#article-11">11. Responsabilité</a></li><li><a href="#article-12">12. Droit de rétractation : clients consommateurs</a></li><li><a href="#article-13">13. Protection des données personnelles (RGPD)</a></li><li><a href="#article-14">14. Médiation de la consommation : clients consommateurs</a></li><li><a href="#article-15">15. Droit applicable et litiges</a></li><li><a href="#annexe">Annexe : formulaire de rétractation</a></li></ol></div>
 <h2 class="art-h2 cgv-h2" id="article-1"><span class="cgv-num">Article 1</span>Objet et champ d'application</h2>
 <p class="art-p">Les présentes Conditions Générales ont pour objet de définir les droits et obligations des parties dans le cadre de la fourniture par le Prestataire de prestations de coaching professionnel, de formation, de conseil et d'accompagnement individuel ou collectif.</p>
 <p class="art-p">Toute commande emporte acceptation pleine et entière des présentes Conditions Générales par le Client, qui reconnaît en avoir pris connaissance préalablement à la passation de sa commande. Les présentes Conditions Générales sont opposables au Client dès leur acceptation. Le Prestataire se réserve le droit de les modifier à tout moment ; les Conditions Générales applicables sont celles en vigueur à la date de la commande.</p>
@@ -378,5 +420,52 @@ footer a:hover{color:#fff}
 </main>
 <p class="art-cta-direct">Une question sur ces conditions ? <a href="mailto:contact@mariebras.fr">Écrivez-moi directement</a>.</p>
 <footer class="footer"><p class="footer-logo">Élan</p><p class="footer-sub">© 2026 Marie Bras · <a href="/cgv">CGV</a></p></footer>
+
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
+})();
+</script>
 </body>
 </html>

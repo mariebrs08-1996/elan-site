@@ -1,32 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée.">
-  <title>Management hybride : manager à distance sans perdre le fil</title>
-  <meta name="publish-date" content="2026-07-08">
-  <link rel="canonical" href="https://mariebras.fr/blog/management-hybride">
-  <meta property="og:title" content="Management hybride : manager à distance sans perdre le fil">
-  <meta property="og:description" content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://mariebras.fr/blog/management-hybride">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Management hybride : manager à distance sans perdre le fil">
-  <meta name="twitter:description" content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée.">
-  <script type="application/ld+json">{
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée." name="description"/>
+<title>Management hybride : manager à distance sans perdre le fil</title>
+<meta content="2026-07-08" name="publish-date"/>
+<link href="https://mariebras.fr/blog/management-hybride" rel="canonical"/>
+<meta content="Management hybride : manager à distance sans perdre le fil" property="og:title"/>
+<meta content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://mariebras.fr/blog/management-hybride" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Management hybride : manager à distance sans perdre le fil" name="twitter:title"/>
+<meta content="Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée." name="twitter:description"/>
+<script type="application/ld+json">{
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Management hybride : manager à distance sans perdre le fil",
       "description": "Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément, c'est la façon dont on construit la confiance, la visibilité et le lien dans une équipe dispersée.",
       "datePublished": "2026-07-08",
-      "author": {"@type": "Person", "name": "Marie Bras", "url": "https://mariebras.fr/marie-bras", "jobTitle": "Coach et formatrice pour primo-managers", "description": "Certifiée coach professionnel RNCP 6 (Linkup Coaching). 5 ans chez Malt en recrutement, management et formation, plus de 500 personnes formées aux métiers de la tech.", "sameAs": ["https://www.linkedin.com/in/marie-bras-026306112"]},
+      "author": {"@type": "Person", "name": "Marie Bras"},
       "publisher": {"@type": "Organization", "name": "Élan"}
     }</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap" rel="stylesheet"/>
+<style>
 /* ===== ÉLAN by Marie Bras : blog, même DA que la home v26 et la page entreprise v38 =====
    Brun cacao, terracotta du logo, miel, sable, blanc.
    Bricolage Grotesque pour tout, Playfair italique réservé au logo. */
@@ -222,83 +223,70 @@ main[style]{padding-top:var(--nav-h)!important}
 .back-link{display:flex!important;width:fit-content}
 </style>
 <style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
+
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
 </head>
 <body>
-<div id="mc-cd-bar" style="position:relative;overflow:hidden;">
-  <button id="mc-cd-toggle" type="button" style="all:unset;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-sizing:border-box;padding:11px 16px;background:linear-gradient(270deg,#C1532A,#E4772F,#8f3a1e,#C04E2A);background-size:600% 600%;animation:mcCdGradient 6s ease infinite,mcCdPulse 2.4s ease-in-out infinite;color:#FAF7F2;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;text-align:center;">
-    <span>Masterclass gratuite le 17 septembre : plus que <strong id="mc-cd-days">…</strong> jours <span id="mc-cd-label-days">pour vous inscrire</span></span>
-    <span id="mc-cd-caret" style="display:inline-block;transition:transform .3s ease;font-size:11px;">▾</span>
-  </button>
-  <div id="mc-cd-panel" class="mc-cd-panel" style="max-height:0;overflow:hidden;transition:max-height .4s ease;background:#3F302A;">
-    <div style="padding:22px 16px;text-align:center;color:#FAF7F2;">
-      <div style="display:flex;justify-content:center;gap:22px;margin-bottom:16px;font-family:'Playfair Display',serif;">
-        <div><span id="mc-cd-d" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">jours</span></div>
-        <div><span id="mc-cd-h" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">heures</span></div>
-        <div><span id="mc-cd-m" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">min</span></div>
-      </div>
-      <a href="/masterclass" style="display:inline-block;background:#C1532A;color:#FAF7F2;text-decoration:none;font-weight:700;font-family:'Jost',sans-serif;font-size:14px;padding:11px 24px;border-radius:6px;">Je réserve ma place →</a>
-    </div>
-  </div>
+<nav class="nav">
+<div class="nav-inner">
+<a class="nav-logo" href="/">Élan</a>
+<div class="nav-links elan-mobile-menu">
+<a href="/blog">Blog</a>
+<a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">Parlons-en</a>
 </div>
-<style>
-@keyframes mcCdGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes mcCdPulse{0%,100%{box-shadow:inset 0 0 0 0 rgba(255,255,255,0)}50%{box-shadow:inset 0 0 24px 2px rgba(255,255,255,0.18)}}
-.mc-cd-panel.mc-cd-open{max-height:220px !important;}
-</style>
-<script>
-(function(){
-  var target=new Date("2026-09-17T12:00:00+02:00").getTime();
-  var bar=document.getElementById('mc-cd-bar');
-  var btn=document.getElementById('mc-cd-toggle');
-  var panel=document.getElementById('mc-cd-panel');
-  var caret=document.getElementById('mc-cd-caret');
-  function pad(n){return n<10?'0'+n:''+n;}
-  function tick(){
-    var diff=target-new Date().getTime();
-    if(diff<=0){if(bar)bar.style.display='none';return;}
-    var d=Math.floor(diff/86400000);
-    var h=Math.floor((diff%86400000)/3600000);
-    var m=Math.floor((diff%3600000)/60000);
-    var dEl=document.getElementById('mc-cd-d'),hEl=document.getElementById('mc-cd-h'),mEl=document.getElementById('mc-cd-m'),daysInline=document.getElementById('mc-cd-days');
-    if(dEl)dEl.textContent=d;
-    if(hEl)hEl.textContent=pad(h);
-    if(mEl)mEl.textContent=pad(m);
-    if(daysInline)daysInline.textContent=d;
-  }
-  tick();
-  setInterval(tick,60000);
-  if(btn&&panel&&caret){
-    btn.addEventListener('click',function(){
-      panel.classList.toggle('mc-cd-open');
-      caret.style.transform=panel.classList.contains('mc-cd-open')?'rotate(180deg)':'rotate(0deg)';
-    });
-  }
-})();
-</script>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">Élan</a>
-      <div class="nav-links">
-        <a href="/blog">Blog</a>
-        <a href="/accompagnement-manager" class="nav-cta">Accompagnement</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="art-hero">
-    <div class="art-hero-inner">
-      <p class="art-cat">Vie d’équipe</p>
-      <h1 class="art-h1">Management hybride : manager à distance sans perdre le fil</h1>
-      <p class="art-meta">2026-07-08</p>
-    </div>
-  </header>
-
-  <main class="art-wrap">
-    <p class="art-spacer"></p>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="elan-mobile-burger" type="button"><span></span><span></span><span></span></button></div>
+</nav>
+<header class="art-hero">
+<div class="art-hero-inner">
+<p class="art-cat">Vie d’équipe</p>
+<h1 class="art-h1">Management hybride : manager à distance sans perdre le fil</h1>
+<p class="art-meta">2026-07-08</p>
+</div>
+</header>
+<main class="art-wrap">
+<p class="art-spacer"></p>
 <h2 class="art-h2">Le management hybride ne s'improvise pas. Ce que les équipes en présentiel tolèrent sans le dire, les équipes à distance ne le tolèrent pas.</h2>
 <p class="art-spacer"></p>
-<p class="art-p">La plupart des managers qui gèrent une équipe en management hybride ont commencé par croire que c'était une question d'outils : le bon outil de visio, la bonne plateforme de collaboration, le bon canal de communication. Ce n'est pas une question d'outils. C'est une question de fonctionnement explicite. Et sur ce point, le management hybride est impitoyable : ce qui restait flou en présentiel devient un problème réel quand la moitié de l'équipe ne voit pas les mêmes choses en même temps. Le management hybride consiste à piloter une équipe répartie entre présentiel et distanciel, avec pour objectif de maintenir un cadre commun et une cohésion réelle malgré la distance physique.</p>
-<p class="art-p">Ce sentiment est largement partagé. Une étude Livestorm montre que pour près de deux managers sur trois (64%), le télétravail a changé leur façon de manager leur équipe, et 43% jugent que ça complexifie directement leur rôle.</p>
+<p class="art-p">La plupart des managers qui gèrent une équipe en management hybride ont commencé par croire que c'était une question d'outils : le bon outil de visio, la bonne plateforme de collaboration, le bon canal de communication. Ce n'est pas une question d'outils. C'est une question de fonctionnement explicite. Et sur ce point, le management hybride est impitoyable : ce qui restait flou en présentiel devient un problème réel quand la moitié de l'équipe ne voit pas les mêmes choses en même temps.</p>
 <p class="art-spacer"></p>
 <h2 class="art-h2">En management hybride, tout ce qui était implicite doit devenir explicite</h2>
 <p class="art-spacer"></p>
@@ -339,18 +327,63 @@ main[style]{padding-top:var(--nav-h)!important}
 <p class="art-p">Sur le fond, le management hybride ne demande pas moins de management que le présentiel. Il en demande davantage, plus explicite, plus intentionnel. Ce n'est pas une mauvaise nouvelle : c'est souvent dans la contrainte de rendre les choses explicites que les managers qui n'avaient jamais vraiment réfléchi à leur fonctionnement font les progrès les plus nets.</p>
 <p class="art-spacer"></p>
 <p class="art-p">Le management hybride ne produit pas des équipes moins soudées, moins performantes ou moins engagées que le présentiel. Il produit des équipes différentes, dont la cohérence repose sur des fondations plus conscientes. Ce qui est en réalité un avantage, une fois qu'on a compris ce que ces fondations demandent.</p>
-  <div class="art-related"><p class="art-related-title">Pour aller plus loin</p><ul><li><a href="/blog/dynamique-equipe">Dynamique d'équipe</a></li><li><a href="/blog/equipe-autonome">Équipe autonome</a></li></ul></div>
+<div class="art-related"><p class="art-related-title">Pour aller plus loin</p><ul><li><a href="/blog/dynamique-equipe">Dynamique d'équipe</a></li><li><a href="/blog/equipe-autonome">Équipe autonome</a></li></ul></div>
 </main>
-
-  <div class="art-cta-dual">
-<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a href="/accompagnement-manager" class="art-cta-card-btn">Découvrir l'accompagnement individuel</a></div>
-<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a href="/formation-primo-manager" class="art-cta-card-btn">Découvrir la formation en entreprise</a></div>
+<div class="art-cta-dual">
+<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a class="art-cta-card-btn" href="/accompagnement-manager">Découvrir l'accompagnement individuel</a></div>
+<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a class="art-cta-card-btn" href="/formation-primo-manager">Découvrir la formation en entreprise</a></div>
 </div>
 <p class="art-cta-direct">Une question avant de choisir ? <a href="mailto:contact@mariebras.fr">Écrivez-moi directement</a>.</p>
+<footer class="footer">
+<p class="footer-logo">Élan</p>
+<p class="footer-sub">Par Marie Bras — Coach et formatrice pour primo-managers · <a href="/cgv">CGV</a></p>
+</footer>
 
-  <footer class="footer">
-    <p class="footer-logo">Élan</p>
-    <p class="footer-sub">Par Marie Bras — Coach et formatrice pour primo-managers · <a href="/cgv">CGV</a></p>
-  </footer>
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
+})();
+</script>
 </body>
 </html>

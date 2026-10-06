@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Équipe autonome : comment y arriver sans perdre le contrôle | ÉLAN by Marie Bras</title>
-<meta name="description" content="Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://mariebras.fr/blog/equipe-autonome">
-<meta property="og:url" content="https://mariebras.fr/blog/equipe-autonome">
-<meta property="og:image" content="https://mariebras.fr/images/marie-bras-portrait.jpg">
-<meta property="og:title" content="Équipe autonome : comment y arriver sans perdre le contrôle | ÉLAN by Marie Bras">
-<meta property="og:description" content="Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats.">
-<meta name="twitter:card" content="summary_large_image">
+<meta content="Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Playfair+Display:ital,wght@1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://mariebras.fr/blog/equipe-autonome" rel="canonical"/>
+<meta content="https://mariebras.fr/blog/equipe-autonome" property="og:url"/>
+<meta content="https://mariebras.fr/images/marie-bras-portrait.jpg" property="og:image"/>
+<meta content="Équipe autonome : comment y arriver sans perdre le contrôle | ÉLAN by Marie Bras" property="og:title"/>
+<meta content="Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats." property="og:description"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -232,29 +233,69 @@ main[style]{padding-top:var(--nav-h)!important}
 .back-link{display:flex!important;width:fit-content}
 </style>
 <style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
+
+<style id="elan-mobile-nav-fix">
+.elan-mobile-burger{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:5px;
+  background:transparent;border:0;cursor:pointer;
+  padding:10px;z-index:1002;
+}
+.elan-mobile-burger span{
+  display:block;width:22px;height:2px;
+  background:currentColor;border-radius:99px;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.elan-mobile-burger.elan-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.elan-mobile-burger.elan-open span:nth-child(2){opacity:0}
+.elan-mobile-burger.elan-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:860px){
+  .elan-mobile-burger{display:flex!important}
+  .elan-mobile-menu{
+    display:none!important;
+    position:fixed!important;
+    top:var(--nav, var(--nav-h, 70px))!important;
+    left:0!important;right:0!important;
+    z-index:1001!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:.9rem!important;
+    padding:1.15rem 1.4rem 1.4rem!important;
+    background:rgba(255,255,255,.98)!important;
+    border-bottom:1px solid rgba(46,26,17,.10)!important;
+    box-shadow:0 18px 36px rgba(46,26,17,.10)!important;
+    max-height:calc(100vh - 70px)!important;
+    overflow:auto!important;
+  }
+  .elan-mobile-menu.elan-open{display:flex!important}
+  .elan-mobile-menu a{width:100%!important}
+}
+</style>
 </head>
 <body>
 <nav>
-  <a class="nav-brand" href="/">
-    <span class="nav-brand-top"><em>ÉLAN</em> by Marie Bras</span>
-  </a>
-  <div class="nav-right">
-    <a class="nav-link" href="/#parcours">POUR QUI ?</a>
-    <a class="nav-link" href="/formation-primo-manager#situations">LES ANGLES MORTS</a>
-    <a class="nav-link" href="/formation-primo-manager#methode">LA MÉTHODE BASCULE</a>
-    <a class="nav-link" href="/blog">RESSOURCES &amp; RÉFLEXIONS</a>
-    <a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">PARLONS-EN</a>
-  </div>
-</nav>
-
+<a class="nav-brand" href="/">
+<span class="nav-brand-top"><em>ÉLAN</em> by Marie Bras</span>
+</a>
+<div class="nav-right elan-mobile-menu">
+<a class="nav-link" href="/#parcours">POUR QUI ?</a>
+<a class="nav-link" href="/formation-primo-manager#situations">LES ANGLES MORTS</a>
+<a class="nav-link" href="/formation-primo-manager#methode">LA MÉTHODE BASCULE</a>
+<a class="nav-link" href="/blog">RESSOURCES &amp; RÉFLEXIONS</a>
+<a class="nav-cta" href="https://calendly.com/elan-by-marie-bras/30min">PARLONS-EN</a>
+</div>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="elan-mobile-burger" type="button"><span></span><span></span><span></span></button></nav>
 <main>
 <div class="article-wrap">
-  <a class="back-link" href="/blog">← Retour au blog</a>
-  <span class="art-tag">Délégation &amp; autonomie</span>
-  <h1 class="art-title">Équipe autonome : comment y arriver sans perdre le contrôle</h1>
-  <p class="art-desc">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats.</p>
-  <time class="art-date" datetime="2026-05-27">27 mai 2026</time>
-  <div class="art-body">
+<a class="back-link" href="/blog">← Retour au blog</a>
+<span class="art-tag">Délégation &amp; autonomie</span>
+<h1 class="art-title">Équipe autonome : comment y arriver sans perdre le contrôle</h1>
+<p class="art-desc">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance à ses collaborateurs sans perdre de vue les résultats.</p>
+<time class="art-date" datetime="2026-05-27">27 mai 2026</time>
+<div class="art-body">
 <h2>Équipe autonome : ce que ça demande vraiment au manager</h2>
 <p>On vous dit qu'il faut faire confiance à votre équipe. Que vous devez déléguer davantage, laisser de l'espace, éviter le micro-management. Vous êtes d'accord avec tout ça en théorie. Le problème, c'est que la semaine dernière un projet a dérapé parce que personne ne vous a signalé un problème à temps, et maintenant vous ne savez plus exactement quelle est la bonne distance. La question de l'équipe autonome est plus complexe que les slogans sur la confiance.</p>
 <h2>Une équipe autonome n'est pas laissée sans cadre</h2>
@@ -276,19 +317,65 @@ main[style]{padding-top:var(--nav-h)!important}
 <p>Si vous souhaitez travailler sur comment mettre en pratique cette transformation dans votre équipe spécifique, <a href="/accompagnement-manager" style="color:var(--terra);text-decoration:underline;font-weight:500">l'accompagnement individuel que je propose</a> peut vous aider à identifier les leviers les plus pertinents dans votre contexte.</p>
 <h2>Une équipe autonome est plus engagée et plus solide face aux imprévus</h2>
 <p>Une équipe qui fonctionne de façon autonome est généralement plus engagée, parce que ses membres ont un vrai espace pour exercer leur jugement et voir l'effet de leur travail. Elle est aussi plus solide face aux imprévus, parce qu'elle ne dépend pas d'une seule personne pour prendre les décisions courantes. Et elle vous libère pour faire ce que seul un manager peut faire : voir le contexte global, anticiper les obstacles, travailler les conditions dans lesquelles votre équipe peut progresser sur la durée.</p>
-  </div>
-  <div class="art-cta-dual">
-<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a href="/accompagnement-manager" class="art-cta-card-btn">Découvrir l'accompagnement individuel</a></div>
-<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a href="/formation-primo-manager" class="art-cta-card-btn">Découvrir la formation en entreprise</a></div>
+</div>
+<div class="art-cta-dual">
+<div class="art-cta-card"><h3>Vous vivez cette situation seul(e) ?</h3><p>Un accompagnement individuel avec le Protocole BASCULE pour retravailler votre posture sur ce point précis.</p><a class="art-cta-card-btn" href="/accompagnement-manager">Découvrir l'accompagnement individuel</a></div>
+<div class="art-cta-card"><h3>Vous formez plusieurs managers dans votre entreprise ?</h3><p>La formation Protocole BASCULE forme vos primo-managers en groupe, avec la même méthode.</p><a class="art-cta-card-btn" href="/formation-primo-manager">Découvrir la formation en entreprise</a></div>
 </div>
 <p class="art-cta-direct">Une question avant de choisir ? <a href="mailto:contact@mariebras.fr">Écrivez-moi directement</a>.</p>
 </div>
 <div class="art-related"><p class="art-related-title">Pour aller plus loin</p><ul><li><a href="/blog/deleguer-efficacement">Déléguer efficacement</a></li><li><a href="/blog/dynamique-equipe">Dynamique d'équipe</a></li></ul></div>
 </main>
-
 <footer>
-  <div class="footer-brand"><em>ÉLAN</em>, Marie Bras</div>
-  <div class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></div>
+<div class="footer-brand"><em>ÉLAN</em>, Marie Bras</div>
+<div class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></div>
 </footer>
+
+<script id="elan-mobile-nav-script">
+(function(){
+  function initElanMobileNav(){
+    var menus = document.querySelectorAll('.elan-mobile-menu');
+    menus.forEach(function(menu){
+      var nav = menu.closest('nav');
+      if(!nav) return;
+      var burger = nav.querySelector('.elan-mobile-burger');
+      if(!burger) return;
+
+      function setOpen(open){
+        menu.classList.toggle('elan-open', open);
+        burger.classList.toggle('elan-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('elan-menu-open', open);
+      }
+
+      /* Capture phase prevents older page-specific burger handlers
+         from toggling the menu a second time. */
+      burger.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setOpen(!menu.classList.contains('elan-open'));
+      }, true);
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){ setOpen(false); });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+
+      window.addEventListener('resize', function(){
+        if(window.innerWidth > 860) setOpen(false);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initElanMobileNav);
+  }else{
+    initElanMobileNav();
+  }
+})();
+</script>
 </body>
 </html>
