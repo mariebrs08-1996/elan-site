@@ -241,26 +241,17 @@ main[style]{padding-top:var(--nav-h)!important}
 </head>
 <body>
 <nav id="nav">
-  <a href="#" class="nav-brand">
-    <span class="nav-brand-top"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em> <span style="font-size:0.58rem;font-weight:400;color:var(--muted);font-family:'Jost',sans-serif">by Marie Bras</span></span>
+  <a href="/" class="nav-brand" aria-label="ÉLAN by Marie Bras, accueil">
+    <span class="nav-brand-top"><em><strong>ÉLAN</strong></em> <span>by Marie Bras</span></span>
   </a>
   <div class="nav-right" id="nav-links">
-    <a href="/#parcours" class="nav-link" onclick="closeBurger()">Pour qui ?</a>
-    <a href="/formation-primo-manager#situations" class="nav-link" onclick="closeBurger()">Les angles morts</a>
-    <a href="/formation-primo-manager#methode" class="nav-link" onclick="closeBurger()">La méthode Bascule</a>
-    <div style="position:relative" id="nav-dd">
-      <a href="/#parcours" class="nav-link" id="nav-dd-trigger" style="display:flex;align-items:center;gap:0.3rem">Accompagnement <span style="font-size:0.55rem;opacity:0.5">▾</span></a>
-      <div id="nav-dd-menu" style="display:none;position:absolute;top:calc(100% + 8px);left:0;background:#FAF7F2;border:1px solid #E4DAD0;border-top:2px solid #C1532A;min-width:230px;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,0.08)">
-        <a href="/formation-primo-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif;border-bottom:1px solid #F2EDE4" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les entreprises</a>
-        <a href="/accompagnement-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif;border-bottom:1px solid #F2EDE4" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les managers</a>
-        <a href="/entrepreneur-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les dirigeants</a>
-      </div>
-    </div>
+    <a href="/formation-primo-manager" class="nav-link" onclick="closeBurger()">Entreprises</a>
+    <a href="/accompagnement-manager" class="nav-link" onclick="closeBurger()">Coaching individuel</a>
     <a href="/marie-bras" class="nav-link" onclick="closeBurger()">À propos</a>
     <a href="/blog" class="nav-link" onclick="closeBurger()">Blog</a>
-    <a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta" onclick="closeBurger()">Parlons-en</a>
+    <a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta" onclick="closeBurger()">Parlons de votre besoin</a>
   </div>
-  <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu">
+  <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -402,23 +393,53 @@ main[style]{padding-top:var(--nav-h)!important}
 </footer>
 <script>
 function toggleBurger(){
-  document.getElementById('nav-burger').classList.toggle('open');
-  document.getElementById('nav-links').classList.toggle('open');
+  var burger=document.getElementById('nav-burger');
+  var links=document.getElementById('nav-links');
+  if(burger) burger.classList.toggle('open');
+  if(links) links.classList.toggle('open');
 }
 function closeBurger(){
-  document.getElementById('nav-burger').classList.remove('open');
-  document.getElementById('nav-links').classList.remove('open');
+  var burger=document.getElementById('nav-burger');
+  var links=document.getElementById('nav-links');
+  if(burger) burger.classList.remove('open');
+  if(links) links.classList.remove('open');
 }
+
 (function(){
-  var dd=document.getElementById('nav-dd'),menu=document.getElementById('nav-dd-menu'),trigger=document.getElementById('nav-dd-trigger');
-  if(!dd||!menu||!trigger)return;
-  trigger.addEventListener('click',function(e){if(window.innerWidth>780){e.preventDefault();menu.style.display=menu.style.display==='block'?'none':'block';}});
-  dd.addEventListener('mouseenter',function(){if(window.innerWidth>780)menu.style.display='block';});
-  dd.addEventListener('mouseleave',function(){menu.style.display='none';});
-  document.addEventListener('click',function(e){if(!dd.contains(e.target))menu.style.display='none';});
-  // Reveal on scroll
-  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.1});
-  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+  /* Ancien dropdown : conservé uniquement s'il existe */
+  var dd=document.getElementById('nav-dd');
+  var menu=document.getElementById('nav-dd-menu');
+  var trigger=document.getElementById('nav-dd-trigger');
+
+  if(dd && menu && trigger){
+    trigger.addEventListener('click',function(e){
+      if(window.innerWidth>780){
+        e.preventDefault();
+        menu.style.display=menu.style.display==='block'?'none':'block';
+      }
+    });
+    dd.addEventListener('mouseenter',function(){
+      if(window.innerWidth>780) menu.style.display='block';
+    });
+    dd.addEventListener('mouseleave',function(){
+      menu.style.display='none';
+    });
+    document.addEventListener('click',function(e){
+      if(!dd.contains(e.target)) menu.style.display='none';
+    });
+  }
+
+  /* Reveal on scroll : doit toujours s'exécuter */
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting) entry.target.classList.add('on');
+      });
+    },{threshold:0.1});
+    document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on');});
+  }
 })();
 </script>
 <script>
