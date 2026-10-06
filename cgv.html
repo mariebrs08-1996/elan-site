@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CGV | ÉLAN by Marie Bras</title>
+<meta name="description" content="Conditions générales de prestation de services d’ÉLAN by Marie Bras : coaching professionnel, formation et accompagnement de managers et dirigeants.">
+<link rel="canonical" href="https://mariebras.fr/cgv">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+/* ===== ÉLAN by Marie Bras : blog, même DA que la home v26 et la page entreprise v38 =====
+   Brun cacao, terracotta du logo, miel, sable, blanc.
+   Bricolage Grotesque pour tout, Playfair italique réservé au logo. */
+:root{
+  --terra:#C1532A;--terra2:#E4875F;--terra3:#E5CDA4;--ink-terra:#A6411C;
+  --dark:#2E1A11;--ink:#22140C;--mid:#5C4436;--muted:#8A7062;--light:#8A7062;
+  --miel:#D4A04A;--sable:#F5EBDD;--paper:#FAF6F0;--white:#FFFFFF;
+  --ivory:#FFFFFF;--ivory2:#F5EBDD;--ivory3:#EADCC8;--border:#EADCC8;
+  --sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --logo:"Playfair Display",Georgia,serif;
+  --nav-h:66px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--sans);background:#fff;color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+
+/* ---------- NAVIGATION (les trois variantes) ---------- */
+nav,.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);padding:0 clamp(1.25rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(46,26,17,.08)}
+.nav-inner{width:100%;max-width:none;margin:0;display:flex;align-items:center;justify-content:space-between;height:100%}
+/* Logo : la plume ÉLAN d'origine */
+.nav-logo,.nav-brand-top em,.nav-brand-top strong,.footer-logo,.footer-brand em,.footer-brand strong{font-family:var(--logo)!important;font-style:italic!important;font-weight:700!important;letter-spacing:.08em!important;color:var(--terra)!important}
+.nav-logo{font-size:1.6rem;line-height:1;text-transform:uppercase;display:inline-flex;align-items:baseline;gap:.5rem}
+.nav-logo::after{content:"by Marie Bras";font-family:var(--sans);font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;font-size:.8rem;color:var(--muted)}
+.nav-brand{display:flex;align-items:center;text-decoration:none}
+.nav-brand-top{font-family:var(--sans)!important;font-style:normal;font-weight:500;font-size:.8rem!important;letter-spacing:0!important;color:var(--muted)!important;line-height:1;display:inline-flex;align-items:baseline;gap:.15rem}
+.nav-brand-top em,.nav-brand-top strong{font-size:1.6rem}
+.nav-brand-top span{font-family:var(--sans)!important;font-size:.8rem!important;color:var(--muted)!important}
+.nav-links,.nav-right{display:flex;align-items:center;gap:1.6rem}
+.nav-links a,.nav-link{font-family:var(--sans)!important;font-size:.9rem!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:var(--mid)!important;position:relative;transition:color .2s}
+.nav-links a:hover,.nav-link:hover{color:var(--dark)!important}
+.nav-links a.nav-cta,.nav-cta{background:var(--dark)!important;color:#fff!important;border-radius:999px!important;padding:.68rem 1.25rem!important;font-size:.88rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;transition:background .2s}
+.nav-links a.nav-cta:hover,.nav-cta:hover{background:var(--terra)!important}
+/* Menu déroulant et burger de la page blog */
+#nav-dd-menu{background:#fff!important;border:1px solid var(--ivory3)!important;border-top:0!important;border-radius:14px!important;overflow:hidden;box-shadow:0 18px 40px rgba(46,26,17,.12)!important}
+#nav-dd-menu a{font-family:var(--sans)!important;font-size:.9rem!important;color:var(--dark)!important;border-bottom:1px solid var(--sable)!important}
+#nav-dd-menu a:hover{background:var(--sable)!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:12px;margin-right:-12px}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- EN-TÊTE D'ARTICLE ---------- */
+/* Gabarit 1 : .art-hero + .art-wrap */
+.art-hero{background:#fff;padding:calc(var(--nav-h) + clamp(3rem,8vh,5rem)) clamp(1.25rem,5vw,2rem) clamp(2rem,5vh,3rem);border:0}
+.art-hero-inner{max-width:820px;margin:0 auto}
+/* Gabarit 2 : .article-wrap */
+.article-wrap{max-width:820px;margin:0 auto;padding:calc(var(--nav-h) + clamp(2.5rem,7vh,4.5rem)) clamp(1.25rem,5vw,2rem) 0}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem!important;font-weight:600;letter-spacing:0!important;text-transform:none!important;color:var(--mid)!important;margin-bottom:2rem;transition:color .2s}
+.back-link:hover{color:var(--terra)!important}
+/* Catégorie en pastille brune */
+.art-cat,.art-tag{display:inline-block!important;background:var(--dark);color:#fff!important;font-size:.82rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;padding:.38rem .9rem;border-radius:999px;margin-bottom:1.3rem!important}
+.art-h1,.art-title{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(2.1rem,5vw,3.5rem)!important;line-height:1.02!important;letter-spacing:-.04em!important;color:var(--dark)!important;margin-bottom:1.2rem!important}
+.art-desc{font-size:1.15rem!important;line-height:1.6!important;color:var(--mid)!important;max-width:40em;margin-bottom:1.2rem!important}
+.art-meta,.art-meta-date,.art-date{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem!important;font-weight:500;letter-spacing:0!important;color:var(--muted)!important;margin:0!important;padding:0!important;border:0!important}
+.art-meta::before,.art-meta-date::before,.art-date::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--miel)}
+.art-date{display:flex;margin-bottom:2.5rem!important;padding-bottom:2rem!important;border-bottom:1px solid var(--ivory3)!important}
+
+/* ---------- CORPS D'ARTICLE ---------- */
+.art-wrap{max-width:820px;margin:0 auto;padding:clamp(1rem,3vh,2rem) clamp(1.25rem,5vw,2rem) 0}
+.art-body{margin:0}
+.art-spacer{display:none}
+.art-img{width:100%;border-radius:24px;margin:0 0 2.5rem;aspect-ratio:16/9;object-fit:cover;background:var(--sable)}
+.art-p,.art-body p{font-size:1.1rem!important;line-height:1.78!important;color:var(--ink)!important;margin-bottom:1.25rem!important}
+.art-wrap > .art-p:first-of-type{font-size:1.22rem!important;line-height:1.65!important;color:var(--dark)!important;font-weight:500}
+.art-h2,.art-body h2,.art-body h1{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(1.5rem,2.8vw,2rem)!important;line-height:1.12!important;letter-spacing:-.03em!important;color:var(--dark)!important;margin:3rem 0 1rem!important}
+.art-body h1{font-size:clamp(1.7rem,3.2vw,2.3rem)!important}
+.art-h3,.art-body h3{font-family:var(--sans)!important;font-size:1.2rem!important;font-weight:700!important;letter-spacing:-.015em!important;text-transform:none!important;color:var(--terra)!important;margin:2rem 0 .6rem!important}
+.art-wrap strong,.art-body strong{color:var(--dark);font-weight:700}
+.art-body em,.art-wrap em{font-style:italic;color:inherit}
+.art-wrap ul:not(.art-related ul),.art-body ul,.art-wrap ol,.art-body ol{margin:0 0 1.4rem 1.3rem;font-size:1.08rem;line-height:1.75}
+.art-wrap li,.art-body li{margin-bottom:.4rem}
+/* Liens dans le texte */
+.art-wrap p a,.art-body p a{color:var(--terra)!important;font-weight:600!important;text-decoration:none!important;background:linear-gradient(transparent 62%,rgba(212,160,74,.35) 62%) no-repeat;transition:background .2s}
+.art-wrap p a:hover,.art-body p a:hover{background:linear-gradient(transparent 0,rgba(212,160,74,.35) 0)}
+
+/* Encadré "En pratique" */
+.art-callout{background:var(--sable)!important;border:0!important;border-radius:22px!important;padding:clamp(1.4rem,3vw,2rem) clamp(1.4rem,3vw,2.2rem)!important;margin:2.5rem 0!important;position:relative}
+.art-callout-title{display:inline-flex!important;align-items:center;gap:.5rem;font-size:.9rem!important;font-weight:700!important;letter-spacing:0!important;text-transform:none!important;color:var(--terra)!important;margin-bottom:.7rem!important}
+.art-callout-title::before{content:"";width:22px;height:22px;border-radius:50%;flex:none;background:var(--terra) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/13px no-repeat}
+.art-callout-body{font-size:1.05rem!important;line-height:1.7!important;color:var(--dark)!important;margin:0!important}
+/* Ancien bloc d'appel (si présent) */
+.art-cta-block,.art-cta{background:var(--dark)!important;color:#fff!important;border:0!important;border-radius:24px!important;padding:2.4rem 2rem!important;margin:3rem 0!important;text-align:center}
+.art-cta-block h3{font-family:var(--sans)!important;font-weight:700;letter-spacing:-.02em;font-size:1.5rem!important}
+.art-cta p,.art-cta-block p{color:rgba(255,255,255,.78)!important}
+.art-cta a,.art-cta-btn{display:inline-block;background:var(--terra)!important;color:#fff!important;border-radius:999px!important;padding:.9rem 1.5rem!important;font-weight:600!important;font-size:.95rem!important;letter-spacing:0!important;text-transform:none!important}
+
+/* "Pour aller plus loin" */
+.art-related{max-width:820px;margin:3rem auto 0!important;padding:1.6rem clamp(1.25rem,3vw,1.8rem)!important;border:1px solid var(--ivory3)!important;border-radius:22px;background:#fff}
+.article-wrap + .art-related{margin:3rem auto 0!important;width:calc(100% - 2.5rem)}
+.art-related-title{font-size:.95rem!important;font-weight:700!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink-terra)!important;margin-bottom:.9rem!important}
+.art-related ul{list-style:none;display:flex!important;flex-wrap:wrap;flex-direction:row!important;gap:.6rem!important;margin:0!important}
+.art-related li{margin:0}
+.art-related a{display:inline-flex;align-items:center;gap:.55rem;background:var(--paper);border:1px solid var(--ivory3);border-radius:999px;padding:.55rem 1rem;color:var(--dark)!important;text-decoration:none!important;font-weight:600!important;font-size:.95rem;transition:background .2s,border-color .2s}
+.art-related a::after{content:"→";color:var(--terra);transition:transform .2s}
+.art-related a:hover{background:var(--sable);border-color:var(--terra3)}
+.art-related a:hover::after{transform:translateX(3px)}
+
+/* ---------- APPELS À L'ACTION DE FIN ---------- */
+.art-cta-dual{display:grid!important;grid-template-columns:1fr 1fr;gap:1rem!important;max-width:820px!important;margin:3rem auto 0!important;padding:0 clamp(1.25rem,5vw,2rem)!important}
+.article-wrap .art-cta-dual{padding:0!important}
+.art-cta-card{display:flex;flex-direction:column;min-width:0!important;border-radius:24px!important;padding:clamp(1.5rem,3vw,2rem)!important;border:0!important;text-align:left}
+.art-cta-card:first-child{background:var(--sable)!important}
+.art-cta-card:last-child{background:var(--dark)!important}
+.art-cta-card h3{font-family:var(--sans)!important;font-weight:700!important;font-size:1.35rem!important;line-height:1.15!important;letter-spacing:-.025em!important;color:var(--dark)!important;margin-bottom:.7rem!important}
+.art-cta-card p{font-size:.98rem!important;line-height:1.6!important;color:var(--mid)!important;margin-bottom:1.4rem!important}
+.art-cta-card:last-child h3{color:#fff!important}
+.art-cta-card:last-child p{color:rgba(255,255,255,.75)!important}
+.art-cta-card-btn{margin-top:auto;align-self:flex-start;display:inline-flex!important;align-items:center;gap:.5rem;background:var(--terra)!important;color:#fff!important;border-radius:999px!important;padding:.85rem 1.3rem!important;font-size:.92rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;transition:background .2s}
+.art-cta-card-btn::after{content:"→";transition:transform .2s}
+.art-cta-card-btn:hover{background:var(--dark)!important}
+.art-cta-card:last-child .art-cta-card-btn:hover{background:#fff!important;color:var(--dark)!important}
+.art-cta-card-btn:hover::after{transform:translateX(3px)}
+.art-cta-direct{max-width:820px!important;margin:1.4rem auto 0!important;padding:0 clamp(1.25rem,5vw,2rem) clamp(3rem,8vh,5rem)!important;text-align:center;font-size:.98rem!important;color:var(--mid)!important}
+.article-wrap .art-cta-direct{padding:0 0 clamp(3rem,8vh,5rem)!important}
+.art-cta-direct a{color:var(--terra)!important;font-weight:600;text-decoration:none!important;border-bottom:2px solid currentColor}
+
+/* ---------- PIED DE PAGE ---------- */
+footer,.footer{background:var(--dark)!important;color:rgba(255,255,255,.62)!important;padding:1.6rem clamp(1.25rem,5vw,4rem)!important;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem 1rem;text-align:left!important;margin-top:clamp(3rem,8vh,5rem)}
+.article-wrap ~ footer,.art-cta-direct + footer{margin-top:0}
+.footer-logo{font-size:1.2rem!important;text-transform:uppercase;margin:0!important;color:var(--terra2)!important}
+.footer-brand{font-family:var(--sans)!important;font-size:.95rem!important;font-weight:500;letter-spacing:0!important;color:rgba(255,255,255,.62)}
+.footer-brand em,.footer-brand strong{font-size:1.2rem;color:var(--terra2)!important}
+.footer-sub,.footer-note{font-size:.85rem!important;letter-spacing:0!important;color:rgba(255,255,255,.6)!important;margin:0!important}
+
+/* ---------- PAGE D'ACCUEIL DU BLOG ---------- */
+.pw{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+main[style]{padding-top:var(--nav-h)!important}
+.hero-p{background:#fff;padding:clamp(3rem,9vh,5.5rem) 0 clamp(2rem,5vh,3rem);position:relative;overflow:hidden}
+.hero-p::after{content:"";position:absolute;right:-6vw;top:12%;width:clamp(220px,28vw,400px);aspect-ratio:3/4;border-radius:999px 999px 0 0;background:var(--sable);z-index:0}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.ptag{display:inline-block;background:var(--dark);color:#fff;font-size:.85rem;font-weight:600;padding:.4rem .95rem;border-radius:999px;margin-bottom:1.3rem}
+.hero-h1{font-family:var(--sans);font-weight:700;font-size:clamp(2.8rem,7vw,5.2rem);line-height:.95;letter-spacing:-.05em;color:var(--dark)}
+.hero-h1 em{font-family:var(--logo);font-style:italic;font-weight:700;letter-spacing:.06em;color:var(--terra)}
+.hero-sub{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.6;color:var(--mid);font-weight:500}
+.sec{padding:clamp(2.5rem,7vh,4.5rem) 0;background:var(--paper)}
+.sec-alt{background:var(--sable)!important}
+.sh2{font-family:var(--sans);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.05;letter-spacing:-.035em;color:var(--dark)}
+.sbdy{font-size:1.05rem;line-height:1.65;color:var(--mid)}
+.cta-btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--terra);color:#fff;border-radius:999px;padding:.95rem 1.6rem;font-size:1rem;font-weight:600;transition:background .2s}
+.cta-btn:hover{background:var(--dark)}
+/* Grille d'articles (styles en ligne neutralisés) */
+.sec .pw > div.rv[style*="grid"]{gap:1rem!important}
+.sec a[href^="/blog/"]{display:flex!important;flex-direction:column;background:#fff!important;border:1px solid var(--ivory3)!important;border-top:1px solid var(--ivory3)!important;border-radius:22px!important;padding:clamp(1.4rem,2.6vw,1.9rem)!important;box-shadow:none!important;transition:transform .25s ease,box-shadow .25s ease,border-color .25s!important}
+.sec a[href^="/blog/"]:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(46,26,17,.09)!important;border-color:var(--terra3)!important}
+.sec a[href^="/blog/"] > span{align-self:flex-start;font-family:var(--sans)!important;font-size:.8rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;color:var(--dark)!important;background:var(--sable)!important;padding:.3rem .75rem!important;border-radius:999px!important;margin-bottom:1rem!important}
+.sec a[href^="/blog/"] > h2{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(1.2rem,1.7vw,1.4rem)!important;line-height:1.18!important;letter-spacing:-.025em!important;color:var(--dark)!important;margin-bottom:.7rem!important}
+.sec a[href^="/blog/"] > p{font-family:var(--sans)!important;font-size:.95rem!important;line-height:1.6!important;color:var(--mid)!important}
+.sec a[href^="/blog/"] > p:last-child{margin-top:auto!important;padding-top:.8rem;margin-bottom:0!important;font-size:.92rem!important;font-weight:700!important;color:var(--terra)!important}
+.sec a[href^="/blog/"]:hover > p:last-child{color:var(--dark)!important}
+/* Apparition douce de la page blog */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){
+  .nav-burger{display:flex}
+  #nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem 1.6rem;background:#fff;border-bottom:1px solid var(--ivory3);box-shadow:0 18px 30px rgba(46,26,17,.08)}
+  #nav-links.open{display:flex}
+  #nav-links .nav-cta{align-self:stretch;text-align:center}
+  /* Articles du 2e gabarit : sans burger, on garde le seul bouton de contact */
+  nav:not(#nav) .nav-right{display:flex!important;gap:0}
+  nav:not(#nav) .nav-right .nav-link{display:none}
+  .sec .pw > div.rv[style*="grid"]{grid-template-columns:1fr!important}
+  .hero-p::after{display:none}
+}
+@media(max-width:700px){
+  .art-cta-dual{grid-template-columns:1fr}
+  .nav-logo{font-size:1.4rem}
+  .nav-logo::after{display:none}
+  .nav-brand-top span{display:none}
+  .nav-links{gap:1rem}
+  .nav-links a:not(.nav-cta){font-size:.85rem!important}
+  .nav-links a.nav-cta,.nav-cta{padding:.6rem 1rem!important;font-size:.82rem!important}
+  .art-p,.art-body p{font-size:1.04rem!important}
+  .art-wrap > .art-p:first-of-type{font-size:1.12rem!important}
+  footer,.footer{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+
+/* Alignement : même colonne de lecture pour l'en-tête, le texte et les blocs de fin */
+.art-hero{padding-left:0!important;padding-right:0!important}
+.art-hero-inner,.art-wrap,.article-wrap,.art-cta-dual,.art-cta-direct,.article-wrap + .art-related{width:calc(100% - 2.5rem)!important;max-width:820px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
+.art-wrap .art-related,.article-wrap .art-related{width:100%!important}
+.article-wrap .art-cta-dual,.article-wrap .art-cta-direct{width:100%!important}
+@media(min-width:1100px){.sec .pw > div.rv[style*="grid"]{grid-template-columns:repeat(3,1fr)!important}}
+.back-link{display:flex!important;width:fit-content}
+
+/* Page CGV */
+.cgv-toc{background:var(--sable);border-radius:22px;padding:1.4rem 1.6rem;margin:0 0 2.5rem}
+.cgv-toc-title{font-size:.95rem;font-weight:700;color:var(--ink-terra);margin-bottom:.7rem}
+.cgv-toc ol{list-style:none;columns:2;column-gap:2rem;margin:0}
+.cgv-toc li{break-inside:avoid;margin:0 0 .35rem}
+.cgv-toc a{font-size:.95rem;font-weight:500;color:var(--dark);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.cgv-toc a:hover{color:var(--terra);border-color:currentColor}
+.cgv-h2{display:flex;flex-direction:column;gap:.35rem;scroll-margin-top:calc(var(--nav-h) + 1rem)}
+.cgv-num{align-self:flex-start;font-size:.8rem;font-weight:600;letter-spacing:0;background:var(--dark);color:#fff;padding:.25rem .7rem;border-radius:999px}
+.cgv-list{margin:0 0 1.4rem 1.2rem!important}
+.cgv-list li{font-size:1.05rem;line-height:1.7;margin-bottom:.5rem}
+.cgv-list li::marker{color:var(--terra)}
+.cgv-annex{scroll-margin-top:calc(var(--nav-h) + 1rem);margin-top:3rem;border:1.5px dashed var(--terra3);border-radius:22px;padding:1.6rem 1.8rem}
+.cgv-annex-title{display:inline-block;font-size:.8rem;font-weight:600;background:var(--terra);color:#fff;padding:.25rem .7rem;border-radius:999px}
+.cgv-sign{margin-top:2rem!important;color:var(--muted)!important;font-style:normal}
+.art-wrap .art-p{font-size:1.02rem!important}
+.art-wrap > .art-p:first-of-type{font-size:1.1rem!important}
+@media(max-width:700px){.cgv-toc ol{columns:1}}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">Élan</a><div class="nav-links"><a href="/blog">Blog</a><a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta">Parlons-en</a></div></div></nav>
+<header class="art-hero"><div class="art-hero-inner"><p class="art-cat">Informations légales</p><h1 class="art-h1">Conditions générales de prestation de services</h1><p class="art-meta-date">Mises à jour le 6 octobre 2026</p></div></header>
+<main class="art-wrap">
+<p class="art-p">Les présentes Conditions Générales de Prestation de Services (ci-après les « CGPS ») sont conclues entre Marie Bras EI, exerçant sous le nom commercial « Elan by Marie Bras », entrepreneur individuel immatriculé sous le numéro SIRET 10306684100018, dont l'établissement est situé 24 rue Dombasle, 75015 Paris, joignable par téléphone au 06 01 31 14 65 et par courriel à l'adresse contact@mariebras.fr, bénéficiant de la franchise en base de TVA, représentée par Marie Bras, en qualité d'entrepreneur individuel, ci-après dénommée « le Prestataire », d'une part,</p>
+<p class="art-p">et toute personne, physique majeure ou morale, ayant accepté les présentes Conditions Générales en passant commande, ci-après dénommée « le Client », d'autre part.</p>
+<p class="art-p">Le Prestataire a souscrit une assurance responsabilité civile professionnelle auprès de l'organisme ORUS.</p>
+<p class="art-p">Les présentes Conditions Générales s'appliquent indifféremment aux clients professionnels et aux clients particuliers (consommateurs). Lorsque des dispositions divergent selon la qualité du Client, elles sont clairement distinguées en précisant si elles s'appliquent « aux clients professionnels » ou « aux clients consommateurs ».</p>
+<div class="cgv-toc" role="navigation" aria-label="Sommaire des conditions générales"><p class="cgv-toc-title">Sommaire</p><ol><li><a href="#article-1">1. Objet et champ d'application</a></li><li><a href="#article-2">2. Description de l'activité et des offres</a></li><li><a href="#article-3">3. Commande et devis</a></li><li><a href="#article-4">4. Modalités de fourniture des prestations</a></li><li><a href="#article-5">5. Modification, report et annulation</a></li><li><a href="#article-6">6. Obligations des parties</a></li><li><a href="#article-7">7. Prix et tarification</a></li><li><a href="#article-8">8. Paiement</a></li><li><a href="#article-9">9. Livrables et propriété intellectuelle</a></li><li><a href="#article-10">10. Confidentialité</a></li><li><a href="#article-11">11. Responsabilité</a></li><li><a href="#article-12">12. Droit de rétractation : clients consommateurs</a></li><li><a href="#article-13">13. Protection des données personnelles (RGPD)</a></li><li><a href="#article-14">14. Médiation de la consommation : clients consommateurs</a></li><li><a href="#article-15">15. Droit applicable et litiges</a></li><li><a href="#annexe">Annexe : formulaire de rétractation</a></li></ol></div>
+<h2 class="art-h2 cgv-h2" id="article-1"><span class="cgv-num">Article 1</span>Objet et champ d'application</h2>
+<p class="art-p">Les présentes Conditions Générales ont pour objet de définir les droits et obligations des parties dans le cadre de la fourniture par le Prestataire de prestations de coaching professionnel, de formation, de conseil et d'accompagnement individuel ou collectif.</p>
+<p class="art-p">Toute commande emporte acceptation pleine et entière des présentes Conditions Générales par le Client, qui reconnaît en avoir pris connaissance préalablement à la passation de sa commande. Les présentes Conditions Générales sont opposables au Client dès leur acceptation. Le Prestataire se réserve le droit de les modifier à tout moment ; les Conditions Générales applicables sont celles en vigueur à la date de la commande.</p>
+<h2 class="art-h2 cgv-h2" id="article-2"><span class="cgv-num">Article 2</span>Description de l'activité et des offres</h2>
+<h3 class="art-h3">2.1 Nature de l'activité</h3>
+<p class="art-p">Le Prestataire accompagne des dirigeants, managers, équipes et professionnels sur leurs enjeux de management, de leadership et d'évolution professionnelle, principalement au sein de startups, scale-ups et PME. Son activité comprend des prestations de coaching professionnel, de formation, de conseil et d'accompagnement individuel ou collectif.</p>
+<p class="art-p">Le Prestataire intervient notamment auprès de dirigeants souhaitant faire évoluer leur posture, mieux déléguer, clarifier leur rôle, structurer leur organisation et développer l'autonomie de leurs managers ; ainsi qu'auprès de managers, notamment primo-managers, souhaitant réussir leur prise de poste, trouver leur posture, mieux communiquer avec leur équipe, donner du feedback, gérer des conversations difficiles, fixer des priorités, responsabiliser leurs collaborateurs et gagner en efficacité managériale. Il intervient également sur les sujets liés aux transitions et évolutions professionnelles.</p>
+<p class="art-p">Selon les besoins du Client, les prestations peuvent comprendre un temps de diagnostic ou de cadrage, des entretiens individuels, des séances de coaching, des formations, des ateliers collectifs, des mises en situation, des exercices pratiques, des outils ou supports pédagogiques, ainsi que des points de suivi après l'intervention. Les prestations peuvent être réalisées en présentiel ou à distance, auprès de particuliers ou d'entreprises, directement ou en sous-traitance pour le compte d'organismes de formation, cabinets de conseil, cabinets d'accompagnement ou autres partenaires.</p>
+<h3 class="art-h3">2.2 Les différentes offres</h3>
+<p class="art-p">Le Prestataire propose plusieurs types de prestations, qui peuvent être vendues séparément ou combinées selon les besoins du Client :</p>
+<ul class="cgv-list">
+<li>des prestations de coaching professionnel individuel à destination de dirigeants, managers et professionnels, sous forme de séances ponctuelles ou de parcours de plusieurs séances ;</li>
+<li>des formations professionnelles en management et leadership destinées aux entreprises et à leurs collaborateurs, pouvant être réalisées sur une demi-journée, une journée, plusieurs journées ou sous forme de parcours ;</li>
+<li>des prestations de coaching collectif, de codéveloppement, d’ateliers, de masterclass et de séminaires ;</li>
+<li>des prestations de conseil, de diagnostic et d’accompagnement portant notamment sur les pratiques managériales, l’organisation, la délégation, la clarification des rôles et le développement de l’autonomie ;</li>
+<li>des accompagnements individuels liés aux prises de poste, évolutions de rôle et transitions professionnelles.</li>
+</ul>
+<h3 class="art-h3">2.3 Définition de la mission</h3>
+<p class="art-p">Le contenu précis, la durée, le nombre de séances ou de journées, les modalités d'intervention et le tarif de chaque prestation sont définis dans le devis, la proposition commerciale, le contrat ou la convention correspondant à la mission.</p>
+<h2 class="art-h2 cgv-h2" id="article-3"><span class="cgv-num">Article 3</span>Commande et devis</h2>
+<h3 class="art-h3">3.1 Processus de commande</h3>
+<p class="art-p">Le Client contacte le Prestataire directement par courriel, téléphone, LinkedIn, via le site internet ou par l'intermédiaire d'un partenaire. Un premier échange permet de préciser le besoin, les objectifs de l'accompagnement, le format envisagé, le nombre de participants le cas échéant, les modalités d'intervention et le calendrier souhaité. À l'issue de cet échange, le Prestataire adresse au Client un devis détaillant la prestation proposée, son prix et ses principales modalités.</p>
+<p class="art-p">La commande devient ferme à compter de l'acceptation du devis par le Client, matérialisée par sa signature ou par toute autre validation écrite. C'est à cet instant que le contrat est formé. Selon la nature de la prestation, un contrat de coaching, une convention ou un contrat de formation peut également être établi. Lorsque le devis prévoit le versement d'un acompte, le démarrage de la prestation est conditionné à son règlement.</p>
+<h3 class="art-h3">3.2 Devis</h3>
+<p class="art-p">Un devis est systématiquement établi pour chaque prestation. Sauf mention contraire, le devis est valable 30 jours à compter de sa date d'émission. Passé ce délai, le Prestataire n'est plus tenu par les conditions qui y figurent.</p>
+<h3 class="art-h3">3.3 Zones d'intervention</h3>
+<p class="art-p">Le Prestataire intervient principalement en France, à distance en visioconférence et en présentiel. Les prestations en présentiel sont notamment réalisées à Paris et en Île-de-France, le Prestataire pouvant également intervenir dans toute la France en fonction des besoins du Client et des modalités convenues dans le devis. Des interventions à l'étranger peuvent être envisagées au cas par cas. Les éventuels frais de déplacement, d'hébergement ou autres frais liés à une intervention hors de la zone habituelle sont précisés dans le devis et peuvent être facturés en complément.</p>
+<h2 class="art-h2 cgv-h2" id="article-4"><span class="cgv-num">Article 4</span>Modalités de fourniture des prestations</h2>
+<h3 class="art-h3">4.1 Lieu de réalisation</h3>
+<p class="art-p">Les prestations sont réalisées à distance en visioconférence et/ou en présentiel, selon la nature de la mission et les modalités convenues avec le Client. Les interventions en présentiel peuvent avoir lieu dans les locaux du Client, dans un lieu réservé à cet effet ou dans tout autre lieu convenu entre les parties. Les coachings, formations, ateliers, masterclass, séances de codéveloppement, accompagnements collectifs et prestations de conseil peuvent être réalisés intégralement à distance, intégralement en présentiel ou sous un format hybride.</p>
+<h3 class="art-h3">4.2 Délais et calendrier d'exécution</h3>
+<p class="art-p">Le calendrier d'exécution de chaque prestation est défini avec le Client et précisé dans le devis, le contrat, la convention ou tout autre document contractuel applicable. La durée varie selon la nature de la mission : une prestation peut être ponctuelle, réalisée sur une demi-journée ou une journée, ou s'inscrire dans un parcours de plusieurs séances ou interventions réparties sur plusieurs semaines ou plusieurs mois.</p>
+<h3 class="art-h3">4.3 Retard d'exécution</h3>
+<p class="art-p">Un retard est considéré comme problématique lorsqu'une date ou une échéance expressément convenue entre les parties ne peut être respectée et qu'aucune nouvelle date n'a pu être convenue dans un délai raisonnable. En cas d'empêchement ou de retard prévisible, le Client est informé dans les meilleurs délais afin de convenir d'un report ou d'un nouvel échéancier.</p>
+<h2 class="art-h2 cgv-h2" id="article-5"><span class="cgv-num">Article 5</span>Modification, report et annulation</h2>
+<p class="art-p">Toute demande de modification portant notamment sur le contenu, le format, la date, le lieu, le nombre de participants ou le périmètre de la prestation doit être formulée, dans la mesure du possible, au moins 7 jours ouvrés avant la date d’intervention concernée. Les demandes formulées après ce délai sont étudiées au cas par cas et peuvent être refusées lorsqu’elles ne permettent plus d’assurer la prestation dans les conditions initialement convenues. Toute modification substantielle du périmètre peut donner lieu à l’établissement d’un nouveau devis ou à une révision du tarif.</p>
+<p class="art-p">En cas de demande de report ou d’annulation par le Client, celui-ci doit en informer le Prestataire par écrit dans les meilleurs délais.</p>
+<p class="art-p">Pour les prestations réalisées auprès de clients professionnels, sauf conditions particulières prévues au devis :</p>
+<ul class="cgv-list">
+<li>toute annulation ou demande de report intervenant plus de 7 jours ouvrés avant la date prévue peut être acceptée sans frais, sous réserve des éventuels frais déjà engagés et non remboursables ;</li>
+<li>toute annulation ou demande de report intervenant entre 7 jours ouvrés et 48 heures avant la date prévue entraîne la facturation de 50 % du montant de la prestation concernée ;</li>
+<li>toute annulation ou demande de report intervenant moins de 48 heures avant la date prévue entraîne la facturation de 100 % du montant de la prestation concernée ;</li>
+<li>toute absence du Client ou des participants le jour de la prestation, sans annulation préalable, entraîne la facturation de 100 % de la prestation.</li>
+</ul>
+<p class="art-p">Pour les parcours de coaching individuel, toute séance annulée ou reportée moins de 48 heures avant l’horaire prévu est considérée comme due et décomptée du nombre de séances prévues au parcours, sauf cas de force majeure ou accord exceptionnel du Prestataire.</p>
+<p class="art-p">En cas d’interruption anticipée d’un parcours de coaching à l’initiative du Client, les séances déjà réalisées ainsi que les séances annulées tardivement conformément aux dispositions ci-dessus restent dues. Les sommes correspondant à des prestations futures non encore réalisées sont traitées conformément aux modalités prévues dans le devis ou le contrat de coaching et aux dispositions légales applicables.</p>
+<p class="art-p">Les frais engagés par le Prestataire pour les besoins de la mission et devenus non remboursables du fait de l’annulation ou du report, notamment les frais de déplacement, de transport, d’hébergement ou de location de salle, restent à la charge du Client lorsqu’ils ont été préalablement acceptés ou prévus au devis.</p>
+<p class="art-p">Lorsque le report ou l’annulation est à l’initiative du Prestataire, celui-ci propose au Client, dans les meilleurs délais, une nouvelle date. Lorsque le report est impossible, les sommes éventuellement versées au titre des prestations non réalisées sont remboursées au Client, sans autre indemnité, sauf disposition légale impérative contraire.</p>
+<h2 class="art-h2 cgv-h2" id="article-6"><span class="cgv-num">Article 6</span>Obligations des parties</h2>
+<h3 class="art-h3">6.1 Obligations du Prestataire</h3>
+<p class="art-p">Les prestations de coaching, formation, conseil et accompagnement constituent des obligations de moyens et non de résultat. Le Prestataire s'engage à mettre en œuvre toute sa compétence et sa diligence pour assurer la bonne exécution de la mission, et à respecter un devoir de conseil à l'égard du Client.</p>
+<h3 class="art-h3">6.2 Obligations du Client</h3>
+<p class="art-p">Le Client s'engage à coopérer de bonne foi à la bonne exécution de la prestation, notamment en fournissant au Prestataire, en temps utile, l'ensemble des éléments, informations et accès nécessaires, ainsi qu'en procédant aux validations requises. Les résultats de l'accompagnement dépendent notamment de l'implication du Client ou du bénéficiaire et de la mise en œuvre des actions décidées.</p>
+<h2 class="art-h2 cgv-h2" id="article-7"><span class="cgv-num">Article 7</span>Prix et tarification</h2>
+<h3 class="art-h3">7.1 Fixation des prix</h3>
+<p class="art-p">Les tarifs sont fixés en fonction de la nature et du format de la prestation. Certaines prestations, notamment les coachings et formations, sont proposées sous forme de forfaits ou de tarifs à la journée. Les prestations sur mesure sont chiffrées en fonction de leur durée, du nombre de participants ou de bénéficiaires, du niveau de personnalisation et de préparation nécessaire, des éventuels temps de suivi et des livrables prévus. Le tarif applicable à chaque prestation est précisé dans le devis transmis au Client.</p>
+<p class="art-p">Le Prestataire dispose de tarifs de référence pour ses principales offres (coaching individuel, formation en management, coaching collectif, codéveloppement, masterclass et interventions en sous-traitance). Certaines prestations sont proposées à tarif fixe ou sous forme de forfait, tandis que d'autres sont proposées « à partir de » ou font l'objet d'un devis sur mesure selon le périmètre de la mission. Le tarif définitif est systématiquement indiqué dans le devis adressé au Client.</p>
+<h3 class="art-h3">7.2 Régime de TVA</h3>
+<p class="art-p">Les prix sont exprimés en euros. Le Prestataire n'étant pas assujetti à la TVA, les prix sont indiqués nets, sans application de TVA (mention « TVA non applicable, art. 293 B du Code général des impôts »).</p>
+<h3 class="art-h3">7.3 Remises</h3>
+<p class="art-p">Le Prestataire n'applique pas de remise systématique. Des conditions tarifaires particulières peuvent être accordées ponctuellement, notamment pour une prestation pilote, un volume important de prestations, un parcours comprenant plusieurs interventions ou une mission réalisée en partenariat ou en sous-traitance. Toute remise éventuelle est définie au cas par cas et précisée dans le devis.</p>
+<h2 class="art-h2 cgv-h2" id="article-8"><span class="cgv-num">Article 8</span>Paiement</h2>
+<h3 class="art-h3">8.1 Moyens de paiement</h3>
+<p class="art-p">Les règlements sont effectués principalement par virement bancaire ou via Wero. D'autres moyens de paiement peuvent être acceptés ponctuellement lorsqu'ils sont expressément convenus avec le Client.</p>
+<h3 class="art-h3">8.2 Acompte et échéancier</h3>
+<p class="art-p">Pour les clients professionnels, un acompte de 30 % du montant total de la prestation peut être demandé à la commande et est alors précisé dans le devis. Le solde est facturé selon les modalités prévues au devis, notamment à l'issue de la prestation ou selon un échéancier convenu pour les accompagnements réalisés sur plusieurs mois.</p>
+<p class="art-p">Pour les clients consommateurs, le règlement peut être effectué en une fois ou, lorsque cela est prévu au devis ou au contrat, en plusieurs échéances sans frais. Pour les parcours de coaching comprenant plusieurs séances, un paiement échelonné peut notamment être proposé en deux ou trois fois. En cas de paiement échelonné, la première échéance est due à la signature du devis ou du contrat, avant le démarrage de l'accompagnement, et aucun acompte distinct n'est demandé. L'échéancier et les dates de règlement sont précisés avant le début de l'accompagnement.</p>
+<h3 class="art-h3">8.3 Délais de paiement : clients professionnels</h3>
+<p class="art-p">Sauf disposition différente expressément prévue au devis, les factures adressées aux clients professionnels sont payables dans un délai de 30 jours à compter de leur date d'émission.</p>
+<h3 class="art-h3">8.4 Pénalités de retard : clients professionnels</h3>
+<p class="art-p">En cas de retard de paiement par un client professionnel, des pénalités sont exigibles de plein droit, sans qu'un rappel soit nécessaire et sans mise en demeure préalable, dès le jour suivant la date de règlement figurant sur la facture, au taux appliqué par la Banque centrale européenne à son opération de refinancement la plus récente, majoré de 10 points de pourcentage. S'y ajoute, de plein droit, l'indemnité forfaitaire légale de 40 € pour frais de recouvrement, conformément à l'article L441-10 du Code de commerce. Lorsque les frais de recouvrement exposés sont supérieurs à ce montant forfaitaire, le Prestataire peut demander une indemnisation complémentaire, sur justificatifs.</p>
+<h3 class="art-h3">8.5 Escompte : clients professionnels</h3>
+<p class="art-p">Aucun escompte n'est accordé pour paiement anticipé.</p>
+<h2 class="art-h2 cgv-h2" id="article-9"><span class="cgv-num">Article 9</span>Livrables et propriété intellectuelle</h2>
+<h3 class="art-h3">9.1 Livrables</h3>
+<p class="art-p">Certaines prestations peuvent donner lieu à la remise de livrables, notamment des supports de formation ou de présentation, des outils et exercices pédagogiques, des questionnaires ou supports de diagnostic, des synthèses, recommandations, plans d'action ou autres documents spécifiquement prévus dans le cadre de la mission. Les prestations de coaching ne donnent pas nécessairement lieu à la remise d'un livrable. Les éventuels livrables prévus sont précisés dans le devis ou les documents contractuels relatifs à la mission.</p>
+<h3 class="art-h3">9.2 Propriété intellectuelle</h3>
+<p class="art-p">Le Prestataire demeure propriétaire de l'ensemble des droits de propriété intellectuelle attachés aux méthodes, outils, supports, contenus et créations conçus et développés par ses soins, préexistants ou élaborés dans le cadre de la mission. Sauf stipulation contraire expresse figurant au devis ou au contrat, le Client ne bénéficie que d'un droit d'usage personnel, non exclusif et non cessible des livrables et supports remis, pour ses seuls besoins internes et dans le cadre défini par la mission.</p>
+<p class="art-p">Toute cession de droits de propriété intellectuelle, lorsqu'elle est expressément prévue, est subordonnée au paiement intégral du prix de la prestation concernée.</p>
+<h2 class="art-h2 cgv-h2" id="article-10"><span class="cgv-num">Article 10</span>Confidentialité</h2>
+<p class="art-p">Les parties s'engagent à conserver confidentiels les informations, documents, données, échanges et éléments dont elles pourraient avoir connaissance dans le cadre de la prestation et qui ne sont pas publics.</p>
+<p class="art-p">Cette obligation concerne notamment les informations relatives à l'organisation, la stratégie, les ressources humaines, les collaborateurs, les pratiques managériales, les données commerciales ou financières, ainsi que toute information présentée comme confidentielle par l'une des parties.</p>
+<p class="art-p">Dans le cadre d'un coaching, le contenu des séances et des échanges avec la personne accompagnée demeure confidentiel. Lorsque le coaching est commandé ou financé par une entreprise, seules les informations ou éléments de suivi expressément convenus avec la personne accompagnée peuvent être communiqués au commanditaire, sauf obligation légale contraire.</p>
+<h2 class="art-h2 cgv-h2" id="article-11"><span class="cgv-num">Article 11</span>Responsabilité</h2>
+<h3 class="art-h3">11.1 Obligation de moyens et exclusions de garantie</h3>
+<p class="art-p">Les prestations de coaching, formation, conseil et accompagnement constituent des obligations de moyens et non de résultat. Le Prestataire ne garantit pas l'atteinte d'un résultat professionnel, managérial, organisationnel, commercial, financier ou personnel déterminé à l'issue de la prestation. Les résultats dépendent notamment de l'implication du Client ou du bénéficiaire, de la mise en œuvre des actions décidées, de son environnement professionnel et organisationnel ainsi que de facteurs extérieurs à l'intervention du Prestataire.</p>
+<p class="art-p">Les conseils, outils, méthodes, recommandations et contenus transmis ont vocation à accompagner la réflexion, le développement des compétences et la prise de décision du Client. Ils ne se substituent pas aux décisions qui relèvent de la responsabilité du Client ni, lorsque cela est nécessaire, à l'intervention de professionnels spécialisés dans les domaines juridique, médical, psychologique, comptable ou financier.</p>
+<h3 class="art-h3">11.2 Limitation de responsabilité : clients professionnels</h3>
+<p class="art-p">Pour les clients professionnels, sauf disposition légale impérative contraire, la responsabilité du Prestataire susceptible d'être engagée au titre d'une prestation est limitée au montant hors taxes effectivement payé par le Client au titre de la prestation à l'origine du dommage. Sont exclus les dommages indirects, tels que notamment la perte de chiffre d'affaires, la perte d'exploitation, la perte de données ou l'atteinte à l'image.</p>
+<p class="art-p">Cette limitation ne s'applique pas dans les cas où la loi interdit de limiter ou d'exclure la responsabilité, notamment en cas de faute lourde ou dolosive, ou lorsqu'une telle limitation aurait pour effet de priver de sa substance une obligation essentielle.</p>
+<h3 class="art-h3">11.3 Responsabilité : clients consommateurs</h3>
+<p class="art-p">À l'égard des clients consommateurs, la responsabilité du Prestataire est engagée dans les conditions du droit commun. Elle est limitée aux dommages directs et prévisibles au moment de la conclusion du contrat. Le Prestataire n'est pas responsable des dommages résultant d'une faute du Client. Aucune stipulation des présentes ne saurait avoir pour effet de supprimer ou réduire le droit à réparation du consommateur en cas de manquement du Prestataire à ses obligations.</p>
+<h3 class="art-h3">11.4 Force majeure</h3>
+<p class="art-p">La responsabilité du Prestataire ne saurait être engagée en cas d'inexécution ou de retard résultant d'un cas de force majeure, tel que défini par l'article 1218 du Code civil et la jurisprudence des tribunaux français. En pareil cas, les parties se concerteront afin de convenir d'un report ou des modalités de poursuite ou de résiliation de la prestation.</p>
+<h2 class="art-h2 cgv-h2" id="article-12"><span class="cgv-num">Article 12</span>Droit de rétractation : clients consommateurs</h2>
+<p class="art-p">Conformément aux articles L221-18 et suivants du Code de la consommation, le Client consommateur ayant conclu le contrat à distance ou hors établissement dispose d’un délai de quatorze (14) jours à compter de la conclusion du contrat pour exercer son droit de rétractation, sans avoir à motiver sa décision ni à supporter de pénalités.</p>
+<p class="art-p">Pour exercer ce droit, le Client notifie au Prestataire sa décision de se rétracter au moyen d’une déclaration dénuée d’ambiguïté ou en utilisant le formulaire type de rétractation figurant en annexe des présentes.</p>
+<p class="art-p">Lorsque le Client souhaite que l’exécution de la prestation commence avant l’expiration du délai de quatorze jours, il doit en faire la demande expresse.</p>
+<p class="art-p">Si le Client exerce son droit de rétractation alors que l’exécution de la prestation a commencé à sa demande expresse, il reste redevable d’un montant correspondant aux prestations effectivement réalisées jusqu’à la communication de sa décision de se rétracter, calculé proportionnellement au prix total convenu.</p>
+<p class="art-p">Lorsque la prestation a été entièrement exécutée avant la fin du délai de rétractation, après demande expresse du Client et reconnaissance par celui-ci de la perte de son droit de rétractation une fois la prestation pleinement exécutée, le Client ne peut plus exercer ce droit.</p>
+<h2 class="art-h2 cgv-h2" id="article-13"><span class="cgv-num">Article 13</span>Protection des données personnelles (RGPD)</h2>
+<h3 class="art-h3">13.1 Responsable de traitement</h3>
+<p class="art-p">Le responsable du traitement des données à caractère personnel est Marie Bras EI, exerçant sous le nom commercial « Elan by Marie Bras », établie 24 rue Dombasle, 75015 Paris, joignable à l'adresse contact@mariebras.fr.</p>
+<h3 class="art-h3">13.2 Données collectées et finalités</h3>
+<p class="art-p">Le Prestataire peut collecter les données nécessaires à la gestion de la relation commerciale et à la réalisation de ses prestations, notamment : nom, prénom, adresse e-mail, numéro de téléphone, fonction, entreprise, adresse postale et informations de facturation. Dans le cadre des prestations de coaching, de formation ou d'accompagnement, il peut également recueillir des informations relatives à la situation professionnelle, aux objectifs, besoins, difficultés ou problématiques exprimées par le Client ou le bénéficiaire, ainsi que des notes de travail nécessaires au suivi de l'accompagnement. Le Prestataire peut enfin collecter des données de prospects, notamment leurs coordonnées professionnelles et les informations utiles au suivi des échanges commerciaux.</p>
+<p class="art-p">Ces données sont collectées afin de répondre aux demandes de contact, établir les devis et contrats, organiser et réaliser les prestations, assurer le suivi des accompagnements, communiquer avec les clients et bénéficiaires, gérer la facturation et les paiements, respecter les obligations légales et comptables et, lorsque cela est applicable, assurer le suivi des prospects et de la relation commerciale. Les informations recueillies dans le cadre d'un coaching ou d'un accompagnement sont utilisées uniquement dans la mesure nécessaire à la préparation, à la réalisation et au suivi de la prestation.</p>
+<h3 class="art-h3">13.3 Bases légales</h3>
+<p class="art-p">Les traitements reposent, selon le cas, sur l'exécution du contrat ou de mesures précontractuelles (gestion des devis, réalisation des prestations, facturation), sur le respect d'obligations légales (obligations comptables et fiscales) et sur l'intérêt légitime du Prestataire (prospection auprès de clients professionnels, suivi de la relation commerciale, défense de ses droits). Lorsque la loi l'exige, les traitements reposent sur le consentement de la personne concernée.</p>
+<h3 class="art-h3">13.4 Durée de conservation</h3>
+<p class="art-p">Les données sont conservées pendant la durée nécessaire à la réalisation de la prestation et à la gestion de la relation contractuelle, puis pendant les durées nécessaires au respect des obligations légales et à la défense des droits du Prestataire. Les documents et données devant être conservés à des fins comptables sont archivés pendant la durée légale applicable, notamment 10 ans pour les documents comptables. Les données utilisées à des fins de prospection commerciale sont conservées pendant la relation commerciale puis, en principe, pendant 3 ans à compter de la fin de cette relation ; pour les prospects n'ayant pas contractualisé, elles peuvent être conservées pendant 3 ans à compter de leur collecte ou du dernier contact émanant du prospect. Les notes ou informations spécifiques recueillies pour les besoins d'un coaching ou d'un accompagnement ne sont conservées que pendant la durée nécessaire au suivi de la prestation, puis supprimées ou archivées lorsque leur conservation n'est plus nécessaire, sous réserve d'une obligation légale contraire.</p>
+<h3 class="art-h3">13.5 Partage des données</h3>
+<p class="art-p">Les données peuvent être partagées avec des tiers et sous-traitants dans la stricte mesure nécessaire à la réalisation des finalités décrites ci-dessus, notamment les prestataires techniques (hébergement, outils de visioconférence, facturation), les partenaires pour le compte desquels le Prestataire intervient en sous-traitance, ainsi que les administrations et organismes auxquels le Prestataire est légalement tenu de communiquer des informations. Le Prestataire veille à ce que ses sous-traitants présentent des garanties suffisantes au regard de la réglementation applicable.</p>
+<h3 class="art-h3">13.6 Droits des personnes</h3>
+<p class="art-p">Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée, toute personne concernée dispose d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition au traitement de ses données, ainsi que du droit de définir des directives relatives à leur sort après son décès. Ces droits peuvent être exercés en adressant une demande à l'adresse contact@mariebras.fr, accompagnée le cas échéant d'un justificatif d'identité.</p>
+<p class="art-p">La personne concernée dispose également du droit d'introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 (www.cnil.fr).</p>
+<h2 class="art-h2 cgv-h2" id="article-14"><span class="cgv-num">Article 14</span>Médiation de la consommation : clients consommateurs</h2>
+<p class="art-p">Conformément à l'article L612-1 du Code de la consommation, le Client consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige qui l'opposerait au Prestataire.</p>
+<p class="art-p">Avant de saisir le médiateur, le consommateur doit avoir tenté de résoudre son litige directement auprès du Prestataire par une réclamation écrite.</p>
+<p class="art-p">Les coordonnées du médiateur de la consommation compétent seront renseignées après adhésion du Prestataire à un dispositif de médiation référencé. À ce jour : [MÉDIATEUR À SOUSCRIRE — NOM, ADRESSE POSTALE ET SITE INTERNET À RENSEIGNER].</p>
+<h2 class="art-h2 cgv-h2" id="article-15"><span class="cgv-num">Article 15</span>Droit applicable et litiges</h2>
+<h3 class="art-h3">15.1 Droit applicable</h3>
+<p class="art-p">Les présentes Conditions Générales et les relations contractuelles qui en découlent sont régies par le droit français.</p>
+<h3 class="art-h3">15.2 Juridiction compétente : clients professionnels</h3>
+<p class="art-p">À défaut de résolution amiable, tout litige relatif à la formation, l’interprétation, l’exécution ou la cessation de la relation contractuelle sera porté devant les juridictions compétentes conformément aux règles de droit commun.</p>
+<p class="art-p">Lorsque le Client et le Prestataire ont tous deux contracté en qualité de commerçants, il est expressément convenu que tout litige relèvera de la compétence exclusive des tribunaux compétents de Paris, y compris en cas de pluralité de défendeurs ou d’appel en garantie.</p>
+<h3 class="art-h3">15.3 Juridiction compétente : clients consommateurs</h3>
+<p class="art-p">Conformément aux dispositions du Code de procédure civile et du Code de la consommation, le client consommateur peut saisir, à son choix, soit l'une des juridictions territorialement compétentes en vertu du droit commun, soit la juridiction du lieu où il demeurait au moment de la conclusion du contrat ou de la survenance du fait dommageable.</p>
+<div class="cgv-annex" id="annexe"><p class="cgv-annex-title">Annexe</p><h2 class="art-h2" style="margin-top:.2rem!important">Modèle de formulaire de rétractation</h2>
+<p class="art-p">(Veuillez compléter et renvoyer le présent formulaire uniquement si vous souhaitez vous rétracter du contrat.)</p>
+<p class="art-p">À l'attention de Marie Bras EI (Elan by Marie Bras), 24 rue Dombasle, 75015 Paris, contact@mariebras.fr :</p>
+<p class="art-p">Je/nous (*) vous notifie/notifions (*) par la présente ma/notre (*) rétractation du contrat portant sur la vente du bien (*)/pour la prestation de services (*) ci-dessous :</p>
+<p class="art-p">Commandé le (*)/reçu le (*) :</p>
+<p class="art-p">Nom du (des) consommateur(s) :</p>
+<p class="art-p">Adresse du (des) consommateur(s) :</p>
+<p class="art-p">Signature du (des) consommateur(s) (uniquement en cas de notification du présent formulaire sur papier) :</p>
+<p class="art-p">Date :</p>
+<p class="art-p">(*) Rayez la mention inutile.</p>
+</div>
+<p class="art-p cgv-sign">Paris, le 06/10/2026</p>
+</main>
+<p class="art-cta-direct">Une question sur ces conditions ? <a href="mailto:contact@mariebras.fr">Écrivez-moi directement</a>.</p>
+<footer class="footer"><p class="footer-logo">Élan</p><p class="footer-sub">© 2026 Marie Bras · <a href="/cgv">CGV</a></p></footer>
+</body>
+</html>

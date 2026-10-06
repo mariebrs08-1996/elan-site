@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blog management : prise de poste, posture et rôle du manager | ÉLAN</title>
+<meta name="description" content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste.">
+<meta property="og:title" content="Blog management : prise de poste, posture et rôle du manager | ÉLAN">
+<meta property="og:description" content="Le blog ÉLAN : prise de poste manager, posture managériale, rôle du manager, micro-management, délégation. Des repères concrets pour les managers en prise de poste.">
+<meta property="og:url" content="https://mariebras.fr/blog">
+<meta property="og:image" content="https://mariebras.fr/images/marie-bras-portrait.jpg">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://mariebras.fr/blog">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style id="resp-fix">
+@media(max-width:780px){
+  [style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  [style*="min-width:320px"],[style*="min-width:240px"],[style*="min-width:230px"],[style*="min-width:140px"]{min-width:0!important}
+  img{max-width:100%;height:auto}
+  #nav-dd-menu{display:block!important;position:static!important;border:none!important;box-shadow:none!important;background:transparent!important;padding-left:0.8rem}
+}
+</style>
+<style>
+/* ===== ÉLAN by Marie Bras : blog, même DA que la home v26 et la page entreprise v38 =====
+   Brun cacao, terracotta du logo, miel, sable, blanc.
+   Bricolage Grotesque pour tout, Playfair italique réservé au logo. */
+:root{
+  --terra:#C1532A;--terra2:#E4875F;--terra3:#E5CDA4;--ink-terra:#A6411C;
+  --dark:#2E1A11;--ink:#22140C;--mid:#5C4436;--muted:#8A7062;--light:#8A7062;
+  --miel:#D4A04A;--sable:#F5EBDD;--paper:#FAF6F0;--white:#FFFFFF;
+  --ivory:#FFFFFF;--ivory2:#F5EBDD;--ivory3:#EADCC8;--border:#EADCC8;
+  --sans:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --logo:"Playfair Display",Georgia,serif;
+  --nav-h:66px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--sans);background:#fff;color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+
+/* ---------- NAVIGATION (les trois variantes) ---------- */
+nav,.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);padding:0 clamp(1.25rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(46,26,17,.08)}
+.nav-inner{width:100%;max-width:none;margin:0;display:flex;align-items:center;justify-content:space-between;height:100%}
+/* Logo : la plume ÉLAN d'origine */
+.nav-logo,.nav-brand-top em,.nav-brand-top strong,.footer-logo,.footer-brand em,.footer-brand strong{font-family:var(--logo)!important;font-style:italic!important;font-weight:700!important;letter-spacing:.08em!important;color:var(--terra)!important}
+.nav-logo{font-size:1.6rem;line-height:1;text-transform:uppercase;display:inline-flex;align-items:baseline;gap:.5rem}
+.nav-logo::after{content:"by Marie Bras";font-family:var(--sans);font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;font-size:.8rem;color:var(--muted)}
+.nav-brand{display:flex;align-items:center;text-decoration:none}
+.nav-brand-top{font-family:var(--sans)!important;font-style:normal;font-weight:500;font-size:.8rem!important;letter-spacing:0!important;color:var(--muted)!important;line-height:1;display:inline-flex;align-items:baseline;gap:.15rem}
+.nav-brand-top em,.nav-brand-top strong{font-size:1.6rem}
+.nav-brand-top span{font-family:var(--sans)!important;font-size:.8rem!important;color:var(--muted)!important}
+.nav-links,.nav-right{display:flex;align-items:center;gap:1.6rem}
+.nav-links a,.nav-link{font-family:var(--sans)!important;font-size:.9rem!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:var(--mid)!important;position:relative;transition:color .2s}
+.nav-links a:hover,.nav-link:hover{color:var(--dark)!important}
+.nav-links a.nav-cta,.nav-cta{background:var(--dark)!important;color:#fff!important;border-radius:999px!important;padding:.68rem 1.25rem!important;font-size:.88rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;transition:background .2s}
+.nav-links a.nav-cta:hover,.nav-cta:hover{background:var(--terra)!important}
+/* Menu déroulant et burger de la page blog */
+#nav-dd-menu{background:#fff!important;border:1px solid var(--ivory3)!important;border-top:0!important;border-radius:14px!important;overflow:hidden;box-shadow:0 18px 40px rgba(46,26,17,.12)!important}
+#nav-dd-menu a{font-family:var(--sans)!important;font-size:.9rem!important;color:var(--dark)!important;border-bottom:1px solid var(--sable)!important}
+#nav-dd-menu a:hover{background:var(--sable)!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:12px;margin-right:-12px}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- EN-TÊTE D'ARTICLE ---------- */
+/* Gabarit 1 : .art-hero + .art-wrap */
+.art-hero{background:#fff;padding:calc(var(--nav-h) + clamp(3rem,8vh,5rem)) clamp(1.25rem,5vw,2rem) clamp(2rem,5vh,3rem);border:0}
+.art-hero-inner{max-width:820px;margin:0 auto}
+/* Gabarit 2 : .article-wrap */
+.article-wrap{max-width:820px;margin:0 auto;padding:calc(var(--nav-h) + clamp(2.5rem,7vh,4.5rem)) clamp(1.25rem,5vw,2rem) 0}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem!important;font-weight:600;letter-spacing:0!important;text-transform:none!important;color:var(--mid)!important;margin-bottom:2rem;transition:color .2s}
+.back-link:hover{color:var(--terra)!important}
+/* Catégorie en pastille brune */
+.art-cat,.art-tag{display:inline-block!important;background:var(--dark);color:#fff!important;font-size:.82rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;padding:.38rem .9rem;border-radius:999px;margin-bottom:1.3rem!important}
+.art-h1,.art-title{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(2.1rem,5vw,3.5rem)!important;line-height:1.02!important;letter-spacing:-.04em!important;color:var(--dark)!important;margin-bottom:1.2rem!important}
+.art-desc{font-size:1.15rem!important;line-height:1.6!important;color:var(--mid)!important;max-width:40em;margin-bottom:1.2rem!important}
+.art-meta,.art-meta-date,.art-date{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem!important;font-weight:500;letter-spacing:0!important;color:var(--muted)!important;margin:0!important;padding:0!important;border:0!important}
+.art-meta::before,.art-meta-date::before,.art-date::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--miel)}
+.art-date{display:flex;margin-bottom:2.5rem!important;padding-bottom:2rem!important;border-bottom:1px solid var(--ivory3)!important}
+
+/* ---------- CORPS D'ARTICLE ---------- */
+.art-wrap{max-width:820px;margin:0 auto;padding:clamp(1rem,3vh,2rem) clamp(1.25rem,5vw,2rem) 0}
+.art-body{margin:0}
+.art-spacer{display:none}
+.art-img{width:100%;border-radius:24px;margin:0 0 2.5rem;aspect-ratio:16/9;object-fit:cover;background:var(--sable)}
+.art-p,.art-body p{font-size:1.1rem!important;line-height:1.78!important;color:var(--ink)!important;margin-bottom:1.25rem!important}
+.art-wrap > .art-p:first-of-type{font-size:1.22rem!important;line-height:1.65!important;color:var(--dark)!important;font-weight:500}
+.art-h2,.art-body h2,.art-body h1{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(1.5rem,2.8vw,2rem)!important;line-height:1.12!important;letter-spacing:-.03em!important;color:var(--dark)!important;margin:3rem 0 1rem!important}
+.art-body h1{font-size:clamp(1.7rem,3.2vw,2.3rem)!important}
+.art-h3,.art-body h3{font-family:var(--sans)!important;font-size:1.2rem!important;font-weight:700!important;letter-spacing:-.015em!important;text-transform:none!important;color:var(--terra)!important;margin:2rem 0 .6rem!important}
+.art-wrap strong,.art-body strong{color:var(--dark);font-weight:700}
+.art-body em,.art-wrap em{font-style:italic;color:inherit}
+.art-wrap ul:not(.art-related ul),.art-body ul,.art-wrap ol,.art-body ol{margin:0 0 1.4rem 1.3rem;font-size:1.08rem;line-height:1.75}
+.art-wrap li,.art-body li{margin-bottom:.4rem}
+/* Liens dans le texte */
+.art-wrap p a,.art-body p a{color:var(--terra)!important;font-weight:600!important;text-decoration:none!important;background:linear-gradient(transparent 62%,rgba(212,160,74,.35) 62%) no-repeat;transition:background .2s}
+.art-wrap p a:hover,.art-body p a:hover{background:linear-gradient(transparent 0,rgba(212,160,74,.35) 0)}
+
+/* Encadré "En pratique" */
+.art-callout{background:var(--sable)!important;border:0!important;border-radius:22px!important;padding:clamp(1.4rem,3vw,2rem) clamp(1.4rem,3vw,2.2rem)!important;margin:2.5rem 0!important;position:relative}
+.art-callout-title{display:inline-flex!important;align-items:center;gap:.5rem;font-size:.9rem!important;font-weight:700!important;letter-spacing:0!important;text-transform:none!important;color:var(--terra)!important;margin-bottom:.7rem!important}
+.art-callout-title::before{content:"";width:22px;height:22px;border-radius:50%;flex:none;background:var(--terra) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/13px no-repeat}
+.art-callout-body{font-size:1.05rem!important;line-height:1.7!important;color:var(--dark)!important;margin:0!important}
+/* Ancien bloc d'appel (si présent) */
+.art-cta-block,.art-cta{background:var(--dark)!important;color:#fff!important;border:0!important;border-radius:24px!important;padding:2.4rem 2rem!important;margin:3rem 0!important;text-align:center}
+.art-cta-block h3{font-family:var(--sans)!important;font-weight:700;letter-spacing:-.02em;font-size:1.5rem!important}
+.art-cta p,.art-cta-block p{color:rgba(255,255,255,.78)!important}
+.art-cta a,.art-cta-btn{display:inline-block;background:var(--terra)!important;color:#fff!important;border-radius:999px!important;padding:.9rem 1.5rem!important;font-weight:600!important;font-size:.95rem!important;letter-spacing:0!important;text-transform:none!important}
+
+/* "Pour aller plus loin" */
+.art-related{max-width:820px;margin:3rem auto 0!important;padding:1.6rem clamp(1.25rem,3vw,1.8rem)!important;border:1px solid var(--ivory3)!important;border-radius:22px;background:#fff}
+.article-wrap + .art-related{margin:3rem auto 0!important;width:calc(100% - 2.5rem)}
+.art-related-title{font-size:.95rem!important;font-weight:700!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink-terra)!important;margin-bottom:.9rem!important}
+.art-related ul{list-style:none;display:flex!important;flex-wrap:wrap;flex-direction:row!important;gap:.6rem!important;margin:0!important}
+.art-related li{margin:0}
+.art-related a{display:inline-flex;align-items:center;gap:.55rem;background:var(--paper);border:1px solid var(--ivory3);border-radius:999px;padding:.55rem 1rem;color:var(--dark)!important;text-decoration:none!important;font-weight:600!important;font-size:.95rem;transition:background .2s,border-color .2s}
+.art-related a::after{content:"→";color:var(--terra);transition:transform .2s}
+.art-related a:hover{background:var(--sable);border-color:var(--terra3)}
+.art-related a:hover::after{transform:translateX(3px)}
+
+/* ---------- APPELS À L'ACTION DE FIN ---------- */
+.art-cta-dual{display:grid!important;grid-template-columns:1fr 1fr;gap:1rem!important;max-width:820px!important;margin:3rem auto 0!important;padding:0 clamp(1.25rem,5vw,2rem)!important}
+.article-wrap .art-cta-dual{padding:0!important}
+.art-cta-card{display:flex;flex-direction:column;min-width:0!important;border-radius:24px!important;padding:clamp(1.5rem,3vw,2rem)!important;border:0!important;text-align:left}
+.art-cta-card:first-child{background:var(--sable)!important}
+.art-cta-card:last-child{background:var(--dark)!important}
+.art-cta-card h3{font-family:var(--sans)!important;font-weight:700!important;font-size:1.35rem!important;line-height:1.15!important;letter-spacing:-.025em!important;color:var(--dark)!important;margin-bottom:.7rem!important}
+.art-cta-card p{font-size:.98rem!important;line-height:1.6!important;color:var(--mid)!important;margin-bottom:1.4rem!important}
+.art-cta-card:last-child h3{color:#fff!important}
+.art-cta-card:last-child p{color:rgba(255,255,255,.75)!important}
+.art-cta-card-btn{margin-top:auto;align-self:flex-start;display:inline-flex!important;align-items:center;gap:.5rem;background:var(--terra)!important;color:#fff!important;border-radius:999px!important;padding:.85rem 1.3rem!important;font-size:.92rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;transition:background .2s}
+.art-cta-card-btn::after{content:"→";transition:transform .2s}
+.art-cta-card-btn:hover{background:var(--dark)!important}
+.art-cta-card:last-child .art-cta-card-btn:hover{background:#fff!important;color:var(--dark)!important}
+.art-cta-card-btn:hover::after{transform:translateX(3px)}
+.art-cta-direct{max-width:820px!important;margin:1.4rem auto 0!important;padding:0 clamp(1.25rem,5vw,2rem) clamp(3rem,8vh,5rem)!important;text-align:center;font-size:.98rem!important;color:var(--mid)!important}
+.article-wrap .art-cta-direct{padding:0 0 clamp(3rem,8vh,5rem)!important}
+.art-cta-direct a{color:var(--terra)!important;font-weight:600;text-decoration:none!important;border-bottom:2px solid currentColor}
+
+/* ---------- PIED DE PAGE ---------- */
+footer,.footer{background:var(--dark)!important;color:rgba(255,255,255,.62)!important;padding:1.6rem clamp(1.25rem,5vw,4rem)!important;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem 1rem;text-align:left!important;margin-top:clamp(3rem,8vh,5rem)}
+.article-wrap ~ footer,.art-cta-direct + footer{margin-top:0}
+.footer-logo{font-size:1.2rem!important;text-transform:uppercase;margin:0!important;color:var(--terra2)!important}
+.footer-brand{font-family:var(--sans)!important;font-size:.95rem!important;font-weight:500;letter-spacing:0!important;color:rgba(255,255,255,.62)}
+.footer-brand em,.footer-brand strong{font-size:1.2rem;color:var(--terra2)!important}
+.footer-sub,.footer-note{font-size:.85rem!important;letter-spacing:0!important;color:rgba(255,255,255,.6)!important;margin:0!important}
+
+/* ---------- PAGE D'ACCUEIL DU BLOG ---------- */
+.pw{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+main[style]{padding-top:var(--nav-h)!important}
+.hero-p{background:#fff;padding:clamp(3rem,9vh,5.5rem) 0 clamp(2rem,5vh,3rem);position:relative;overflow:hidden}
+.hero-p::after{content:"";position:absolute;right:-6vw;top:12%;width:clamp(220px,28vw,400px);aspect-ratio:3/4;border-radius:999px 999px 0 0;background:var(--sable);z-index:0}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.ptag{display:inline-block;background:var(--dark);color:#fff;font-size:.85rem;font-weight:600;padding:.4rem .95rem;border-radius:999px;margin-bottom:1.3rem}
+.hero-h1{font-family:var(--sans);font-weight:700;font-size:clamp(2.8rem,7vw,5.2rem);line-height:.95;letter-spacing:-.05em;color:var(--dark)}
+.hero-h1 em{font-family:var(--logo);font-style:italic;font-weight:700;letter-spacing:.06em;color:var(--terra)}
+.hero-sub{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.6;color:var(--mid);font-weight:500}
+.sec{padding:clamp(2.5rem,7vh,4.5rem) 0;background:var(--paper)}
+.sec-alt{background:var(--sable)!important}
+.sh2{font-family:var(--sans);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.05;letter-spacing:-.035em;color:var(--dark)}
+.sbdy{font-size:1.05rem;line-height:1.65;color:var(--mid)}
+.cta-btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--terra);color:#fff;border-radius:999px;padding:.95rem 1.6rem;font-size:1rem;font-weight:600;transition:background .2s}
+.cta-btn:hover{background:var(--dark)}
+/* Grille d'articles (styles en ligne neutralisés) */
+.sec .pw > div.rv[style*="grid"]{gap:1rem!important}
+.sec a[href^="/blog/"]{display:flex!important;flex-direction:column;background:#fff!important;border:1px solid var(--ivory3)!important;border-top:1px solid var(--ivory3)!important;border-radius:22px!important;padding:clamp(1.4rem,2.6vw,1.9rem)!important;box-shadow:none!important;transition:transform .25s ease,box-shadow .25s ease,border-color .25s!important}
+.sec a[href^="/blog/"]:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(46,26,17,.09)!important;border-color:var(--terra3)!important}
+.sec a[href^="/blog/"] > span{align-self:flex-start;font-family:var(--sans)!important;font-size:.8rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;color:var(--dark)!important;background:var(--sable)!important;padding:.3rem .75rem!important;border-radius:999px!important;margin-bottom:1rem!important}
+.sec a[href^="/blog/"] > h2{font-family:var(--sans)!important;font-weight:700!important;font-size:clamp(1.2rem,1.7vw,1.4rem)!important;line-height:1.18!important;letter-spacing:-.025em!important;color:var(--dark)!important;margin-bottom:.7rem!important}
+.sec a[href^="/blog/"] > p{font-family:var(--sans)!important;font-size:.95rem!important;line-height:1.6!important;color:var(--mid)!important}
+.sec a[href^="/blog/"] > p:last-child{margin-top:auto!important;padding-top:.8rem;margin-bottom:0!important;font-size:.92rem!important;font-weight:700!important;color:var(--terra)!important}
+.sec a[href^="/blog/"]:hover > p:last-child{color:var(--dark)!important}
+/* Apparition douce de la page blog */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){
+  .nav-burger{display:flex}
+  #nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem 1.6rem;background:#fff;border-bottom:1px solid var(--ivory3);box-shadow:0 18px 30px rgba(46,26,17,.08)}
+  #nav-links.open{display:flex}
+  #nav-links .nav-cta{align-self:stretch;text-align:center}
+  /* Articles du 2e gabarit : sans burger, on garde le seul bouton de contact */
+  nav:not(#nav) .nav-right{display:flex!important;gap:0}
+  nav:not(#nav) .nav-right .nav-link{display:none}
+  .sec .pw > div.rv[style*="grid"]{grid-template-columns:1fr!important}
+  .hero-p::after{display:none}
+}
+@media(max-width:700px){
+  .art-cta-dual{grid-template-columns:1fr}
+  .nav-logo{font-size:1.4rem}
+  .nav-logo::after{display:none}
+  .nav-brand-top span{display:none}
+  .nav-links{gap:1rem}
+  .nav-links a:not(.nav-cta){font-size:.85rem!important}
+  .nav-links a.nav-cta,.nav-cta{padding:.6rem 1rem!important;font-size:.82rem!important}
+  .art-p,.art-body p{font-size:1.04rem!important}
+  .art-wrap > .art-p:first-of-type{font-size:1.12rem!important}
+  footer,.footer{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+
+/* Alignement : même colonne de lecture pour l'en-tête, le texte et les blocs de fin */
+.art-hero{padding-left:0!important;padding-right:0!important}
+.art-hero-inner,.art-wrap,.article-wrap,.art-cta-dual,.art-cta-direct,.article-wrap + .art-related{width:calc(100% - 2.5rem)!important;max-width:820px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
+.art-wrap .art-related,.article-wrap .art-related{width:100%!important}
+.article-wrap .art-cta-dual,.article-wrap .art-cta-direct{width:100%!important}
+@media(min-width:1100px){.sec .pw > div.rv[style*="grid"]{grid-template-columns:repeat(3,1fr)!important}}
+.back-link{display:flex!important;width:fit-content}
+</style>
+<style>
+/* Filtres par thème */
+.blog-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.6rem}
+.bf{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--dark);background:#fff;border:1.5px solid var(--ivory3);border-radius:999px;padding:.55rem .8rem .55rem .95rem;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.bf span{font-size:.78rem;font-weight:700;min-width:1.6em;height:1.6em;padding:0 .45em;border-radius:999px;display:inline-grid;place-items:center;background:var(--sable);color:var(--mid);transition:background .2s,color .2s}
+.bf:hover{border-color:var(--terra3);background:var(--paper)}
+.bf.on{background:var(--dark);border-color:var(--dark);color:#fff}
+.bf.on span{background:var(--terra);color:#fff}
+.blog-grid > a{transition:opacity .35s ease,transform .35s ease,box-shadow .25s,border-color .25s!important}
+.blog-grid > a.is-out{display:none!important}
+.blog-grid > a.is-in{animation:cardIn .4s cubic-bezier(.22,1,.36,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.bf-empty{color:var(--mid);font-size:1rem;margin:1rem 0}
+@media(max-width:700px){
+  .blog-filters{flex-wrap:nowrap;overflow-x:auto;margin-left:calc(-1*clamp(1.25rem,5vw,3rem));margin-right:calc(-1*clamp(1.25rem,5vw,3rem));padding:0 clamp(1.25rem,5vw,3rem) .4rem;scrollbar-width:none}
+  .blog-filters::-webkit-scrollbar{display:none}
+  .bf{flex:none;font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){.blog-grid > a.is-in{animation:none}}
+</style>
+<style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-top"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em> <span style="font-size:0.58rem;font-weight:400;color:var(--muted);font-family:'Jost',sans-serif">by Marie Bras</span></span>
+  </a>
+  <div class="nav-right" id="nav-links">
+    <a href="/#parcours" class="nav-link" onclick="closeBurger()">Pour qui ?</a>
+    <a href="/formation-primo-manager#situations" class="nav-link" onclick="closeBurger()">Les angles morts</a>
+    <a href="/formation-primo-manager#methode" class="nav-link" onclick="closeBurger()">La méthode Bascule</a>
+    <div style="position:relative" id="nav-dd">
+      <a href="/#parcours" class="nav-link" id="nav-dd-trigger" style="display:flex;align-items:center;gap:0.3rem">Accompagnement <span style="font-size:0.55rem;opacity:0.5">▾</span></a>
+      <div id="nav-dd-menu" style="display:none;position:absolute;top:calc(100% + 8px);left:0;background:#FAF7F2;border:1px solid #E4DAD0;border-top:2px solid #C1532A;min-width:230px;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,0.08)">
+        <a href="/formation-primo-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif;border-bottom:1px solid #F2EDE4" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les entreprises</a>
+        <a href="/accompagnement-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif;border-bottom:1px solid #F2EDE4" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les managers</a>
+        <a href="/entrepreneur-manager" style="display:block;padding:0.8rem 1.2rem;font-size:0.82rem;color:#2A201A;text-decoration:none;font-family:'Jost',sans-serif" onmouseover="this.style.background='#F2EDE4'" onmouseout="this.style.background=''">Pour les dirigeants</a>
+      </div>
+    </div>
+    <a href="/marie-bras" class="nav-link" onclick="closeBurger()">À propos</a>
+    <a href="/blog" class="nav-link" onclick="closeBurger()">Blog</a>
+    <a href="https://calendly.com/elan-by-marie-bras/30min" class="nav-cta" onclick="closeBurger()">Parlons-en</a>
+  </div>
+  <button class="nav-burger" id="nav-burger" onclick="toggleBurger()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<main style="padding-top:72px">
+<section class="hero-p">
+  <div class="pw">
+    <div class="hero-inner">
+      <div class="ptag rv">Ressources & réflexions</div>
+      <h1 class="hero-h1 rv">Le blog <em>ÉLAN</em></h1>
+      <p class="hero-sub rv" style="max-width:600px;margin-top:1rem">Des articles concrets sur le management, la prise de poste et la délégation. Du terrain, des situations réelles, des outils activables.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="pw">
+    <div class="blog-filters" role="group" aria-label="Filtrer les articles par thème">
+  <button type="button" class="bf on" data-filter="tous" aria-pressed="true">Tous <span>16</span></button>
+  <button type="button" class="bf" data-filter="prise-de-poste" aria-pressed="false">Prise de poste <span>5</span></button>
+  <button type="button" class="bf" data-filter="posture" aria-pressed="false">Posture & leadership <span>3</span></button>
+  <button type="button" class="bf" data-filter="equipe" aria-pressed="false">Vie d’équipe <span>3</span></button>
+  <button type="button" class="bf" data-filter="delegation" aria-pressed="false">Délégation & autonomie <span>3</span></button>
+  <button type="button" class="bf" data-filter="dirigeants" aria-pressed="false">Startups & dirigeants <span>2</span></button>
+</div>
+<p class="bf-empty" hidden>Aucun article dans ce thème pour l’instant.</p>
+<div class="rv blog-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
+      <a data-theme="posture" href="/blog/posture-manageriale" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Posture managériale : développer la vôtre sans vous renier</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Développer sa posture managériale ne veut pas dire jouer un rôle qui ne vous ressemble pas. Comment la construire sans vous renier.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="equipe" href="/blog/dynamique-equipe" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Dynamique d'équipe : 10 leviers concrets pour les managers</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Une dynamique d'équipe qui fonctionne ne doit rien au hasard. Les leviers concrets qu'un manager peut activer, semaine après semaine.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="prise-de-poste" href="/blog/manager-anciens-collegues" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager ses anciens collègues sans perdre leur confiance</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir le manager de ses anciens collègues bouscule des repères installés. Comment poser un nouveau cadre sans rompre la confiance.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="equipe" href="/blog/motiver-equipe-sans-salaire" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Motiver son équipe sans miser sur le salaire : ce qui marche</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Augmenter les salaires n'est pas toujours possible. Ce qui motive réellement une équipe, observé sur le terrain, sans grand discours.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="prise-de-poste" href="/blog/manager-equipe-premiere-fois" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Manager une équipe pour la première fois : les angles morts que personne ne vous signale</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Prendre la tête d'une équipe pour la première fois ne ressemble jamais à ce qu'on avait imaginé. Ce que personne ne vous dit avant de commencer.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="prise-de-poste" href="/blog/prise-de-poste-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Prise de poste manager : ce qui se joue vraiment dans les 30 premiers jours</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce qui se joue vraiment dans les 30 premiers jours, les erreurs à éviter et les premières actions concrètes pour poser les bases.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="delegation" href="/blog/micro-management" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Micro management : pourquoi on y tombe et comment en sortir</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le micro management est souvent involontaire. Comprendre pourquoi on tombe dedans et comment redonner de l'espace à son équipe sans perdre pied.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="posture" href="/blog/role-du-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Rôle du manager : ce que ça veut vraiment dire au quotidien</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le rôle du manager va bien au-delà des entretiens annuels et des réunions. Ce que ça veut concrètement dire d'encadrer une équipe au jour le jour.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="prise-de-poste" href="/blog/devenir-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Devenir manager : ce que personne ne prépare vraiment</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Devenir manager, ce n'est pas juste un nouveau titre. C'est un changement d'identité professionnelle pour lequel presque personne n'est préparé.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="delegation" href="/blog/deleguer-efficacement" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Déléguer efficacement : comment s'y prendre pour débuter</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Déléguer efficacement est une compétence qui s'apprend. Une méthode concrète pour confier du travail sans perdre en qualité.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="delegation" href="/blog/equipe-autonome" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Délégation &amp; autonomie</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Équipe autonome : comment y arriver sans perdre le contrôle</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Construire une équipe autonome ne s'improvise pas. Les leviers concrets pour donner de l'indépendance sans perdre de vue les résultats.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="prise-de-poste" href="/blog/formation-manager-debutant" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Prise de poste</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Formation manager débutant : ce que les formations ne transmettent pas</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Les formations pour managers débutants se multiplient. Pourtant la plupart ne résolvent pas ce qui coince vraiment. Une analyse depuis le terrain.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="posture" href="/blog/coaching-leadership" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Posture &amp; leadership</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching leadership : développer sa posture sans modèle</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Ce que le coaching leadership produit sur la posture, les décisions et la relation aux équipes. Pas de recette, mais des changements durables.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="dirigeants" href="/blog/coaching-entrepreneur" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Coaching entrepreneur : les moments où ça change vraiment</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Faire appel à un coach quand on est entrepreneur n'est pas un aveu. C'est souvent la décision qui fait la différence entre stagner et avancer.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="dirigeants" href="/blog/startup-manager" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Startups &amp; dirigeants</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Startup manager : les défis du management en scale-up</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Manager une équipe en startup à 10 personnes, c'est un métier. À 50, c'en est un autre. Ce qui change et comment s'adapter quand la croissance s'accélère.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+      <a data-theme="equipe" href="/blog/management-hybride" style="text-decoration:none;display:block;background:var(--white);border:1px solid var(--ivory3);border-top:3px solid var(--terra);padding:1.8rem;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra);background:var(--ivory);padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem">Vie d’équipe</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:0.8rem">Management hybride : manager à distance sans perdre le fil</h2>
+        <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;margin-bottom:1rem">Le management hybride ne se réduit pas à organiser des visios. Ce qui change profondément dans la façon de construire la confiance et la cohésion d'équipe.</p>
+        <p style="font-size:0.78rem;font-weight:600;color:var(--terra)">Lire l'article →</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-alt" style="text-align:center">
+  <div class="pw">
+    <h2 class="sh2 rv">Vous voulez aller plus loin ?</h2>
+    <p class="sbdy rv" style="max-width:500px;margin:1rem auto 2rem">Un échange de 30 minutes pour voir comment ÉLAN peut vous accompagner.</p>
+    <a href="https://calendly.com/elan-by-marie-bras/30min" target="_blank" class="cta-btn rv">Prendre rendez-vous →</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand"><em><strong style="font-style:italic;color:var(--terra)">ÉLAN</strong></em>, Marie Bras</span>
+  <span class="footer-note">© 2026 Marie Bras · Tous droits réservés · <a href="/cgv">CGV</a></span>
+</footer>
+<script>
+function toggleBurger(){
+  document.getElementById('nav-burger').classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function closeBurger(){
+  document.getElementById('nav-burger').classList.remove('open');
+  document.getElementById('nav-links').classList.remove('open');
+}
+(function(){
+  var dd=document.getElementById('nav-dd'),menu=document.getElementById('nav-dd-menu'),trigger=document.getElementById('nav-dd-trigger');
+  if(!dd||!menu||!trigger)return;
+  trigger.addEventListener('click',function(e){if(window.innerWidth>780){e.preventDefault();menu.style.display=menu.style.display==='block'?'none':'block';}});
+  dd.addEventListener('mouseenter',function(){if(window.innerWidth>780)menu.style.display='block';});
+  dd.addEventListener('mouseleave',function(){menu.style.display='none';});
+  document.addEventListener('click',function(e){if(!dd.contains(e.target))menu.style.display='none';});
+  // Reveal on scroll
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+})();
+</script>
+<script>
+/* Filtres par thème : ?theme= ou #theme pour partager un filtre */
+(function(){
+  var bar=document.querySelector('.blog-filters'); if(!bar) return;
+  var btns=[].slice.call(bar.querySelectorAll('.bf')), cards=[].slice.call(document.querySelectorAll('.blog-grid > a[data-theme]'));
+  var empty=document.querySelector('.bf-empty');
+  function apply(f,push){
+    if(!btns.some(function(b){return b.dataset.filter===f;})) f='tous';
+    btns.forEach(function(b){var on=b.dataset.filter===f;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    var n=0;
+    cards.forEach(function(c){var show=f==='tous'||c.dataset.theme===f;c.classList.toggle('is-out',!show);c.classList.remove('is-in');if(show){n++;void c.offsetWidth;c.classList.add('is-in');}});
+    if(empty) empty.hidden=n>0;
+    if(push&&history.replaceState) history.replaceState(null,'',f==='tous'?location.pathname:'#'+f);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.filter,true);if(window.innerWidth<=700)b.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});});});
+  var start=(location.hash||'').slice(1)||new URLSearchParams(location.search).get('theme')||'tous';
+  apply(start,false);
+  var act=bar.querySelector('.bf.on'); if(act&&bar.scrollWidth>bar.clientWidth) bar.scrollLeft=act.offsetLeft-bar.offsetLeft-20;
+})();
+</script>
+</body>
+</html>
