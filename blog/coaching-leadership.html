@@ -20,7 +20,7 @@
       "headline": "Coaching leadership : développer sa posture sans modèle",
       "description": "Ce que le coaching leadership produit sur la posture, les décisions et la relation aux équipes. Pas de recette universelle, mais des changements durables et mesurables.",
       "datePublished": "2026-07-05",
-      "author": {"@type": "Person", "name": "Marie Bras"},
+      "author": {"@type": "Person", "name": "Marie Bras", "url": "https://mariebras.fr/marie-bras", "jobTitle": "Coach et formatrice pour primo-managers", "description": "Certifiée coach professionnel RNCP 6 (Linkup Coaching). 5 ans chez Malt en recrutement, management et formation, plus de 500 personnes formées aux métiers de la tech.", "sameAs": ["https://www.linkedin.com/in/marie-bras-026306112"]},
       "publisher": {"@type": "Organization", "name": "Élan"}
     }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,6 +224,57 @@ main[style]{padding-top:var(--nav-h)!important}
 <style>footer a[href="/cgv"]{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .2s}footer a[href="/cgv"]:hover{color:#fff}</style>
 </head>
 <body>
+<div id="mc-cd-bar" style="position:relative;overflow:hidden;">
+  <button id="mc-cd-toggle" type="button" style="all:unset;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-sizing:border-box;padding:11px 16px;background:linear-gradient(270deg,#C1532A,#E4772F,#8f3a1e,#C04E2A);background-size:600% 600%;animation:mcCdGradient 6s ease infinite,mcCdPulse 2.4s ease-in-out infinite;color:#FAF7F2;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;text-align:center;">
+    <span>Masterclass gratuite le 17 septembre : plus que <strong id="mc-cd-days">…</strong> jours <span id="mc-cd-label-days">pour vous inscrire</span></span>
+    <span id="mc-cd-caret" style="display:inline-block;transition:transform .3s ease;font-size:11px;">▾</span>
+  </button>
+  <div id="mc-cd-panel" class="mc-cd-panel" style="max-height:0;overflow:hidden;transition:max-height .4s ease;background:#3F302A;">
+    <div style="padding:22px 16px;text-align:center;color:#FAF7F2;">
+      <div style="display:flex;justify-content:center;gap:22px;margin-bottom:16px;font-family:'Playfair Display',serif;">
+        <div><span id="mc-cd-d" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">jours</span></div>
+        <div><span id="mc-cd-h" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">heures</span></div>
+        <div><span id="mc-cd-m" style="font-size:26px;font-weight:700;display:block;">–</span><span style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Jost',sans-serif;">min</span></div>
+      </div>
+      <a href="/masterclass" style="display:inline-block;background:#C1532A;color:#FAF7F2;text-decoration:none;font-weight:700;font-family:'Jost',sans-serif;font-size:14px;padding:11px 24px;border-radius:6px;">Je réserve ma place →</a>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes mcCdGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes mcCdPulse{0%,100%{box-shadow:inset 0 0 0 0 rgba(255,255,255,0)}50%{box-shadow:inset 0 0 24px 2px rgba(255,255,255,0.18)}}
+.mc-cd-panel.mc-cd-open{max-height:220px !important;}
+</style>
+<script>
+(function(){
+  var target=new Date("2026-09-17T12:00:00+02:00").getTime();
+  var bar=document.getElementById('mc-cd-bar');
+  var btn=document.getElementById('mc-cd-toggle');
+  var panel=document.getElementById('mc-cd-panel');
+  var caret=document.getElementById('mc-cd-caret');
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var diff=target-new Date().getTime();
+    if(diff<=0){if(bar)bar.style.display='none';return;}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor((diff%86400000)/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var dEl=document.getElementById('mc-cd-d'),hEl=document.getElementById('mc-cd-h'),mEl=document.getElementById('mc-cd-m'),daysInline=document.getElementById('mc-cd-days');
+    if(dEl)dEl.textContent=d;
+    if(hEl)hEl.textContent=pad(h);
+    if(mEl)mEl.textContent=pad(m);
+    if(daysInline)daysInline.textContent=d;
+  }
+  tick();
+  setInterval(tick,60000);
+  if(btn&&panel&&caret){
+    btn.addEventListener('click',function(){
+      panel.classList.toggle('mc-cd-open');
+      caret.style.transform=panel.classList.contains('mc-cd-open')?'rotate(180deg)':'rotate(0deg)';
+    });
+  }
+})();
+</script>
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">Élan</a>
@@ -246,7 +297,8 @@ main[style]{padding-top:var(--nav-h)!important}
     <p class="art-spacer"></p>
 <h2 class="art-h2">Le coaching leadership ne vous donne pas un modèle à suivre. Il vous aide à construire le vôtre, à partir de qui vous êtes vraiment.</h2>
 <p class="art-spacer"></p>
-<p class="art-p">Beaucoup de dirigeants abordent le coaching leadership avec une question implicite : est-ce que je suis un bon leader, et comment le devenir davantage ? Ce n'est pas une mauvaise question en soi, mais elle présuppose qu'il existe un étalon auquel se conformer. Le coaching leadership ne travaille pas sur un modèle à atteindre. Il travaille sur la personne réelle, avec sa façon précise de fonctionner, dans son contexte précis. Ce qui en ressort n'est pas une version améliorée d'un archétype, c'est une version plus consciente de soi-même.</p>
+<p class="art-p">Beaucoup de dirigeants abordent le coaching leadership avec une question implicite : est-ce que je suis un bon leader, et comment le devenir davantage ? Ce n'est pas une mauvaise question en soi, mais elle présuppose qu'il existe un étalon auquel se conformer. Le coaching leadership ne travaille pas sur un modèle à atteindre. Il travaille sur la personne réelle, avec sa façon précise de fonctionner, dans son contexte précis. Ce qui en ressort n'est pas une version améliorée d'un archétype, c'est une version plus consciente de soi-même. Le coaching leadership travaille la capacité d'une personne à entraîner un collectif vers un objectif commun, à partir de sa propre manière d'exercer l'autorité.</p>
+<p class="art-p">Les effets dépassent largement la seule personne accompagnée. Une étude du Human Capital Institute montre que les entreprises intégrant le coaching dans leur pratique constatent une hausse de 85% de l'engagement de leurs salariés.</p>
 <p class="art-spacer"></p>
 <h2 class="art-h2">Le coaching leadership agit sur la posture avant les résultats</h2>
 <p class="art-spacer"></p>
