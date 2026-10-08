@@ -927,6 +927,16 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 .offer-card.bascule p.offer-price span{color:var(--muted,#8A7062)!important}
 .offer-card.prise.is-popular p.offer-price{color:#fff!important}
 .review-head span.review-initial{width:46px!important;height:46px!important;font-size:1.2rem!important;font-weight:800!important;color:var(--terra)!important;display:grid!important;place-items:center;letter-spacing:0!important}
+.offer-plus{display:flex;gap:.5rem;align-items:flex-start;margin:.2rem 0 .9rem!important;font-size:.86rem!important;font-weight:600;line-height:1.4}
+.offer-plus:before{content:"✓";flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:.65rem;font-weight:800;color:#fff;background:var(--terra)}
+.offer-card.prise.is-popular p.offer-plus{color:#fff!important}
+.offer-card.prise.is-popular .offer-plus:before{background:var(--miel);color:var(--cacao)}
+.offer-card.bascule p.offer-plus{color:var(--cacao)!important}
+@media(min-width:901px) and (max-height:800px){
+  .formats .offer-icon{display:none!important}
+  .formats .offer-card p:not(.offer-count):not(.offer-price):not(.offer-plus){font-size:.86rem!important;line-height:1.45!important}
+  .formats-note{margin-top:.8rem!important}
+}
 </style>
 </head>
 <body>
@@ -1159,7 +1169,7 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 </svg></div>
 <h3>Coaching flash</h3>
 <p class="offer-count">3 séances</p>
-<p class="offer-price"><span>À partir de</span> 450 €</p>
+<p class="offer-price"><span>À partir de</span> 540 €</p>
 <p>Pour travailler <strong>un sujet ciblé</strong> et avancer rapidement sur une situation précise.</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
@@ -1173,8 +1183,9 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 </svg></div>
 <h3>Parcours Prise de poste</h3>
 <p class="offer-count">6 séances</p>
-<p class="offer-price"><span>À partir de</span> 850 €</p>
+<p class="offer-price"><span>À partir de</span> 960 €</p>
 <p>Pour accompagner <strong>une prise de poste</strong> ou faire évoluer plusieurs réflexes de management.</p>
+<p class="offer-plus">Espace de suivi en ligne, tests et outils entre les séances</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
 <article class="offer-card bascule">
@@ -1187,8 +1198,9 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 </svg></div>
 <h3>Parcours Bascule 2.0</h3>
 <p class="offer-count">8 séances</p>
-<p class="offer-price"><span>À partir de</span> 1 120 €</p>
+<p class="offer-price"><span>À partir de</span> 1 200 €</p>
 <p>Pour un travail plus profond sur <strong>la posture, le rôle et les changements</strong> à installer dans la durée.</p>
+<p class="offer-plus">Espace de suivi en ligne, tests et outils entre les séances</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
 </div>
