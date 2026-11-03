@@ -25,7 +25,7 @@ exports.handler = async (event) => {
 
   const apiKey = process.env.BREVO_API_KEY;
   const listId = parseInt(process.env.BREVO_LIST_ID, 10);
-  if (!apiKey || !listId) return json(500, { error: 'config' });
+  if (!apiKey || !listId) return json(500, { error: 'config', missing: [!apiKey && 'BREVO_API_KEY', !listId && 'BREVO_LIST_ID'].filter(Boolean) });
 
   const attr = process.env.BREVO_FIRSTNAME_ATTR || 'PRENOM';
   const send = (withAttributes) => fetch('https://api.brevo.com/v3/contacts', {
