@@ -1196,6 +1196,7 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:1.8rem}.about-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <style id="hl-v1">mark.hl{background:linear-gradient(180deg,transparent 40%,#F9E08F 40%,#F9E08F 100%);border-radius:3px;color:inherit;font-weight:700;padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Puis-je me faire accompagner sans savoir quel poste viser ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c’est même le point de départ le plus fréquent. La formule Trouver son poste idéal est faite pour ça : on part de votre socle, de vos valeurs et de ce qui vous donne de l’énergie pour définir une cible claire."}}, {"@type": "Question", "name": "Quelle formule choisir ?", "acceptedAnswer": {"@type": "Answer", "text": "Le quiz plus haut vous oriente en 30 secondes. Si vous hésitez encore, le premier échange de 30 minutes sert exactement à ça : on fait le point sur votre situation et je vous dis honnêtement ce dont vous avez besoin, même si c’est une seule séance."}}, {"@type": "Question", "name": "Comment se déroulent les séances ?", "acceptedAnswer": {"@type": "Answer", "text": "Chaque séance dure entre 1 h et 1 h 15, en visio ou en présentiel à Paris. Entre deux séances, vous avez des exercices concrets à faire, et dans le parcours complet, je relis vos documents et je réponds à vos messages."}}, {"@type": "Question", "name": "Combien de temps dure un accompagnement ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ un mois pour 4 séances, six semaines à deux mois pour 6 séances, et trois mois pour le parcours complet. On adapte le rythme à votre agenda et à l’urgence de votre recherche."}}, {"@type": "Question", "name": "En quoi votre approche est-elle différente ?", "acceptedAnswer": {"@type": "Answer", "text": "J’ai été recruteuse pendant 7 ans, chez Extia puis chez Malt, où j’ai trié des milliers de CV et recruté plus de 200 personnes. Je sais ce que les recruteurs regardent. Je suis aussi coach certifiée et formée à la prise de parole : on travaille autant votre dossier que votre posture et votre confiance."}}, {"@type": "Question", "name": "Vous accompagnez aussi vers le freelance ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Après 5 ans chez Malt, je connais bien le marché hybride entre salariat et freelance. On peut travailler votre positionnement, votre offre et votre profil sur les plateformes, que vous visiez une mission ou un poste."}}, {"@type": "Question", "name": "Coaching ou bilan de compétences ?", "acceptedAnswer": {"@type": "Answer", "text": "Le bilan de compétences explore largement vos possibilités sur une longue durée. Le coaching est plus court et tourné vers l’action : clarifier une cible, décrocher un poste, réussir son arrivée. Si un bilan est plus adapté à votre situation, je vous le dirai."}}, {"@type": "Question", "name": "Est-ce finançable par le CPF ou mon entreprise ?", "acceptedAnswer": {"@type": "Answer", "text": "Le coaching n’est pas éligible au CPF. En revanche, votre entreprise peut parfois le prendre en charge, notamment pour une prise de poste ou une mobilité interne. Dans ce cas, je vous fournis un devis et le tarif est établi sur mesure."}}, {"@type": "Question", "name": "Quels sont vos tarifs, et peut-on payer en plusieurs fois ?", "acceptedAnswer": {"@type": "Answer", "text": "Coaching flash : 150 €. Booster sa candidature : 560 €. Trouver son poste idéal : 840 €. Parcours complet : 1 490 €, payable en 3 fois. Une séance supplémentaire coûte 140 €. TVA non applicable, art. 293 B du CGI."}}, {"@type": "Question", "name": "Et si je trouve un poste avant la fin de l’accompagnement ?", "acceptedAnswer": {"@type": "Answer", "text": "Tant mieux, c’est l’objectif. Les séances restantes servent alors à préparer votre arrivée : vos objectifs, vos premières semaines et votre posture pendant la période d’essai."}}]}</script>
 </head>
 <body>
 <nav>
@@ -1269,19 +1270,19 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 <h3>Où en êtes-vous aujourd’hui ?</h3>
 <div class="quiz-options">
 <button type="button" data-score="ideal:3">Je ne sais pas encore quel poste viser</button>
-<button type="button" data-score="best:3">Je sais ce que je veux, mais mes candidatures n’aboutissent pas</button>
+<button type="button" data-score="boost:3">Je sais ce que je veux, mais mes candidatures n’aboutissent pas</button>
 <button type="button" data-score="flash:3">J’ai un entretien important qui arrive</button>
-<button type="button" data-score="prise:3">Je viens de décrocher un poste</button>
+<button type="button" data-score="complet:3">Je veux être accompagné·e du début jusqu’à ma prise de poste</button>
 </div>
 </div>
 <div class="quiz-step" data-step="1" hidden>
 <p class="quiz-count">Question 2 sur 3</p>
 <h3>Depuis combien de temps cherchez-vous ?</h3>
 <div class="quiz-options">
-<button type="button" data-score="ideal:1,flash:1">Je commence tout juste</button>
-<button type="button" data-score="best:1,ideal:1">Entre 1 et 3 mois</button>
-<button type="button" data-score="best:2">Plus de 3 mois</button>
-<button type="button" data-score="prise:2">Je ne cherche plus, je démarre</button>
+<button type="button" data-score="ideal:1,complet:1">Je commence tout juste</button>
+<button type="button" data-score="boost:1,ideal:1">Entre 1 et 3 mois</button>
+<button type="button" data-score="boost:1,complet:2">Plus de 3 mois</button>
+<button type="button" data-score="flash:2">Peu importe, j’ai une échéance très proche</button>
 </div>
 </div>
 <div class="quiz-step" data-step="2" hidden>
@@ -1289,9 +1290,9 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 <h3>Qu’est-ce qui vous pèse le plus en ce moment ?</h3>
 <div class="quiz-options">
 <button type="button" data-score="ideal:2">Le flou sur ce que je veux vraiment</button>
-<button type="button" data-score="best:2">Le silence après mes candidatures</button>
+<button type="button" data-score="boost:2">Le silence après mes candidatures</button>
 <button type="button" data-score="flash:2">Le stress de l’oral et des entretiens</button>
-<button type="button" data-score="prise:2">La peur de ne pas être à la hauteur dans le poste</button>
+<button type="button" data-score="complet:2">Tout à la fois, et l’envie de ne plus avancer seul·e</button>
 </div>
 </div>
 <div class="quiz-result" id="quizResult" hidden>
@@ -1385,48 +1386,48 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 <div class="inner">
 <span class="kicker">Mes accompagnements</span>
 <h2 class="section-title">Quatre formats selon <em>votre moment.</em></h2>
-<p class="lead formats-lead">Un format court pour un enjeu précis, ou un parcours qui suit les étapes de <mark class="hl">votre transition</mark>.</p>
+<p class="lead formats-lead">Un format court pour un enjeu précis, ou un parcours qui vous accompagne <mark class="hl">jusqu’à votre prise de poste</mark>.</p>
 <div class="offer-track">
 <article class="offer-card flash" id="offre-flash">
 <span class="offer-index">01</span>
 <div class="offer-icon"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M11 34L53 12 38 53 29 36 11 34z"></path><path d="M29 36L53 12"></path></svg></div>
 <h3>Coaching flash</h3>
-<p class="offer-count">1 séance · un point précis</p>
-<p class="offer-price"><span>À partir de</span> 150 €</p>
-<p>Pour préparer <strong>un entretien important</strong>, relire votre CV ou débloquer une question précise.</p>
+<p class="offer-count">1 séance · 1 h à 1 h 15</p>
+<p class="offer-price">150 €</p>
+<p>Pour préparer <strong>un entretien important</strong>, une négociation ou une décision à prendre.</p>
+<a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
+</article>
+<article class="offer-card prise" id="offre-boost">
+<span class="offer-index">02</span>
+<div class="offer-icon"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M12 50V34h10v16M27 50V24h10v26M42 50V14h10v36"></path><path d="M9 50h47"></path></svg></div>
+<h3>Booster sa candidature</h3>
+<p class="offer-count">4 séances</p>
+<p class="offer-price">560 €</p>
+<p>Vous savez ce que vous voulez. On reprend <strong>CV, LinkedIn et pitch</strong>, puis on simule vos entretiens.</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
 <article class="offer-card prise" id="offre-ideal">
-<span class="offer-index">02</span>
+<span class="offer-index">03</span>
 <div class="offer-icon"><svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" r="20"></circle><circle cx="32" cy="32" r="10"></circle><path d="M32 12v8M32 44v8M12 32h8M44 32h8"></path></svg></div>
 <h3>Trouver son poste idéal</h3>
-<p class="offer-count">4 séances · étapes 1 à 3</p>
-<p class="offer-price"><span>À partir de</span> 520 €</p>
-<p>Pour savoir <strong>sur quoi vous appuyer</strong> et quels postes viser avant de vous lancer.</p>
+<p class="offer-count">6 séances</p>
+<p class="offer-price">840 €</p>
+<p>Vous ne savez plus où aller. On définit <strong>votre socle, votre cible</strong> et votre stratégie de candidature.</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
-<article class="offer-card prise is-popular" id="offre-best">
-<span class="offer-badge offer-badge-popular">Le plus complet</span>
-<span class="offer-index">03</span>
-<div class="offer-icon"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M12 50V34h10v16M27 50V24h10v26M42 50V14h10v36"></path><path d="M9 50h47"></path></svg></div>
-<h3>Décrocher le meilleur poste</h3>
-<p class="offer-count">6 séances · étapes 1 à 6</p>
-<p class="offer-price"><span>À partir de</span> 720 €</p>
-<p>Pour être accompagné·e <strong>de la réflexion jusqu’à la signature</strong>.</p>
-<p class="offer-plus">Espace de suivi en ligne, tests et outils entre les séances</p>
-<a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
-</article>
-<article class="offer-card bascule" id="offre-prise">
+<article class="offer-card prise is-popular" id="offre-complet">
+<span class="offer-badge offer-badge-popular">Le plus demandé</span>
 <span class="offer-index">04</span>
 <div class="offer-icon"><svg aria-hidden="true" viewbox="0 0 64 64"><path d="M49 12C34 16 20 26 15 43c9 5 21 1 28-8 6-8 8-17 6-23z"></path><path d="M17 45c7-10 16-18 28-25"></path></svg></div>
-<h3>Réussir sa prise de poste</h3>
-<p class="offer-count">6 séances · étape 7</p>
-<p class="offer-price"><span>À partir de</span> 720 €</p>
-<p>Pour <strong>passer la période d’essai sereinement</strong> et vous installer dans votre rôle.</p>
-<p class="offer-plus">Espace de suivi en ligne, tests et outils entre les séances</p>
+<h3>Parcours complet</h3>
+<p class="offer-count">3 mois · jusqu’à 10 séances</p>
+<p class="offer-price">1 490 €</p>
+<p>De la réflexion <strong>jusqu’à la signature</strong>, puis la préparation de votre prise de poste.</p>
+<p class="offer-plus">Relectures, simulation d’entretien et échanges entre les séances · paiement en 3 fois possible</p>
 <a href="https://calendly.com/elan-by-marie-bras/30min">En parler →</a>
 </article>
 </div>
+<p class="formats-note" style="font-weight:600;color:var(--cacao)">Séance supplémentaire : 140 €. Vous avez déjà signé ? Un suivi pendant votre période d’essai est possible sur demande.</p>
 <p class="formats-note">Tarifs pour une personne qui finance elle-même son accompagnement. Si votre entreprise ou un dispositif prend en charge le coaching, le tarif est établi sur devis. TVA non applicable, art. 293 B du CGI.</p>
 </div>
 </section>
@@ -1438,6 +1439,33 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 <h2 class="section-title" style="color:#FAF6F0;margin-top:8px">Pas encore prêt·e pour un coaching ?<br/><em style="color:#D4A04A">Commencez par le guide.</em></h2>
 <p style="color:#E5CDA4;margin:10px 0 20px">27 pages de méthodes, d’exemples et de fiches à remplir : CV annoté, elevator pitch, 10 erreurs en entretien, profil Malt.</p>
 <a class="btn-main" href="/guide-du-candidat">Recevoir le guide gratuit →</a>
+</div>
+</div>
+</section>
+<style id="faq-v1">
+.faq-section .faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.7rem;max-width:860px}
+.faq-item{background:#FAF6F0;border-radius:18px;padding:0 1.4rem;border:1px solid rgba(46,26,17,.06)}
+.faq-item summary{cursor:pointer;list-style:none;padding:1.2rem 2.2rem 1.2rem 0;font-weight:700;font-size:1.08rem;color:var(--cacao,#2E1A11);position:relative}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:#C1532A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;line-height:1}
+.faq-item[open] summary:after{content:"−"}
+.faq-item p{margin:0 0 1.3rem;line-height:1.65;color:var(--mid,#5C4436);max-width:760px}
+</style>
+<section class="faq-section wrap" id="faq">
+<div class="inner">
+<span class="kicker">Questions fréquentes</span>
+<h2 class="section-title">Avant de vous lancer,<br/><em>vos questions.</em></h2>
+<div class="faq-list">
+<details class="faq-item"><summary>Puis-je me faire accompagner sans savoir quel poste viser ?</summary><p>Oui, c’est même le point de départ le plus fréquent. La formule Trouver son poste idéal est faite pour ça : on part de votre socle, de vos valeurs et de ce qui vous donne de l’énergie pour définir une cible claire.</p></details>
+<details class="faq-item"><summary>Quelle formule choisir ?</summary><p>Le quiz plus haut vous oriente en 30 secondes. Si vous hésitez encore, le premier échange de 30 minutes sert exactement à ça : on fait le point sur votre situation et je vous dis honnêtement ce dont vous avez besoin, même si c’est une seule séance.</p></details>
+<details class="faq-item"><summary>Comment se déroulent les séances ?</summary><p>Chaque séance dure entre 1 h et 1 h 15, en visio ou en présentiel à Paris. Entre deux séances, vous avez des exercices concrets à faire, et dans le parcours complet, je relis vos documents et je réponds à vos messages.</p></details>
+<details class="faq-item"><summary>Combien de temps dure un accompagnement ?</summary><p>Comptez environ un mois pour 4 séances, six semaines à deux mois pour 6 séances, et trois mois pour le parcours complet. On adapte le rythme à votre agenda et à l’urgence de votre recherche.</p></details>
+<details class="faq-item"><summary>En quoi votre approche est-elle différente ?</summary><p>J’ai été recruteuse pendant 7 ans, chez Extia puis chez Malt, où j’ai trié des milliers de CV et recruté plus de 200 personnes. Je sais ce que les recruteurs regardent. Je suis aussi coach certifiée et formée à la prise de parole : on travaille autant votre dossier que votre posture et votre confiance.</p></details>
+<details class="faq-item"><summary>Vous accompagnez aussi vers le freelance ?</summary><p>Oui. Après 5 ans chez Malt, je connais bien le marché hybride entre salariat et freelance. On peut travailler votre positionnement, votre offre et votre profil sur les plateformes, que vous visiez une mission ou un poste.</p></details>
+<details class="faq-item"><summary>Coaching ou bilan de compétences ?</summary><p>Le bilan de compétences explore largement vos possibilités sur une longue durée. Le coaching est plus court et tourné vers l’action : clarifier une cible, décrocher un poste, réussir son arrivée. Si un bilan est plus adapté à votre situation, je vous le dirai.</p></details>
+<details class="faq-item"><summary>Est-ce finançable par le CPF ou mon entreprise ?</summary><p>Le coaching n’est pas éligible au CPF. En revanche, votre entreprise peut parfois le prendre en charge, notamment pour une prise de poste ou une mobilité interne. Dans ce cas, je vous fournis un devis et le tarif est établi sur mesure.</p></details>
+<details class="faq-item"><summary>Quels sont vos tarifs, et peut-on payer en plusieurs fois ?</summary><p>Coaching flash : 150 €. Booster sa candidature : 560 €. Trouver son poste idéal : 840 €. Parcours complet : 1 490 €, payable en 3 fois. Une séance supplémentaire coûte 140 €. TVA non applicable, art. 293 B du CGI.</p></details>
+<details class="faq-item"><summary>Et si je trouve un poste avant la fin de l’accompagnement ?</summary><p>Tant mieux, c’est l’objectif. Les séances restantes servent alors à préparer votre arrivée : vos objectifs, vos premières semaines et votre posture pendant la période d’essai.</p></details>
 </div>
 </div>
 </section>
@@ -1511,13 +1539,13 @@ if(b&&n)b.addEventListener('click',()=>n.classList.toggle('open'));
 (function(){
   var R={
     flash:{t:'Le coaching flash',d:'Vous avez un enjeu précis et proche. En une séance, on prépare ce moment ensemble : votre pitch, les questions difficiles, et une simulation pour arriver serein·e.'},
-    ideal:{t:'Trouver son poste idéal',d:'Avant d’envoyer des candidatures, il faut savoir ce que vous visez. En quatre séances, on définit votre socle, votre poste idéal et les opportunités qui vous correspondent vraiment.'},
-    best:{t:'Décrocher le meilleur poste',d:'Vous savez où vous allez, mais la méthode ne suit pas encore. En six séances, on reprend tout : votre socle, vos candidatures, vos entretiens et le closing.'},
-    prise:{t:'Réussir sa prise de poste',d:'Le plus dur n’est pas fini : la période d’essai commence. En six séances, on travaille votre posture, vos croyances limitantes et la gestion du stress pour vous installer sereinement.'}
+    boost:{t:'Booster sa candidature',d:'Vous savez où vous allez, mais les réponses ne viennent pas. En quatre séances, on reprend votre CV, votre LinkedIn et votre pitch avec le regard d’une recruteuse, puis on simule vos entretiens.'},
+    ideal:{t:'Trouver son poste idéal',d:'Avant d’envoyer des candidatures, il faut savoir ce que vous visez. En six séances, on définit votre socle, vos valeurs, votre cible et les opportunités qui vous correspondent vraiment, puis votre stratégie de candidature.'},
+    complet:{t:'Le parcours complet',d:'Vous voulez être accompagné·e de A à Z. Pendant trois mois, on avance de la réflexion jusqu’à la signature, puis on prépare votre prise de poste, avec un suivi entre les séances.'}
   };
   var card=document.getElementById('quizCard'); if(!card) return;
   var steps=card.querySelectorAll('.quiz-step'), bar=document.getElementById('quizBar'), res=document.getElementById('quizResult');
-  var score={flash:0,ideal:0,best:0,prise:0}, i=0;
+  var score={flash:0,boost:0,ideal:0,complet:0}, i=0;
   function show(n){steps.forEach(function(s,k){s.hidden=k!==n;});bar.style.width=(n/steps.length*100)+'%';}
   card.querySelectorAll('.quiz-options button').forEach(function(b){
     b.addEventListener('click',function(){
@@ -1532,7 +1560,7 @@ if(b&&n)b.addEventListener('click',()=>n.classList.toggle('open'));
       res.hidden=false;
     });
   });
-  document.getElementById('quizRestart').addEventListener('click',function(){score={flash:0,ideal:0,best:0,prise:0};i=0;res.hidden=true;show(0);});
+  document.getElementById('quizRestart').addEventListener('click',function(){score={flash:0,boost:0,ideal:0,complet:0};i=0;res.hidden=true;show(0);});
   show(0);
 })();
 </script>
