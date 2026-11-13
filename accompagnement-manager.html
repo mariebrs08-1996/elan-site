@@ -1363,6 +1363,41 @@ nav{background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(46,2
 </div>
 </div>
 </section>
+<style id="interventions-v1">
+.int-sec .int-grid{display:grid;gap:22px;margin-top:30px}
+.int-sec .int-grid.n3{grid-template-columns:repeat(3,1fr)}
+.int-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(46,26,17,.1);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+a.int-card:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(46,26,17,.1)}
+.int-grid.n1 .int-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);max-width:980px;margin:0 auto}
+.int-media{position:relative;aspect-ratio:16/10;background:#F5EBDD;overflow:hidden}
+.int-grid.n1 .int-media{aspect-ratio:auto;min-height:100%}
+.int-media img{width:100%;height:100%;object-fit:cover;display:block}
+.int-play{position:absolute;top:12px;right:12px;background:rgba(46,26,17,.85);color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:6px 12px}
+.int-body{display:flex;flex-direction:column;gap:7px;padding:20px 22px 22px;flex:1}
+.int-grid.n1 .int-body{padding:30px 32px;justify-content:center}
+.int-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.8rem;color:#8A7062}
+.int-meta small{background:#F5EBDD;color:#2E1A11;font-size:.75rem;font-weight:700;border-radius:999px;padding:4px 10px}
+.int-card h3{font-size:1.1rem;line-height:1.3;color:#2E1A11;margin:.2rem 0 0}
+.int-grid.n1 .int-card h3{font-size:1.35rem}
+.int-card p{font-size:.9rem;line-height:1.55;color:#5C4436;margin:0}
+.int-card em{margin-top:auto;padding-top:8px;font-style:normal;font-weight:700;color:#C1532A}
+.int-grid.n1 .int-card em{margin-top:6px}
+@media(max-width:900px){.int-sec .int-grid.n3{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.int-grid.n1 .int-card{grid-template-columns:1fr}.int-grid.n1 .int-media{aspect-ratio:16/10}}
+</style>
+<section class="int-sec wrap" id="interventions">
+<div class="inner">
+<div style="text-align:center">
+<span class="kicker">Vu récemment</span>
+<h2 class="section-title">Mon dernier live, <em>en replay.</em></h2>
+</div>
+<div class="int-grid n1">
+<a class="int-card" href="https://www.linkedin.com/posts/nathalieramond_prendre-sa-place-de-manager-l%C3%A9gitimit%C3%A9-ugcPost-7520397331335270400-A-w3/" rel="noopener" target="_blank">
+<span class="int-media"><img alt="Live LinkedIn Prendre sa place de manager, avec Marie Bras et Nathalie Ramond" loading="lazy" src="/assets/intervention-live-management.jpg"/><span class="int-play">▶ Replay</span></span>
+<span class="int-body"><span class="int-meta"><small>Management</small>Live LinkedIn avec Nathalie Ramond</span><h3>Prendre sa place de manager : légitimité, solitude et charge mentale</h3><p>Des repères concrets pour celles et ceux qui deviennent managers et se sentent seuls dans ce nouveau rôle.</p><em>Voir le replay →</em></span>
+</a>
+</div>
+</div>
+</section>
 <section class="reviews wrap">
 <div class="inner">
 <span class="kicker">Ils ont été accompagnés</span>
